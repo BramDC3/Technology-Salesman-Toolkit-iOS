@@ -8,5 +8,6 @@ target 'Technology Salesman Toolkit' do
   # Pods for Technology Salesman Toolkit
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
 end

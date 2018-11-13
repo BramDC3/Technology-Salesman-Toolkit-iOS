@@ -39,7 +39,7 @@
                                             <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEI-Pf-rhm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-NE-41o">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-NE-41o" customClass="GIDSignInButton">
                                         <rect key="frame" x="0.0" y="246" width="242" height="30"/>
                                         <state key="normal" title="Meld aan met Google"/>
                                     </button>
