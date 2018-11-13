@@ -18,30 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="tmD-kD-SBp">
-                                <rect key="frame" x="66" y="289" width="243" height="358"/>
+                                <rect key="frame" x="66.5" y="154.5" width="242" height="358"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gebruikersnaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-ue-MUo">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-ue-MUo">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-vL-NFy">
-                                        <rect key="frame" x="0.0" y="82" width="243" height="30"/>
+                                        <rect key="frame" x="0.0" y="82" width="242" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m89-OO-WP3">
-                                        <rect key="frame" x="0.0" y="164" width="243" height="30"/>
+                                        <rect key="frame" x="0.0" y="164" width="242" height="30"/>
                                         <state key="normal" title="Meld aan"/>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEI-Pf-rhm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-NE-41o">
-                                        <rect key="frame" x="0.0" y="246" width="243" height="30"/>
+                                        <rect key="frame" x="0.0" y="246" width="242" height="30"/>
                                         <state key="normal" title="Meld aan met Google"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-tg-AV0">
-                                        <rect key="frame" x="0.0" y="328" width="243" height="30"/>
+                                        <rect key="frame" x="0.0" y="328" width="242" height="30"/>
                                         <state key="normal" title="Heb je nog geen account? Klik hier!"/>
                                         <connections>
                                             <segue destination="2iY-aO-kqn" kind="show" id="TU6-IZ-es5"/>
@@ -52,13 +55,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tmD-kD-SBp" secondAttribute="trailing" constant="66" id="7DO-kk-2yi"/>
-                            <constraint firstItem="tmD-kD-SBp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="UeP-gE-NIP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tmD-kD-SBp" secondAttribute="bottom" constant="20" id="iMO-9J-YDC"/>
+                            <constraint firstItem="tmD-kD-SBp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="azz-nF-5Qj"/>
+                            <constraint firstItem="tmD-kD-SBp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1m-DA-Dmf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meld aan" id="kOp-t0-bHD"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Iof-ue-MUo" id="pAp-BT-feQ"/>
+                        <outlet property="passwordTextField" destination="q0a-vL-NFy" id="ZxO-ve-tmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

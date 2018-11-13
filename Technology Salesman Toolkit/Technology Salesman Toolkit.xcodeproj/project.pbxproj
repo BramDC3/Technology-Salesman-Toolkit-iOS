@@ -13,6 +13,8 @@
 		11C834572188659A00FE1808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C834552188659A00FE1808 /* Main.storyboard */; };
 		11C834592188659B00FE1808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C834582188659B00FE1808 /* Assets.xcassets */; };
 		11C8345C2188659B00FE1808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C8345A2188659B00FE1808 /* LaunchScreen.storyboard */; };
+		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
+		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		11C834582188659B00FE1808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11C8345B2188659B00FE1808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C8345D2188659B00FE1808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		243E3DEFF752D6F612D8B0AF /* Pods-Technology Salesman Toolkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technology Salesman Toolkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit.debug.xcconfig"; sourceTree = "<group>"; };
+		9958E757FC1A955071D7359D /* Pods-Technology Salesman Toolkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technology Salesman Toolkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit.release.xcconfig"; sourceTree = "<group>"; };
+		BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technology_Salesman_Toolkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +58,8 @@
 			children = (
 				11C834502188659A00FE1808 /* Technology Salesman Toolkit */,
 				11C8344F2188659A00FE1808 /* Products */,
+				373CF1AA07A45BDBC76F96A0 /* Pods */,
+				C6C3D9DD1E750FAEDE413A74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +80,26 @@
 				11C834582188659B00FE1808 /* Assets.xcassets */,
 				11C8345A2188659B00FE1808 /* LaunchScreen.storyboard */,
 				11C8345D2188659B00FE1808 /* Info.plist */,
+				11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */,
 			);
 			path = "Technology Salesman Toolkit";
+			sourceTree = "<group>";
+		};
+		373CF1AA07A45BDBC76F96A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				243E3DEFF752D6F612D8B0AF /* Pods-Technology Salesman Toolkit.debug.xcconfig */,
+				9958E757FC1A955071D7359D /* Pods-Technology Salesman Toolkit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6C3D9DD1E750FAEDE413A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11C834602188659B00FE1808 /* Build configuration list for PBXNativeTarget "Technology Salesman Toolkit" */;
 			buildPhases = (
+				53199C8CBF58235DAB80F249 /* [CP] Check Pods Manifest.lock */,
 				11C8344A2188659A00FE1808 /* Sources */,
 				11C8344B2188659A00FE1808 /* Frameworks */,
 				11C8344C2188659A00FE1808 /* Resources */,
+				5902C5EBF9C57EF462BA748A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,12 +163,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C8345C2188659B00FE1808 /* LaunchScreen.storyboard in Resources */,
+				11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */,
 				11C834592188659B00FE1808 /* Assets.xcassets in Resources */,
 				11C834572188659A00FE1808 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53199C8CBF58235DAB80F249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Technology Salesman Toolkit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5902C5EBF9C57EF462BA748A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11C8344A2188659A00FE1808 /* Sources */ = {
@@ -292,6 +365,7 @@
 		};
 		11C834612188659B00FE1808 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 243E3DEFF752D6F612D8B0AF /* Pods-Technology Salesman Toolkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +383,7 @@
 		};
 		11C834622188659B00FE1808 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9958E757FC1A955071D7359D /* Pods-Technology Salesman Toolkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
