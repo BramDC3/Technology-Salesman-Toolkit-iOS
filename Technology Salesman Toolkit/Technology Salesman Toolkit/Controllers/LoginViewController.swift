@@ -18,8 +18,25 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     // Function for signing the user in with an email/password combination
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         if loginFormIsValid() {
+            
+            // https://firebase.google.com/docs/auth/ios/custom-auth
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                
                 if let user = user {
+                    
+                    guard user.user.isEmailVerified else {
+                        
+                        // https://firebase.google.com/docs/auth/ios/custom-auth
+                        do {
+                            try Auth.auth().signOut()
+                        } catch let signOutError as NSError {
+                            print ("Error signing out: %@", signOutError)
+                        }
+                        
+                        self.displayAlert(withMessage: "Gelieve uw e-mailadres eerst te verifiëren aan de hand van de verzonden e-mail.")
+                        return
+                    }
+                    
                     self.displayAlert(withMessage: "Welkom \(user.user.displayName!)!")
                 } else {
                     self.displayAlert(withMessage: "Er is iets fout gegaan tijdens de aanmelding: \(error!)")
@@ -57,6 +74,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         let alert = UIAlertController(title: "Aanmelding", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Oké", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Function for going back to the login screen
+    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
+        
     }
     
 }
