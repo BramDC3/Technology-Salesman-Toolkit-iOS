@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="82" width="242" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m89-OO-WP3">
                                         <rect key="frame" x="0.0" y="164" width="242" height="30"/>
@@ -53,7 +53,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tmD-kD-SBp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="azz-nF-5Qj"/>
                             <constraint firstItem="tmD-kD-SBp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1m-DA-Dmf"/>
@@ -70,21 +70,85 @@
             </objects>
             <point key="canvasLocation" x="980" y="26.53673163418291"/>
         </scene>
-        <!--Maak een account-->
+        <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">
             <objects>
                 <viewController id="2iY-aO-kqn" customClass="RegistrationViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t8g-qt-IWH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Wg-ULR">
+                                <rect key="frame" x="78" y="72.5" width="219" height="522"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-6U-ZoN">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Familienaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-dh-Ax9">
+                                        <rect key="frame" x="0.0" y="82" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whG-wy-dEJ">
+                                        <rect key="frame" x="0.0" y="164" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-vS-P1I">
+                                        <rect key="frame" x="0.0" y="246" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Herhaal wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEy-F9-Wo3">
+                                        <rect key="frame" x="0.0" y="328" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUX-VR-Pic">
+                                        <rect key="frame" x="0.0" y="410" width="219" height="30"/>
+                                        <state key="normal" title="Maak account aan"/>
+                                        <connections>
+                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="nSJ-5I-Tif"/>
+                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJ0-uT-mqk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-mG-a4B">
+                                        <rect key="frame" x="0.0" y="492" width="219" height="30"/>
+                                        <state key="normal" title="Heb je al een account? Klik hier!"/>
+                                        <connections>
+                                            <segue destination="B9q-jw-n5i" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="31f-tI-6f8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="centerX" secondItem="t8g-qt-IWH" secondAttribute="centerX" id="JM4-Aq-ctv"/>
+                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="centerY" secondItem="t8g-qt-IWH" secondAttribute="centerY" id="z5t-Hi-3Uy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dqu-un-F5e"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Maak een account" id="Rn3-Gi-d5b"/>
+                    <navigationItem key="navigationItem" title="Maak account aan" id="Rn3-Gi-d5b"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="whG-wy-dEJ" id="J6H-d9-VeY"/>
+                        <outlet property="firstnameTextField" destination="9ij-6U-ZoN" id="9Bc-my-jYc"/>
+                        <outlet property="lastnameTextField" destination="ex4-dh-Ax9" id="7sY-Il-suc"/>
+                        <outlet property="passwordTextField" destination="DiE-vS-P1I" id="egq-Ls-pdl"/>
+                        <outlet property="repeatPasswordTextField" destination="DEy-F9-Wo3" id="nCk-ix-puL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8J-bm-Yx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B9q-jw-n5i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1802" y="27"/>
+            <point key="canvasLocation" x="1800.8" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uhk-6V-GNf">
