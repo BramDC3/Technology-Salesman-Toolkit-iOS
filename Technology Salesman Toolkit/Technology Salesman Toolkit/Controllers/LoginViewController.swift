@@ -7,6 +7,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let firestoreAPI: FirestoreAPI = FirestoreAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                     }
                     
                     self.displayAlert(withMessage: "Welkom \(user.user.displayName!)!")
+                    self.firestoreAPI.getServices()
                 } else {
                     self.displayAlert(withMessage: "Er is iets fout gegaan tijdens de aanmelding: \(error!)")
                 }
@@ -77,8 +80,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     // Function for going back to the login screen
-    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) { }
     
 }
