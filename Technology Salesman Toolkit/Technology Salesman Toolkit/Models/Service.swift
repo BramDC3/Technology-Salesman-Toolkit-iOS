@@ -31,7 +31,7 @@ extension Service {
             id: id,
             name: name,
             description: description,
-            category: FirebaseUtils.convertIntToCategory(withNumber: category),
+            category: FirebaseUtils.convertIntToCategory(int: category),
             created: created,
             price: price,
             image: image,

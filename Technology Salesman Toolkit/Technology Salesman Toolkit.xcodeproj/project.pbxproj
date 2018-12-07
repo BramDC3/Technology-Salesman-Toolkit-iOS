@@ -71,6 +71,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1150293621BB17A500DF9A64 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		11557B74219A2C7F00F16A04 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +117,7 @@
 		11C834502188659A00FE1808 /* Technology Salesman Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				1150293621BB17A500DF9A64 /* Protocols */,
 				1148378D21BABB8A00A1B045 /* Utils */,
 				1138354B21B69F5900FE2702 /* Network */,
 				11B3E37D219C1BBC008A0890 /* Models */,

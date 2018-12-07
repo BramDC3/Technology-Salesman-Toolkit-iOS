@@ -8,10 +8,10 @@
 
 import Foundation
 
-class FirebaseUtils {
+struct FirebaseUtils {
     
-    static func convertIntToCategory(withNumber number: Int) -> Category {
-        switch number {
+    static func convertIntToCategory(int: Int) -> Category {
+        switch category {
             case 0: return Category.Windows
             case 1: return Category.Android
             case 2: return Category.Apple
