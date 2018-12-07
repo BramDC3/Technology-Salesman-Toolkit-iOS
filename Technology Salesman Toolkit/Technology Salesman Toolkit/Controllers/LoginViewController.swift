@@ -7,8 +7,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let firestoreAPI: FirestoreAPI = FirestoreAPI()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,14 +33,17 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                             print ("Error signing out: %@", signOutError)
                         }
                         
-                        self.displayAlert(withMessage: "Gelieve uw e-mailadres eerst te verifiëren aan de hand van de verzonden e-mail.")
+                        let alert = AlertUtils.createSimpleAlert(withTitle: "Gelieve alle velden in te voeren.", andMessage: "Gelieve uw e-mailadres eerst te verifiëren aan de hand van de verzonden e-mail.")
+                        self.present(alert, animated: true, completion: nil)
                         return
                     }
                     
-                    self.displayAlert(withMessage: "Welkom \(user.user.displayName!)!")
-                    self.firestoreAPI.getServices()
+                    let alert = AlertUtils.createSimpleAlert(withTitle: "Gelieve alle velden in te voeren.", andMessage: "Welkom \(user.user.displayName!)!")
+                    self.present(alert, animated: true, completion: nil)
+                    
                 } else {
-                    self.displayAlert(withMessage: "Er is iets fout gegaan tijdens de aanmelding: \(error!)")
+                    let alert = AlertUtils.createSimpleAlert(withTitle: "Gelieve alle velden in te voeren.", andMessage: "Er is iets fout gegaan tijdens de aanmelding: \(error!)")
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
@@ -51,12 +52,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     // Function that checks whether all fields of the form are filled in correctly
     private func loginFormIsValid() -> Bool {
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
-            self.displayAlert(withMessage: "Gelieve alle velden in te voeren.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Gelieve alle velden in te voeren.", andMessage: "Gelieve alle velden in te voeren.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard isValid(email: email) else {
-            self.displayAlert(withMessage: "Gelieve een geldig e-mailadres in te voeren.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Gelieve alle velden in te voeren.", andMessage: "Gelieve een geldig e-mailadres in te voeren.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
@@ -70,13 +73,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
-    }
-    
-    // Function for displaying alerts with the given message
-    private func displayAlert(withMessage message: String) {
-        let alert = UIAlertController(title: "Aanmelding", message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Oké", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     // Function for going back to the login screen

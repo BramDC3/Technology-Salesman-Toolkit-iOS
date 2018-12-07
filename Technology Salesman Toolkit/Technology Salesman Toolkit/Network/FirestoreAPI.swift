@@ -4,7 +4,7 @@ import Firebase
 struct FirestoreAPI {
     
     // https://firebase.google.com/docs/firestore/quickstart
-    func getServices() -> [Service]? {
+    static func fetchServices() -> [Service]? {
         
         // Firestore settings to use Timestamps instead of Date objects
         let db = Firestore.firestore()
@@ -29,7 +29,7 @@ struct FirestoreAPI {
             }
         }
         
-        return services
+        return services.count != 0 ? services : nil
     }
 
 }
