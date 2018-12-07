@@ -21,7 +21,8 @@ class RegistrationViewController: UIViewController {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
                 
                 guard (authResult?.user) != nil else {
-                    self.displayAlert(withMessage: "Er is iets fout gegaan tijdens het aanmaken van het account.")
+                    let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Er is iets fout gegaan tijdens het aanmaken van het account.")
+                    self.present(alert, animated: true, completion: nil)
                     return
                 }
                 
@@ -34,7 +35,8 @@ class RegistrationViewController: UIViewController {
                         print("Error committing change request: %@", error)
                     } else {
                         authResult?.user.sendEmailVerification()
-                        self.displayAlert(withMessage: "Uw account werd succesvol aangemaakt en er werd een bevestigingsmail naar uw e-mailadres verzonden.")
+                        let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Uw account werd succesvol aangemaakt en er werd een bevestigingsmail naar uw e-mailadres verzonden.")
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
                 
@@ -45,42 +47,30 @@ class RegistrationViewController: UIViewController {
     // Function that checks whether all fields of the form are filled in correctly
     private func registrationFormIsValid() -> Bool {
         guard let firstname = firstnameTextField.text, let lastname = lastnameTextField.text,  let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text, firstname != "", lastname != "",  email != "", password != "", repeatPassword != "" else {
-            self.displayAlert(withMessage: "Gelieve alle velden in te voeren.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Gelieve alle velden in te voeren.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
-        guard isValid(email: email) else {
-            self.displayAlert(withMessage: "Gelieve een geldig e-mailadres in te voeren.")
+        guard ValidationUtils.isEmailValid(email: email) else {
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Gelieve een geldig e-mailadres in te voeren.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard password.count >= 6 else {
-            self.displayAlert(withMessage: "Het wachtwoord moet minstens 6 karakters lang zijn.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Het wachtwoord moet minstens 6 karakters lang zijn.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard password == repeatPassword else {
-            self.displayAlert(withMessage: "De twee opgegeven wachtwoorden komen niet overeen.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "De twee opgegeven wachtwoorden komen niet overeen.")
+            self.present(alert, animated: true, completion: nil)
             return false
         }
         
         return true
-    }
-    
-    // Function that checks whether the provided email address is valid or not
-    // https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
-    private func isValid(email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: email)
-    }
-    
-    // Function for displaying alerts with the given message
-    private func displayAlert(withMessage message: String) {
-        let alert = UIAlertController(title: "Account aanmaken", message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Oké", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
 }

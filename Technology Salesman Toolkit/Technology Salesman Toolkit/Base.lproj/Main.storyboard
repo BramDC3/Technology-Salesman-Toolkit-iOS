@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WK8-F2-y3W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kt-17-9au">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,13 +64,14 @@
                     <connections>
                         <outlet property="emailTextField" destination="Iof-ue-MUo" id="pAp-BT-feQ"/>
                         <outlet property="passwordTextField" destination="q0a-vL-NFy" id="ZxO-ve-tmL"/>
+                        <segue destination="WK8-F2-y3W" kind="show" identifier="GoToServices" id="2Ir-Bz-v7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="26.53673163418291"/>
         </scene>
-        <!--Service Table View Controller-->
+        <!--Diensten-->
         <scene sceneID="vX9-ha-sbg">
             <objects>
                 <tableViewController id="WK8-F2-y3W" customClass="ServiceTableViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,6 +110,7 @@
                             <outlet property="delegate" destination="WK8-F2-y3W" id="cUU-Lf-A26"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Diensten" id="tHo-UW-Rev"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-36-LzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,8 +161,7 @@
                                         <rect key="frame" x="0.0" y="410" width="219" height="30"/>
                                         <state key="normal" title="Maak account aan"/>
                                         <connections>
-                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="nSJ-5I-Tif"/>
-                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJ0-uT-mqk"/>
+                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="gKI-xO-rHM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-mG-a4B">

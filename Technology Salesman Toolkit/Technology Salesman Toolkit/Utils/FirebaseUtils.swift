@@ -11,7 +11,7 @@ import Foundation
 struct FirebaseUtils {
     
     static func convertIntToCategory(int: Int) -> Category {
-        switch category {
+        switch int {
             case 0: return Category.Windows
             case 1: return Category.Android
             case 2: return Category.Apple

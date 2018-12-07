@@ -22,13 +22,6 @@ class ServiceTableViewController: UITableViewController {
         }
     }
     
-    func updateUI(with services: [Service]) {
-        DispatchQueue.main.async {
-            self.services = services
-            self.tableView.reloadData()
-        }
-    }
-    
     // The number of sections, 1 is default but I want to clearly define this table view
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -51,6 +44,13 @@ class ServiceTableViewController: UITableViewController {
         cell.detailTextLabel?.text = service.description
         
         return cell
+    }
+    
+    func updateUI(with services: [Service]) {
+        DispatchQueue.main.async {
+            self.services = services
+            self.tableView.reloadData()
+        }
     }
 
     
