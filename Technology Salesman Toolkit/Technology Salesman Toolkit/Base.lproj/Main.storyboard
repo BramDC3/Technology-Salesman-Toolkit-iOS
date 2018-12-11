@@ -64,11 +64,57 @@
                     <connections>
                         <outlet property="emailTextField" destination="Iof-ue-MUo" id="pAp-BT-feQ"/>
                         <outlet property="passwordTextField" destination="q0a-vL-NFy" id="ZxO-ve-tmL"/>
+                        <segue destination="WK8-F2-y3W" kind="show" identifier="GoToServices" id="2Ir-Bz-v7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="26.53673163418291"/>
+        </scene>
+        <!--Diensten-->
+        <scene sceneID="vX9-ha-sbg">
+            <objects>
+                <tableViewController id="WK8-F2-y3W" customClass="ServiceTableViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vgq-il-g8G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServiceCell" textLabel="E2m-aL-kNQ" detailTextLabel="pCC-me-eUG" style="IBUITableViewCellStyleSubtitle" id="7c4-cq-ipO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7c4-cq-ipO" id="hKP-hO-BrN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E2m-aL-kNQ">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pCC-me-eUG">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WK8-F2-y3W" id="QFv-6c-dJT"/>
+                            <outlet property="delegate" destination="WK8-F2-y3W" id="cUU-Lf-A26"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Diensten" id="tHo-UW-Rev"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-36-LzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="789"/>
         </scene>
         <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">
@@ -115,8 +161,7 @@
                                         <rect key="frame" x="0.0" y="410" width="219" height="30"/>
                                         <state key="normal" title="Maak account aan"/>
                                         <connections>
-                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="nSJ-5I-Tif"/>
-                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJ0-uT-mqk"/>
+                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="gKI-xO-rHM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-mG-a4B">
