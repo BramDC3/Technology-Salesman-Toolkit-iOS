@@ -103,6 +103,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hAW-wh-Ra6" kind="show" identifier="GoToServiceDetail" id="9eK-hI-TJW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,6 +118,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-36-LzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="789"/>
+        </scene>
+        <!--Dienstdetail-->
+        <scene sceneID="HKu-Qk-56E">
+            <objects>
+                <viewController id="hAW-wh-Ra6" customClass="ServiceDetailViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OII-6d-i4O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hallo van service detail!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItV-9f-NOx">
+                                <rect key="frame" x="97" y="323" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ItV-9f-NOx" firstAttribute="centerY" secondItem="OII-6d-i4O" secondAttribute="centerY" id="dqF-LR-dn6"/>
+                            <constraint firstItem="ItV-9f-NOx" firstAttribute="centerX" secondItem="OII-6d-i4O" secondAttribute="centerX" id="nxb-bq-rnt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k8z-wi-oh4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dienstdetail" id="e5X-8y-oxU"/>
+                    <connections>
+                        <outlet property="serviceLabel" destination="ItV-9f-NOx" id="jOq-04-9TC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59E-oc-Vaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="788"/>
         </scene>
         <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">
