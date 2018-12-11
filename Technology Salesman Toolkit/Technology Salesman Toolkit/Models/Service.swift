@@ -22,7 +22,7 @@ extension Service {
             let category = dictionary["category"] as? Int,
             let created = dictionary["created"] as? Timestamp,
             let price = dictionary["price"] as? Double,
-            let image = dictionary["image"] as? String,
+            let image = dictionary["image"] as? String
             else { return nil }
         
         self.init(
@@ -32,7 +32,7 @@ extension Service {
             category: FirebaseUtils.convertIntToCategory(int: category),
             created: created,
             price: price,
-            image: image,
+            image: image
         )
     }
 }
