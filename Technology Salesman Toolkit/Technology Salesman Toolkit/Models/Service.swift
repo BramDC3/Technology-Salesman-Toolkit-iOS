@@ -9,7 +9,6 @@ struct Service {
     let created: Timestamp
     let price: Double
     let image: String
-    let instructions: [String]
 }
 
 enum Category {
@@ -24,7 +23,6 @@ extension Service {
             let created = dictionary["created"] as? Timestamp,
             let price = dictionary["price"] as? Double,
             let image = dictionary["image"] as? String,
-            let instructions = dictionary["url"] as? [String]
             else { return nil }
         
         self.init(
@@ -35,7 +33,6 @@ extension Service {
             created: created,
             price: price,
             image: image,
-            instructions: instructions
         )
     }
 }

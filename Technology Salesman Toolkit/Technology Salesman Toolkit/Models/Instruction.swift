@@ -14,6 +14,7 @@ struct Instruction {
     let description: String
     let content: String
     let image: String
+    let serviceId: String
 }
 
 extension Instruction {
@@ -21,7 +22,8 @@ extension Instruction {
         guard let title = dictionary["title"] as? String,
             let description = dictionary["description"] as? String,
             let content = dictionary["content"] as? String,
-            let image = dictionary["image"] as? String
+            let image = dictionary["image"] as? String,
+            let serviceId = dictionary["serviceId"] as? String
             else { return nil }
         
         self.init(
@@ -29,7 +31,8 @@ extension Instruction {
             title: title,
             description: description,
             content: content,
-            image: image
+            image: image,
+            serviceId: serviceId
         )
     }
 }
