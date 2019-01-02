@@ -127,28 +127,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hallo van service detail!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItV-9f-NOx">
-                                <rect key="frame" x="97" y="323" width="181" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-8p-7Hl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HyP-QK-GYp">
+                                <rect key="frame" x="168" y="598" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ItV-9f-NOx" firstAttribute="centerY" secondItem="OII-6d-i4O" secondAttribute="centerY" id="dqF-LR-dn6"/>
-                            <constraint firstItem="ItV-9f-NOx" firstAttribute="centerX" secondItem="OII-6d-i4O" secondAttribute="centerX" id="nxb-bq-rnt"/>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="trailing" secondItem="6uq-8p-7Hl" secondAttribute="trailing" id="AEf-9A-1ho"/>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="bottom" secondItem="6uq-8p-7Hl" secondAttribute="bottom" id="Fp8-oY-oQ0"/>
+                            <constraint firstItem="6uq-8p-7Hl" firstAttribute="leading" secondItem="k8z-wi-oh4" secondAttribute="leading" id="OZQ-vR-a7z"/>
+                            <constraint firstItem="6uq-8p-7Hl" firstAttribute="top" secondItem="k8z-wi-oh4" secondAttribute="top" id="OeS-FE-cSL"/>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="bottom" secondItem="HyP-QK-GYp" secondAttribute="bottom" constant="32" id="PGB-So-nmh"/>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="trailing" secondItem="HyP-QK-GYp" secondAttribute="trailing" constant="168" id="wnP-5h-IKg"/>
+                            <constraint firstItem="HyP-QK-GYp" firstAttribute="leading" secondItem="k8z-wi-oh4" secondAttribute="leading" constant="168" id="xPB-Ck-htf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8z-wi-oh4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dienstdetail" id="e5X-8y-oxU"/>
                     <connections>
-                        <outlet property="serviceLabel" destination="ItV-9f-NOx" id="jOq-04-9TC"/>
+                        <outlet property="pageControl" destination="HyP-QK-GYp" id="64H-My-B8v"/>
+                        <outlet property="scrollView" destination="6uq-8p-7Hl" id="REe-Qm-Svh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59E-oc-Vaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="788"/>
+            <point key="canvasLocation" x="1800.8" y="787.55622188905556"/>
         </scene>
         <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">

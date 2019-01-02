@@ -12,13 +12,13 @@ class ServiceDetailViewController: UIViewController {
     
     var serviceId: String!
     var instructions: [Instruction] = []
-    
-    @IBOutlet weak var serviceLabel: UILabel!
+    var instructionSlides: [InstructionView] = []
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        serviceLabel.text = ("id: \(serviceId!)")
         
         FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
@@ -31,10 +31,68 @@ class ServiceDetailViewController: UIViewController {
         DispatchQueue.main.async {
             self.instructions = instructions
             
+            self.instructionSlides = self.createInstructionSlides()
+            self.setupSlideScrollView()
+            
+            self.pageControl.numberOfPages = instructions.count
+            self.pageControl.currentPage = 0
+            self.view.bringSubviewToFront(self.pageControl)
+            
             instructions.forEach { instruction in
                 print(instruction.title)
             }
         }
     }
+    
+    func createInstructionSlides() -> [InstructionView] {
+        var slides: [InstructionView] = []
+        
+        instructions.forEach { instruction in
+            let slide:InstructionView = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
+            
+            slide.imageView.downloaded(from: instruction.image)
+            slide.titleLabel.text = instruction.title
+            slide.descriptionLabel.text = instruction.description
+            slide.contentLabel.text = instruction.content.first
+            
+            slides.append(slide)
+        }
+        
+        return slides
+    }
+    
+    func setupSlideScrollView() {
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(instructionSlides.count), height: view.frame.height)
+        scrollView.isPagingEnabled = true
+        
+        for i in 0 ..< instructionSlides.count {
+            instructionSlides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            scrollView.addSubview(instructionSlides[i])
+        }
+    }
 
+}
+
+// Extension to download an image asynchronously
+// https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
+extension UIImageView {
+    func downloaded(from url: URL) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+        }.resume()
+    }
+    
+    func downloaded(from link: String) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url)
+    }
 }
