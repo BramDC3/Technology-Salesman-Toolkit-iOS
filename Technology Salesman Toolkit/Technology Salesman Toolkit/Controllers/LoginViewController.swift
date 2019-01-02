@@ -12,7 +12,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         // https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().uiDelegate = self
-        //GIDSignIn.sharedInstance().signIn()
     }
     
     // Function for signing the user in with an email/password combination
@@ -33,7 +32,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                         self.present(alert, animated: true, completion: nil)
                         return
                     }
-                    self.performSegue(withIdentifier: "GoToServices", sender: nil)
+                    
+                    let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+                    appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+                    
                 } else {
                     let alert = AlertUtils.createSimpleAlert(withTitle: "Aanmelden", andMessage: "Er is iets fout gegaan tijdens de aanmelding: \(error!)")
                     self.present(alert, animated: true, completion: nil)

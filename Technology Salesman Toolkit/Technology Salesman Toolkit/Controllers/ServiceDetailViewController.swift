@@ -21,7 +21,9 @@ class ServiceDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = serviceName
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.updateUI(with: instructions)
