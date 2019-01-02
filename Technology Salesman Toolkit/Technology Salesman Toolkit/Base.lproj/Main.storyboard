@@ -103,6 +103,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hAW-wh-Ra6" kind="show" identifier="GoToServiceDetail" id="9eK-hI-TJW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,6 +118,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-36-LzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="789"/>
+        </scene>
+        <!--Dienstdetail-->
+        <scene sceneID="HKu-Qk-56E">
+            <objects>
+                <viewController id="hAW-wh-Ra6" customClass="ServiceDetailViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OII-6d-i4O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-8p-7Hl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="trailing" secondItem="6uq-8p-7Hl" secondAttribute="trailing" id="AEf-9A-1ho"/>
+                            <constraint firstItem="k8z-wi-oh4" firstAttribute="bottom" secondItem="6uq-8p-7Hl" secondAttribute="bottom" id="Fp8-oY-oQ0"/>
+                            <constraint firstItem="6uq-8p-7Hl" firstAttribute="leading" secondItem="k8z-wi-oh4" secondAttribute="leading" id="OZQ-vR-a7z"/>
+                            <constraint firstItem="6uq-8p-7Hl" firstAttribute="top" secondItem="k8z-wi-oh4" secondAttribute="top" id="OeS-FE-cSL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k8z-wi-oh4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dienstdetail" id="e5X-8y-oxU"/>
+                    <connections>
+                        <outlet property="scrollView" destination="6uq-8p-7Hl" id="REe-Qm-Svh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59E-oc-Vaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="787.55622188905556"/>
         </scene>
         <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">

@@ -29,5 +29,30 @@ struct FirestoreAPI {
             }
         }
     }
+    
+    static func fetchInstructions(fromService serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        var instructions: [Instruction] = []
+        
+        db.collection("Instructions").whereField("serviceId", isEqualTo: serviceId).order(by: "index").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(nil)
+            } else {
+                for document in querySnapshot!.documents {
+                    if let instruction = Instruction(dictionary: document.data(), id: document.documentID) {
+                        instructions.append(instruction)
+                    } else {
+                        fatalError("Unable to initialize type \(Instruction.self) with dictionary \(document.data())")
+                    }
+                }
+                completion(instructions)
+            }
+        }
+    }
 
 }
