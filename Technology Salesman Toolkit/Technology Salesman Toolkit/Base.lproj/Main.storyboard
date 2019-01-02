@@ -130,9 +130,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-8p-7Hl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HyP-QK-GYp">
-                                <rect key="frame" x="168" y="598" width="39" height="37"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,15 +137,11 @@
                             <constraint firstItem="k8z-wi-oh4" firstAttribute="bottom" secondItem="6uq-8p-7Hl" secondAttribute="bottom" id="Fp8-oY-oQ0"/>
                             <constraint firstItem="6uq-8p-7Hl" firstAttribute="leading" secondItem="k8z-wi-oh4" secondAttribute="leading" id="OZQ-vR-a7z"/>
                             <constraint firstItem="6uq-8p-7Hl" firstAttribute="top" secondItem="k8z-wi-oh4" secondAttribute="top" id="OeS-FE-cSL"/>
-                            <constraint firstItem="k8z-wi-oh4" firstAttribute="bottom" secondItem="HyP-QK-GYp" secondAttribute="bottom" constant="32" id="PGB-So-nmh"/>
-                            <constraint firstItem="k8z-wi-oh4" firstAttribute="trailing" secondItem="HyP-QK-GYp" secondAttribute="trailing" constant="168" id="wnP-5h-IKg"/>
-                            <constraint firstItem="HyP-QK-GYp" firstAttribute="leading" secondItem="k8z-wi-oh4" secondAttribute="leading" constant="168" id="xPB-Ck-htf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8z-wi-oh4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dienstdetail" id="e5X-8y-oxU"/>
                     <connections>
-                        <outlet property="pageControl" destination="HyP-QK-GYp" id="64H-My-B8v"/>
                         <outlet property="scrollView" destination="6uq-8p-7Hl" id="REe-Qm-Svh"/>
                     </connections>
                 </viewController>

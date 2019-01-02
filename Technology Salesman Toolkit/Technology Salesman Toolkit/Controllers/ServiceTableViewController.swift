@@ -62,6 +62,7 @@ class ServiceTableViewController: UITableViewController {
             let detailViewController = segue.destination as! ServiceDetailViewController
             
             detailViewController.serviceId = services[index!].id
+            detailViewController.serviceName = services[index!].name
         }
     }
 

@@ -11,14 +11,16 @@ import UIKit
 class ServiceDetailViewController: UIViewController {
     
     var serviceId: String!
+    var serviceName: String!
     var instructions: [Instruction] = []
     var instructionSlides: [InstructionView] = []
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = serviceName
         
         FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
@@ -32,15 +34,8 @@ class ServiceDetailViewController: UIViewController {
             self.instructions = instructions
             
             self.instructionSlides = self.createInstructionSlides()
+            
             self.setupSlideScrollView()
-            
-            self.pageControl.numberOfPages = instructions.count
-            self.pageControl.currentPage = 0
-            self.view.bringSubviewToFront(self.pageControl)
-            
-            instructions.forEach { instruction in
-                print(instruction.title)
-            }
         }
     }
     
@@ -81,6 +76,8 @@ class ServiceDetailViewController: UIViewController {
             scrollView.addSubview(instructionSlides[i])
         }
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) { setupSlideScrollView() }
 
 }
 
