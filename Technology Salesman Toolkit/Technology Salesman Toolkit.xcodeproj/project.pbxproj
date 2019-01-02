@@ -17,11 +17,12 @@
 		11692C8621BAEE5200C1E6C0 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */; };
 		117F19C521BFA97400476E09 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C421BFA97400476E09 /* Instruction.swift */; };
 		117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */; };
+		11A0D12F21DD359300FF3213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0D12E21DD359300FF3213 /* Assets.xcassets */; };
+		11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */; };
 		11B3E37F219C1BD7008A0890 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E37E219C1BD7008A0890 /* Service.swift */; };
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
 		11C834572188659A00FE1808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C834552188659A00FE1808 /* Main.storyboard */; };
-		11C834592188659B00FE1808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C834582188659B00FE1808 /* Assets.xcassets */; };
 		11C8345C2188659B00FE1808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C8345A2188659B00FE1808 /* LaunchScreen.storyboard */; };
 		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
 		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
@@ -38,12 +39,13 @@
 		11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		117F19C421BFA97400476E09 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		11A0D12E21DD359300FF3213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11B3E37E219C1BD7008A0890 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		11C8344E2188659A00FE1808 /* Technology Salesman Toolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technology Salesman Toolkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C834512188659A00FE1808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11C834532188659A00FE1808 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11C834562188659A00FE1808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		11C834582188659B00FE1808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11C8345B2188659B00FE1808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C8345D2188659B00FE1808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		11A0D13021DD399000FF3213 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
 		11B3E37D219C1BBC008A0890 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +142,15 @@
 		11C834502188659A00FE1808 /* Technology Salesman Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				11A0D13021DD399000FF3213 /* Bases */,
 				1118FF6721DCE99000EFCCFB /* Views */,
 				1148378D21BABB8A00A1B045 /* Utils */,
 				1138354B21B69F5900FE2702 /* Network */,
 				11B3E37D219C1BBC008A0890 /* Models */,
 				11557B74219A2C7F00F16A04 /* Controllers */,
 				11C834512188659A00FE1808 /* AppDelegate.swift */,
+				11A0D12E21DD359300FF3213 /* Assets.xcassets */,
 				11C834552188659A00FE1808 /* Main.storyboard */,
-				11C834582188659B00FE1808 /* Assets.xcassets */,
 				11C8345A2188659B00FE1808 /* LaunchScreen.storyboard */,
 				11C8345D2188659B00FE1808 /* Info.plist */,
 				11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */,
@@ -227,9 +238,9 @@
 			files = (
 				11C8345C2188659B00FE1808 /* LaunchScreen.storyboard in Resources */,
 				11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */,
-				11C834592188659B00FE1808 /* Assets.xcassets in Resources */,
 				11C834572188659A00FE1808 /* Main.storyboard in Resources */,
 				1118FF6B21DCEA0100EFCCFB /* InstructionView.xib in Resources */,
+				11A0D12F21DD359300FF3213 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +338,7 @@
 				1138354D21B69F9500FE2702 /* FirestoreAPI.swift in Sources */,
 				11C834542188659A00FE1808 /* LoginViewController.swift in Sources */,
 				1150293821BB1CCE00DF9A64 /* ValidationUtils.swift in Sources */,
+				11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */,
 				117F19C521BFA97400476E09 /* Instruction.swift in Sources */,
 				11C834522188659A00FE1808 /* AppDelegate.swift in Sources */,
 			);

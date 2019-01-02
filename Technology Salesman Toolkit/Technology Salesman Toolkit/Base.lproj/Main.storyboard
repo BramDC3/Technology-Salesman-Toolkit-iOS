@@ -64,7 +64,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Iof-ue-MUo" id="pAp-BT-feQ"/>
                         <outlet property="passwordTextField" destination="q0a-vL-NFy" id="ZxO-ve-tmL"/>
-                        <segue destination="WK8-F2-y3W" kind="show" identifier="GoToServices" id="2Ir-Bz-v7A"/>
+                        <segue destination="2IE-pb-Svi" kind="show" identifier="GoToServices" id="2Ir-Bz-v7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,11 +113,12 @@
                             <outlet property="delegate" destination="WK8-F2-y3W" id="cUU-Lf-A26"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Diensten" image="list" id="Ttf-6R-6v8"/>
                     <navigationItem key="navigationItem" title="Diensten" id="tHo-UW-Rev"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-36-LzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="789"/>
+            <point key="canvasLocation" x="1919.2" y="788.45577211394311"/>
         </scene>
         <!--Dienstdetail-->
         <scene sceneID="HKu-Qk-56E">
@@ -147,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59E-oc-Vaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="787.55622188905556"/>
+            <point key="canvasLocation" x="2740" y="787.55622188905556"/>
         </scene>
         <!--Maak account aan-->
         <scene sceneID="ST4-mF-YXU">
@@ -246,5 +247,69 @@
             </objects>
             <point key="canvasLocation" x="148" y="27"/>
         </scene>
+        <!--Base Tab Bar Controller-->
+        <scene sceneID="JEt-Zl-RL7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2IE-pb-Svi" customClass="BaseTabBarController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e4q-p2-zVJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="defaultIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="2v0-gK-eVD" kind="relationship" relationship="viewControllers" id="b6n-zl-xTa"/>
+                        <segue destination="WK8-F2-y3W" kind="relationship" relationship="viewControllers" id="c1i-4c-dOH"/>
+                        <segue destination="fuV-df-fTK" kind="relationship" relationship="viewControllers" id="tUm-cy-hla"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVa-3r-s4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="788.45577211394311"/>
+        </scene>
+        <!--Instellingen-->
+        <scene sceneID="vsY-2c-urd">
+            <objects>
+                <viewController id="fuV-df-fTK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uDE-Mv-bwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Ux-Id-pby"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Instellingen" image="settings" id="5Ry-IE-Qcw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKx-7P-9PW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="1558"/>
+        </scene>
+        <!--Profiel-->
+        <scene sceneID="xbI-nK-7ST">
+            <objects>
+                <viewController id="2v0-gK-eVD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKA-W7-Tnb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1b0-SJ-dhV"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profiel" image="user_male" id="GeY-OV-N2F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eE2-9V-Z80" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="1558"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="list" width="24" height="20"/>
+        <image name="settings" width="26" height="26"/>
+        <image name="user_male" width="24" height="24"/>
+    </resources>
 </document>
