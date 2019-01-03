@@ -12,7 +12,7 @@ struct Service {
 }
 
 enum Category {
-    case Windows, Android, Apple, Other
+    case Windows, Android, Apple, Andere
 }
 
 extension Service {

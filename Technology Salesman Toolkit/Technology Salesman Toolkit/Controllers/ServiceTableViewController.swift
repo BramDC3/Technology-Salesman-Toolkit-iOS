@@ -46,17 +46,19 @@ class ServiceTableViewController: UITableViewController {
         
         let service = services[indexPath.row]
 
-        let url = URL(string: service.image)
-        let data = try? Data(contentsOf: url!)
-        cell.logoImageView.image = UIImage(data: data!)
+        cell.logoImageView.downloaded(from: service.image)
         
-        //cell.logoImageView.downloaded(from: service.image)
+        cell.descriptionLabel.numberOfLines = 0
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.description
         cell.categoryLabel.text = "\(service.category)"
-        cell.priceLabel.text = "\(service.price)"
+        cell.priceLabel.text = service.price == 0.0 ? " " : String(format: "€ %.2f", service.price)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "GoToServiceDetail", sender: indexPath);
     }
     
     func updateUI(with services: [Service]) {
