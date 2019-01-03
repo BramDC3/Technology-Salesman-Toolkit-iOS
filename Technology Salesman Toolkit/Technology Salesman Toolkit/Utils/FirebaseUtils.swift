@@ -15,7 +15,7 @@ struct FirebaseUtils {
             case 0: return Category.Windows
             case 1: return Category.Android
             case 2: return Category.Apple
-            default: return Category.Other
+            default: return Category.Andere
         }
     }
     

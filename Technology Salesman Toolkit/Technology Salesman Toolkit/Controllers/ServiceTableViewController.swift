@@ -14,6 +14,8 @@ class ServiceTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "ServiceCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,14 +40,24 @@ class ServiceTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath) as? ServiceTableViewCell else {
+            fatalError("Could not dequeue a cell")
+        }
         
         let service = services[indexPath.row]
+
+        cell.logoImageView.downloaded(from: service.image)
         
-        cell.textLabel?.text = service.name
-        cell.detailTextLabel?.text = service.description
+        cell.titleLabel.text = service.name
+        cell.descriptionLabel.text = service.description
+        cell.categoryLabel.text = "\(service.category)"
+        cell.priceLabel.text = service.price == 0.0 ? " " : String(format: "€ %.2f", service.price)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "GoToServiceDetail", sender: indexPath);
     }
     
     func updateUI(with services: [Service]) {
