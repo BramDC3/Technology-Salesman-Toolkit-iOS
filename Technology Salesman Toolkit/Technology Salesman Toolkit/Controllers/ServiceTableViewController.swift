@@ -48,7 +48,6 @@ class ServiceTableViewController: UITableViewController {
 
         cell.logoImageView.downloaded(from: service.image)
         
-        cell.descriptionLabel.numberOfLines = 0
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.description
         cell.categoryLabel.text = "\(service.category)"

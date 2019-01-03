@@ -21,6 +21,7 @@
 		117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */; };
 		11A0D12F21DD359300FF3213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0D12E21DD359300FF3213 /* Assets.xcassets */; };
 		11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */; };
+		11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */; };
 		11B3E37F219C1BD7008A0890 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E37E219C1BD7008A0890 /* Service.swift */; };
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
@@ -45,6 +46,7 @@
 		117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		11A0D12E21DD359300FF3213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddedLabel.swift; sourceTree = "<group>"; };
 		11B3E37E219C1BD7008A0890 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		11C8344E2188659A00FE1808 /* Technology Salesman Toolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technology Salesman Toolkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C834512188659A00FE1808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */,
+				11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				11C834542188659A00FE1808 /* LoginViewController.swift in Sources */,
 				1150293821BB1CCE00DF9A64 /* ValidationUtils.swift in Sources */,
 				11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */,
+				11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */,
 				117F19C521BFA97400476E09 /* Instruction.swift in Sources */,
 				11C834522188659A00FE1808 /* AppDelegate.swift in Sources */,
 				114B0E8321DD947B00B8A6C0 /* ServiceTableViewCell.swift in Sources */,
