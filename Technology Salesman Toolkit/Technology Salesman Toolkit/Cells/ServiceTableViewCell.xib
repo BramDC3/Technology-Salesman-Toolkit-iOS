@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey-square" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-HU-xPK">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-HU-xPK">
                         <rect key="frame" x="10" y="10.5" width="110" height="110"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="110" id="5gt-YB-L5C"/>
@@ -93,6 +93,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="grey-square" width="150" height="150"/>
+        <image name="logo" width="202" height="202"/>
     </resources>
 </document>
