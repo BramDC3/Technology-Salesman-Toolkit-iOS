@@ -384,9 +384,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U">
-                                <rect key="frame" x="62.5" y="69.5" width="250" height="528.5"/>
+                                <rect key="frame" x="62.5" y="93.5" width="250" height="480.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="08w-qT-IMo"/>
@@ -400,31 +400,37 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-jo-x7s">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-jo-x7s">
                                         <rect key="frame" x="0.0" y="306.5" width="250" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkS-sW-4yv">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkS-sW-4yv">
                                         <rect key="frame" x="0.0" y="354.5" width="250" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Wb-QNB">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Wb-QNB">
                                         <rect key="frame" x="0.0" y="402.5" width="250" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-ek-cbX">
-                                        <rect key="frame" x="0.0" y="450.5" width="250" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-ek-cbX">
+                                        <rect key="frame" x="0.0" y="441.5" width="250" height="0.0"/>
                                         <state key="normal" title="Wijzig profiel"/>
+                                        <connections>
+                                            <action selector="editProfileButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="G24-qS-wQD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quA-GL-RKO">
-                                        <rect key="frame" x="17" y="498.5" width="216" height="30"/>
+                                        <rect key="frame" x="17" y="450.5" width="216" height="30"/>
                                         <state key="normal" title="Wachtwoord wijzigen? Klik hier!"/>
+                                        <connections>
+                                            <action selector="changePasswordButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="iAi-Br-0co"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -446,10 +452,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1b0-SJ-dhV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU"/>
+                    <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" id="YlC-nH-Mfk">
+                            <connections>
+                                <action selector="toggleEditModeButtonClicked:" destination="2v0-gK-eVD" id="hM6-jg-1wf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="changePasswordButton" destination="quA-GL-RKO" id="dRS-Xi-5CB"/>
-                        <outlet property="changeProfileButton" destination="kR8-ek-cbX" id="uGS-8h-EwR"/>
+                        <outlet property="changePasswordButton" destination="quA-GL-RKO" id="fjP-u6-7H0"/>
+                        <outlet property="editProfileButton" destination="kR8-ek-cbX" id="osj-uw-Nfl"/>
                         <outlet property="emailTextField" destination="Sic-Wb-QNB" id="y4Y-51-MAC"/>
                         <outlet property="firstnameTextField" destination="mT3-jo-x7s" id="ib7-0m-qQf"/>
                         <outlet property="fullnameLabel" destination="M2W-Bc-2HZ" id="ZcR-aS-6u0"/>
@@ -522,6 +534,7 @@
     <resources>
         <image name="globe_earth" width="30" height="30"/>
         <image name="list" width="24" height="20"/>
+        <image name="pencil" width="30" height="30"/>
         <image name="rocket" width="30" height="30"/>
         <image name="security_checked" width="30" height="30"/>
         <image name="settings" width="26" height="26"/>
