@@ -378,23 +378,104 @@
         <!--Profiel-->
         <scene sceneID="xbI-nK-7ST">
             <objects>
-                <viewController id="2v0-gK-eVD" sceneMemberID="viewController">
+                <viewController id="2v0-gK-eVD" customClass="ProfileViewController" customModule="Technology_Salesman_Toolkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKA-W7-Tnb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U">
+                                <rect key="frame" x="62.5" y="93.5" width="250" height="480.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="08w-qT-IMo"/>
+                                            <constraint firstAttribute="width" secondItem="Rhr-Sw-0Cn" secondAttribute="height" multiplier="1:1" id="OtY-lJ-CrM"/>
+                                            <constraint firstAttribute="height" constant="250" id="vND-qo-aRC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2W-Bc-2HZ">
+                                        <rect key="frame" x="83" y="268" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-jo-x7s">
+                                        <rect key="frame" x="0.0" y="306.5" width="250" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkS-sW-4yv">
+                                        <rect key="frame" x="0.0" y="354.5" width="250" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Wb-QNB">
+                                        <rect key="frame" x="0.0" y="402.5" width="250" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-ek-cbX">
+                                        <rect key="frame" x="0.0" y="441.5" width="250" height="0.0"/>
+                                        <state key="normal" title="Wijzig profiel"/>
+                                        <connections>
+                                            <action selector="editProfileButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="G24-qS-wQD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quA-GL-RKO">
+                                        <rect key="frame" x="17" y="450.5" width="216" height="30"/>
+                                        <state key="normal" title="Wachtwoord wijzigen? Klik hier!"/>
+                                        <connections>
+                                            <action selector="changePasswordButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="iAi-Br-0co"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kR8-ek-cbX" secondAttribute="trailing" id="1oP-Jl-eIj"/>
+                                    <constraint firstItem="Sic-Wb-QNB" firstAttribute="leading" secondItem="JmY-20-02U" secondAttribute="leading" id="5a1-xq-9RE"/>
+                                    <constraint firstItem="mT3-jo-x7s" firstAttribute="leading" secondItem="JmY-20-02U" secondAttribute="leading" id="Ro9-oK-CRW"/>
+                                    <constraint firstAttribute="trailing" secondItem="EkS-sW-4yv" secondAttribute="trailing" id="gwR-6I-Tp4"/>
+                                    <constraint firstItem="kR8-ek-cbX" firstAttribute="leading" secondItem="JmY-20-02U" secondAttribute="leading" id="ji1-rX-E1s"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sic-Wb-QNB" secondAttribute="trailing" id="kib-sW-Bnf"/>
+                                    <constraint firstAttribute="trailing" secondItem="mT3-jo-x7s" secondAttribute="trailing" id="lZX-f4-uf5"/>
+                                    <constraint firstItem="EkS-sW-4yv" firstAttribute="leading" secondItem="JmY-20-02U" secondAttribute="leading" id="yEg-lY-hhe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JmY-20-02U" firstAttribute="centerX" secondItem="CKA-W7-Tnb" secondAttribute="centerX" id="D54-NK-YXu"/>
+                            <constraint firstItem="JmY-20-02U" firstAttribute="centerY" secondItem="CKA-W7-Tnb" secondAttribute="centerY" id="HT8-8c-Qem"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1b0-SJ-dhV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU"/>
+                    <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" id="YlC-nH-Mfk">
+                            <connections>
+                                <action selector="toggleEditModeButtonClicked:" destination="2v0-gK-eVD" id="hM6-jg-1wf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="changePasswordButton" destination="quA-GL-RKO" id="fjP-u6-7H0"/>
+                        <outlet property="editProfileButton" destination="kR8-ek-cbX" id="osj-uw-Nfl"/>
+                        <outlet property="emailTextField" destination="Sic-Wb-QNB" id="y4Y-51-MAC"/>
+                        <outlet property="firstnameTextField" destination="mT3-jo-x7s" id="ib7-0m-qQf"/>
+                        <outlet property="fullnameLabel" destination="M2W-Bc-2HZ" id="ZcR-aS-6u0"/>
+                        <outlet property="lastnameTextField" destination="EkS-sW-4yv" id="XdF-eL-tBK"/>
+                        <outlet property="profilePictureImageView" destination="Rhr-Sw-0Cn" id="XeT-4I-9jn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eE2-9V-Z80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="806"/>
+            <point key="canvasLocation" x="1917.5999999999999" y="805.54722638680664"/>
         </scene>
         <!--Instellingen-->
         <scene sceneID="7WR-tR-EXL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pFV-QW-vdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccO-UU-WGA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Instellingen" image="settings" id="5Ry-IE-Qcw"/>
                     <toolbarItems/>
@@ -407,6 +488,7 @@
                         <segue destination="3uq-RW-vlm" kind="relationship" relationship="rootViewController" id="A0X-7d-mDO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFV-QW-vdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="2266"/>
         </scene>
@@ -452,6 +534,7 @@
     <resources>
         <image name="globe_earth" width="30" height="30"/>
         <image name="list" width="24" height="20"/>
+        <image name="pencil" width="30" height="30"/>
         <image name="rocket" width="30" height="30"/>
         <image name="security_checked" width="30" height="30"/>
         <image name="settings" width="26" height="26"/>

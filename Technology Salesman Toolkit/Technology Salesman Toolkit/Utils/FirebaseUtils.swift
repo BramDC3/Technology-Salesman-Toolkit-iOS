@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct FirebaseUtils {
+    
+    static let mAuth = Auth.auth()
+    static var firebaseUser = mAuth.currentUser
     
     static func convertIntToCategory(int: Int) -> Category {
         switch int {

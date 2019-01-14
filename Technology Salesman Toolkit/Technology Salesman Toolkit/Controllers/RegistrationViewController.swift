@@ -1,5 +1,4 @@
 import UIKit
-import Firebase
 
 class RegistrationViewController: UIViewController {
 
@@ -11,14 +10,13 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
         if registrationFormIsValid() {
             
             // https://firebase.google.com/docs/auth/ios/custom-auth
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
+            FirebaseUtils.mAuth.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
                 
                 guard (authResult?.user) != nil else {
                     let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Er is iets fout gegaan tijdens het aanmaken van het account.")

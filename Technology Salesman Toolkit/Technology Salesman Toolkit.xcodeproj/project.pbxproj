@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1103825E21EA8E82008FE8D4 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103825D21EA8E82008FE8D4 /* StringUtils.swift */; };
+		110BFE4621EA562600AE3132 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BFE4521EA562600AE3132 /* ProfileViewController.swift */; };
 		1118FF6921DCE9A600EFCCFB /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118FF6821DCE9A600EFCCFB /* InstructionView.swift */; };
 		1118FF6B21DCEA0100EFCCFB /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1118FF6A21DCEA0100EFCCFB /* InstructionView.xib */; };
 		11293EF021DF742300B23209 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11293EEF21DF742300B23209 /* SettingsTableViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1103825D21EA8E82008FE8D4 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		110BFE4521EA562600AE3132 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1118FF6821DCE9A600EFCCFB /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		1118FF6A21DCEA0100EFCCFB /* InstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		11293EEF21DF742300B23209 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				1148378E21BABB9A00A1B045 /* FirebaseUtils.swift */,
 				1150293421BB145500DF9A64 /* AlertUtils.swift */,
 				1150293721BB1CCE00DF9A64 /* ValidationUtils.swift */,
+				1103825D21EA8E82008FE8D4 /* StringUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */,
 				117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */,
 				11293EEF21DF742300B23209 /* SettingsTableViewController.swift */,
+				110BFE4521EA562600AE3132 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1103825E21EA8E82008FE8D4 /* StringUtils.swift in Sources */,
 				1148378F21BABB9A00A1B045 /* FirebaseUtils.swift in Sources */,
 				11557B76219A40B900F16A04 /* RegistrationViewController.swift in Sources */,
 				11692C8621BAEE5200C1E6C0 /* ServiceTableViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				1150293521BB145500DF9A64 /* AlertUtils.swift in Sources */,
 				1118FF6921DCE9A600EFCCFB /* InstructionView.swift in Sources */,
 				117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */,
+				110BFE4621EA562600AE3132 /* ProfileViewController.swift in Sources */,
 				1138354D21B69F9500FE2702 /* FirestoreAPI.swift in Sources */,
 				11C834542188659A00FE1808 /* LoginViewController.swift in Sources */,
 				1150293821BB1CCE00DF9A64 /* ValidationUtils.swift in Sources */,
