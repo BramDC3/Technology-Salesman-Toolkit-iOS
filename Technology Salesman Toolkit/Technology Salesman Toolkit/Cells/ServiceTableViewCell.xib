@@ -27,7 +27,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9W4-bF-WLh">
-                        <rect key="frame" x="130" y="16" width="190" height="99"/>
+                        <rect key="frame" x="130" y="16" width="180" height="99"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-Y9-5K1">
                                 <rect key="frame" x="0.0" y="0.0" width="48" height="21.5"/>
@@ -78,7 +78,7 @@
                     <constraint firstItem="B7w-HU-xPK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="OmV-EZ-Eoa"/>
                     <constraint firstItem="B7w-HU-xPK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="SCk-ez-eH8"/>
                     <constraint firstItem="9W4-bF-WLh" firstAttribute="centerY" secondItem="B7w-HU-xPK" secondAttribute="centerY" id="VVi-Gi-NJN"/>
-                    <constraint firstAttribute="trailing" secondItem="9W4-bF-WLh" secondAttribute="trailing" id="iHy-V5-6dc"/>
+                    <constraint firstAttribute="trailing" secondItem="9W4-bF-WLh" secondAttribute="trailing" constant="10" id="iHy-V5-6dc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
