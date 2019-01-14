@@ -384,7 +384,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U">
-                                <rect key="frame" x="62.5" y="74" width="250" height="519"/>
+                                <rect key="frame" x="62.5" y="69.5" width="250" height="528.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -422,12 +422,10 @@
                                         <rect key="frame" x="0.0" y="450.5" width="250" height="30"/>
                                         <state key="normal" title="Wijzig profiel"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wachtwoord wijzigen? Klik hier!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrY-7t-yEL">
-                                        <rect key="frame" x="4.5" y="498.5" width="241" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quA-GL-RKO">
+                                        <rect key="frame" x="17" y="498.5" width="216" height="30"/>
+                                        <state key="normal" title="Wachtwoord wijzigen? Klik hier!"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kR8-ek-cbX" secondAttribute="trailing" id="1oP-Jl-eIj"/>
@@ -449,6 +447,15 @@
                         <viewLayoutGuide key="safeArea" id="1b0-SJ-dhV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU"/>
+                    <connections>
+                        <outlet property="changePasswordButton" destination="quA-GL-RKO" id="dRS-Xi-5CB"/>
+                        <outlet property="changeProfileButton" destination="kR8-ek-cbX" id="uGS-8h-EwR"/>
+                        <outlet property="emailTextField" destination="Sic-Wb-QNB" id="y4Y-51-MAC"/>
+                        <outlet property="firstnameTextField" destination="mT3-jo-x7s" id="ib7-0m-qQf"/>
+                        <outlet property="fullnameLabel" destination="M2W-Bc-2HZ" id="ZcR-aS-6u0"/>
+                        <outlet property="lastnameTextField" destination="EkS-sW-4yv" id="XdF-eL-tBK"/>
+                        <outlet property="profilePictureImageView" destination="Rhr-Sw-0Cn" id="XeT-4I-9jn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eE2-9V-Z80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

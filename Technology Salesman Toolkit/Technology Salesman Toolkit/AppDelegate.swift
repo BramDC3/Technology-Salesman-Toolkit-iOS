@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // try! Auth.auth().signOut()
         
-        if Auth.auth().currentUser == nil {
+        if FirebaseUtils.firebaseUser == nil {
             let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
             self.window?.rootViewController = rootController
         }
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
 
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+        FirebaseUtils.mAuth.signInAndRetrieveData(with: credential) { (authResult, error) in
             if let error = error {
                 print(error)
                 return
@@ -76,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // User is signed in
             if let authResult = authResult {
                 self.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+                FirebaseUtils.firebaseUser = authResult.user
                 print("Welkom Google gebruiker, \(authResult.user.displayName!)")
             }
         }

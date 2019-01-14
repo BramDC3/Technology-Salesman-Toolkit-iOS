@@ -1,5 +1,4 @@
 import UIKit
-import Firebase
 import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
@@ -18,12 +17,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         if loginFormIsValid() {
             // https://firebase.google.com/docs/auth/ios/custom-auth
-            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            FirebaseUtils.mAuth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                 if let user = user {
                     guard user.user.isEmailVerified else {
-                        // https://firebase.google.com/docs/auth/ios/custom-auth
                         do {
-                            try Auth.auth().signOut()
+                            try FirebaseUtils.mAuth.signOut()
                         } catch let signOutError as NSError {
                             print ("Error signing out: %@", signOutError)
                         }
@@ -32,6 +30,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                         self.present(alert, animated: true, completion: nil)
                         return
                     }
+                    
+                    FirebaseUtils.firebaseUser = user.user
                     
                     let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
                     appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()

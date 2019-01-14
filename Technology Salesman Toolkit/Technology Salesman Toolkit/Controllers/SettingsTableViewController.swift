@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class SettingsTableViewController: UITableViewController {
 
@@ -23,7 +22,11 @@ class SettingsTableViewController: UITableViewController {
         
         switch index {
         case 0:
-            try! Auth.auth().signOut()
+            do {
+                try FirebaseUtils.mAuth.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
 
             let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
             appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
