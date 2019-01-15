@@ -49,5 +49,20 @@ struct FirestoreAPI {
             completion(instructions)
         }
     }
+    
+    static func postSuggestion(withMessage message: String, completion: @escaping (Bool) -> Void) {
+        db.collection("Suggestions").addDocument(data: [
+            "message": message,
+            "sender": String(FirebaseUtils.firebaseUser!.uid)
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+                completion(false)
+            } else {
+                print("Document successfully written!")
+                completion(true)
+            }
+        }
+    }
 
 }

@@ -117,7 +117,7 @@ class ProfileViewController: UIViewController {
             } else {
                 self.updateUI()
                 if self.editable { self.toggleEditMode() }
-                let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.succesNameChange)
+                let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.successNameChange)
                 self.present(alert, animated: true, completion: nil)
             }
         }
@@ -134,7 +134,7 @@ class ProfileViewController: UIViewController {
             
             FirebaseUtils.firebaseUser!.sendEmailVerification() { error in
                 if error == nil {
-                    let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.succesEmailAddressChange)
+                    let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.successEmailAddressChange)
                     self.present(alert, animated: true, completion: nil)
                     
                     FirebaseUtils.signOut()

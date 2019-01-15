@@ -19,7 +19,7 @@ class ServiceTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchServices() { (services) in
+        FirestoreAPI.fetchServices() { services in
             if let services = services {
                 self.updateUI(with: services)
             }
