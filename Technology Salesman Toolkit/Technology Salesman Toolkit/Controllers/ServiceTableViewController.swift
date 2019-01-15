@@ -30,13 +30,16 @@ class ServiceTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return services.count }
-        else { return 0 }
+        if section == 0 {
+            return services.count
+        } else {
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath) as? ServiceTableViewCell else {
-            fatalError("Could not dequeue a cell")
+            fatalError("Could not dequeue a cell.")
         }
         
         let service = services[indexPath.row]
