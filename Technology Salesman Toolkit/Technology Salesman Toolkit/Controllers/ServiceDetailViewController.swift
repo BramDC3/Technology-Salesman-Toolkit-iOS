@@ -47,14 +47,10 @@ class ServiceDetailViewController: UIViewController {
         instructions.forEach { instruction in
             let slide:InstructionView = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
             
-            slide.titleLabel.numberOfLines = 0
-            slide.descriptionLabel.numberOfLines = 0
-            slide.contentLabel.numberOfLines = 0
-            
             slide.imageView.downloaded(from: instruction.image)
             slide.titleLabel.text = instruction.title
             slide.descriptionLabel.text = instruction.description
-            slide.contentLabel.text = formatInstructionsList(content: instruction.content)
+            slide.contentLabel.text = formatInstructionsList(withContent: instruction.content)
             
             slides.append(slide)
         }
@@ -62,7 +58,7 @@ class ServiceDetailViewController: UIViewController {
         return slides
     }
     
-    func formatInstructionsList(content: [String]) -> String {
+    func formatInstructionsList(withContent content: [String]) -> String {
         var string = ""
         for (index, instruction) in content.enumerated() { string += "\(index + 1). \(instruction)\n\n" }
         return string

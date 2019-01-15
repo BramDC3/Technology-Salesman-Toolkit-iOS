@@ -27,16 +27,11 @@ class ServiceTableViewController: UITableViewController {
     }
     
     // The number of sections, 1 is default but I want to clearly define this table view
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return services.count
-        } else {
-            return 0
-        }
+        if section == 0 { return services.count }
+        else { return 0 }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

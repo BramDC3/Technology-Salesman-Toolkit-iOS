@@ -59,7 +59,9 @@ class ProfileViewController: UIViewController {
         editProfileButton.isHidden = !editable
         changePasswordButton.isHidden = editable
         
-        if !editable { updateUI() }
+        if !editable {
+            updateUI()
+        }
     }
     
     private func profileFormIsValid() -> Bool {
@@ -86,6 +88,7 @@ class ProfileViewController: UIViewController {
     private func displayEditProfileDialog() {
         if profileFormIsValid() {
             let alert = UIAlertController(title: "Profiel wijzigen", message: "Bent u zeker dat u uw profiel wilt wijzigen?", preferredStyle: .alert)
+            
             alert.addAction(UIAlertAction(title: "Nee", style: .cancel, handler: nil))
             
             alert.addAction(UIAlertAction(title: "Ja", style: .default, handler: { action in
@@ -99,11 +102,16 @@ class ProfileViewController: UIViewController {
     private func checkForProfileChanges() {
         let name = "\(firstnameTextField.text!) \(lastnameTextField.text!)"
         
-        if (FirebaseUtils.firebaseUser!.displayName! != name) { changeName(to: name) }
+        if (FirebaseUtils.firebaseUser!.displayName! != name) {
+            changeName(to: name)
+        }
         
         let email = emailTextField.text!
         
-        if (FirebaseUtils.firebaseUser!.email != email) { changeEmail(to: email) }
+        if (FirebaseUtils.firebaseUser!.email != email) {
+            changeEmail(to: email)
+            
+        }
     }
     
     private func changeName(to name: String) {

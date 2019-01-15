@@ -22,15 +22,7 @@ class SettingsTableViewController: UITableViewController {
         
         switch index {
         case 0:
-            do {
-                try FirebaseUtils.mAuth.signOut()
-                FirebaseUtils.firebaseUser = nil
-            } catch let signOutError as NSError {
-                print ("Error signing out: %@", signOutError)
-            }
-
-            let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-            appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+            displaySignOutAlert()
         case 1:
             print(1)
         case 2:
@@ -46,6 +38,30 @@ class SettingsTableViewController: UITableViewController {
         default:
             print("foutje")
         }
+    }
+    
+    private func displaySignOutAlert() {
+        let alert = UIAlertController(title: "Afmelden", message: "Bent u zeker dat u zich wilt afmelden?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Nee", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ja", style: .default, handler: { action in
+            self.signOut()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    private func signOut() {
+        do {
+            try FirebaseUtils.mAuth.signOut()
+            FirebaseUtils.firebaseUser = nil
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
     }
 
 }
