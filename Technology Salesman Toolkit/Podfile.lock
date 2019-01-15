@@ -1,5 +1,4 @@
 PODS:
-  - BoringSSL/Implementation (10.0.5):
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
