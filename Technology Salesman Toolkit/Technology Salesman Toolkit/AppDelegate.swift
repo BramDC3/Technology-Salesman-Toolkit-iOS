@@ -13,10 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         // Firestore settings to use Timestamps instead of Date objects
-        let db = Firestore.firestore()
-        let settings = db.settings
+        let settings = Firestore.firestore().settings
         settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
+        Firestore.firestore().settings = settings
         
         // https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID

@@ -28,40 +28,26 @@ class SettingsTableViewController: UITableViewController {
         case 2:
             print(2)
         case 3:
-            if let link = URL(string: "https://technology-salesman-toolkit.firebaseapp.com/privacy_policy.html") {
+            if let link = URL(string: StringConstants.privacyPolicy) {
                 UIApplication.shared.open(link)
             }
         case 4:
-            if let link = URL(string: "https://bramdeconinck.com") {
+            if let link = URL(string: StringConstants.website) {
                 UIApplication.shared.open(link)
             }
         default:
-            print("foutje")
+            fatalError("The selected action doesn't exist.")
         }
     }
     
     private func displaySignOutAlert() {
-        let alert = UIAlertController(title: "Afmelden", message: "Bent u zeker dat u zich wilt afmelden?", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Nee", style: .cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Ja", style: .default, handler: { action in
-            self.signOut()
+        let alert = UIAlertController(title: StringConstants.titleSettingsSignOutAlert, message: StringConstants.messageSignOut, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: StringConstants.alertNo, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: StringConstants.alertYes, style: .default, handler: { action in
+            FirebaseUtils.signOut()
+            FirebaseUtils.navigateToLogin()
         }))
-        
         self.present(alert, animated: true)
-    }
-    
-    private func signOut() {
-        do {
-            try FirebaseUtils.mAuth.signOut()
-            FirebaseUtils.firebaseUser = nil
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
     }
 
 }

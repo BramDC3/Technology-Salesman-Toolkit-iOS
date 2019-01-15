@@ -12,58 +12,58 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func createAccountButtonTapped(_ sender: UIButton) {
-        if registrationFormIsValid() {
+    @IBAction func createAccountButtonTapped(_ sender: UIButton) { createAccount() }
+    
+    // https://firebase.google.com/docs/auth/ios/custom-auth
+    private func createAccount() {
+        guard registrationFormIsValid() else { return }
+        
+        FirebaseUtils.mAuth.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
+            guard authResult?.user != nil else {
+                let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.errorAccountNotCreated)
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
             
-            // https://firebase.google.com/docs/auth/ios/custom-auth
-            FirebaseUtils.mAuth.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
-                
-                guard (authResult?.user) != nil else {
-                    let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Er is iets fout gegaan tijdens het aanmaken van het account.")
+            let changeRequest = authResult?.user.createProfileChangeRequest()
+            changeRequest?.displayName = "\(self.firstnameTextField.text!) \(self.lastnameTextField.text!)"
+            
+            changeRequest?.commitChanges { error in
+                if let error = error {
+                    print("Error committing change request: %@", error)
+                } else {
+                    authResult?.user.sendEmailVerification()
+                    let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.messageVerificationEmailSent)
                     self.present(alert, animated: true, completion: nil)
-                    return
                 }
-                
-                // https://stackoverflow.com/questions/38389341/firebase-create-user-with-email-password-display-name-and-photo-url
-                let changeRequest = authResult?.user.createProfileChangeRequest()
-                changeRequest?.displayName = "\(self.firstnameTextField.text!) \(self.lastnameTextField.text!)"
-                
-                changeRequest?.commitChanges { error in
-                    if let error = error {
-                        print("Error committing change request: %@", error)
-                    } else {
-                        authResult?.user.sendEmailVerification()
-                        let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Uw account werd succesvol aangemaakt en er werd een bevestigingsmail naar uw e-mailadres verzonden.")
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                }
-                
             }
         }
     }
     
     // Function that checks whether all fields of the form are filled in correctly
     private func registrationFormIsValid() -> Bool {
-        guard let firstname = firstnameTextField.text, let lastname = lastnameTextField.text,  let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text, firstname != "", lastname != "",  email != "", password != "", repeatPassword != "" else {
-            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Gelieve alle velden in te voeren.")
+        guard let firstname = firstnameTextField.text, let lastname = lastnameTextField.text,  let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return false }
+        
+        guard ValidationUtils.doesEveryFieldHaveValue(fields: [firstname, lastname, email, password, repeatPassword]) else {
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.formEmptyFields)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard ValidationUtils.isEmailValid(email: email) else {
-            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Gelieve een geldig e-mailadres in te voeren.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.formInvalidEmailAddress)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard password.count >= 6 else {
-            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "Het wachtwoord moet minstens 6 karakters lang zijn.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.formInvalidPassword)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         
         guard password == repeatPassword else {
-            let alert = AlertUtils.createSimpleAlert(withTitle: "Account aanmaken", andMessage: "De twee opgegeven wachtwoorden komen niet overeen.")
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.formPasswordsDoNotMatch)
             self.present(alert, animated: true, completion: nil)
             return false
         }

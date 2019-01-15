@@ -31,26 +31,28 @@ class ServiceDetailViewController: UIViewController {
         }
     }
     
-    func updateUI(with instructions: [Instruction]) {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setupSlideScrollView()
+    }
+    
+    private func updateUI(with instructions: [Instruction]) {
         DispatchQueue.main.async {
             self.instructions = instructions
-            
             self.instructionSlides = self.createInstructionSlides()
-            
             self.setupSlideScrollView()
         }
     }
     
-    func createInstructionSlides() -> [InstructionView] {
+    private func createInstructionSlides() -> [InstructionView] {
         var slides: [InstructionView] = []
         
         instructions.forEach { instruction in
-            let slide:InstructionView = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
+            let slide = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
             
             slide.imageView.downloaded(from: instruction.image)
             slide.titleLabel.text = instruction.title
             slide.descriptionLabel.text = instruction.description
-            slide.contentLabel.text = formatInstructionsList(withContent: instruction.content)
+            slide.contentLabel.text = StringUtils.formatInstructionsList(withContent: instruction.content)
             
             slides.append(slide)
         }
@@ -58,13 +60,7 @@ class ServiceDetailViewController: UIViewController {
         return slides
     }
     
-    func formatInstructionsList(withContent content: [String]) -> String {
-        var string = ""
-        for (index, instruction) in content.enumerated() { string += "\(index + 1). \(instruction)\n\n" }
-        return string
-    }
-    
-    func setupSlideScrollView() {
+    private func setupSlideScrollView() {
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(instructionSlides.count), height: view.frame.height)
         scrollView.isPagingEnabled = true
@@ -74,8 +70,6 @@ class ServiceDetailViewController: UIViewController {
             scrollView.addSubview(instructionSlides[i])
         }
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) { setupSlideScrollView() }
 
 }
 

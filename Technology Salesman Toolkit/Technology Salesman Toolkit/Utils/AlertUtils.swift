@@ -13,8 +13,8 @@ struct AlertUtils {
     
     // Function for displaying alerts with the given message
     static func createSimpleAlert(withTitle title: String, andMessage message: String) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Oké", style: UIAlertAction.Style.default, handler: nil))
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: StringConstants.alertOk, style: .default, handler: nil))
         return alert
     }
     

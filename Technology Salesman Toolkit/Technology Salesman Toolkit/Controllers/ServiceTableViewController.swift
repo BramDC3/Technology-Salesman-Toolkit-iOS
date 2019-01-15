@@ -27,7 +27,9 @@ class ServiceTableViewController: UITableViewController {
     }
     
     // The number of sections, 1 is default but I want to clearly define this table view
-    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -49,7 +51,7 @@ class ServiceTableViewController: UITableViewController {
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.description
         cell.categoryLabel.text = "\(service.category)"
-        cell.priceLabel.text = service.price == 0.0 ? " " : String(format: "€ %.2f", service.price)
+        cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(price: service.price)
         
         return cell
     }
@@ -58,23 +60,19 @@ class ServiceTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "GoToServiceDetail", sender: indexPath);
     }
     
-    func updateUI(with services: [Service]) {
-        DispatchQueue.main.async {
-            self.services = services
-            self.tableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToServiceDetail" {
+            let index = (sender as! IndexPath).row
+            let detailViewController = segue.destination as! ServiceDetailViewController
+            detailViewController.serviceId = services[index].id
+            detailViewController.serviceName = services[index].name
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToServiceDetail" {
-            let indexPath = tableView.indexPathForSelectedRow
-            
-            let index = indexPath?.row
-            
-            let detailViewController = segue.destination as! ServiceDetailViewController
-            
-            detailViewController.serviceId = services[index!].id
-            detailViewController.serviceName = services[index!].name
+    private func updateUI(with services: [Service]) {
+        DispatchQueue.main.async {
+            self.services = services
+            self.tableView.reloadData()
         }
     }
 

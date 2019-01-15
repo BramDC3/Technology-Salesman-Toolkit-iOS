@@ -10,8 +10,8 @@ struct FirestoreAPI {
         var services: [Service] = []
         
         db.collection("Services").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
+            guard err == nil else {
+                print("Error getting documents: \(err!)")
                 completion(nil)
                 return
             }
@@ -32,8 +32,8 @@ struct FirestoreAPI {
         var instructions: [Instruction] = []
         
         db.collection("Instructions").whereField("serviceId", isEqualTo: serviceId).order(by: "index").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
+            guard err == nil else {
+                print("Error getting documents: \(err!)")
                 completion(nil)
                 return
             }

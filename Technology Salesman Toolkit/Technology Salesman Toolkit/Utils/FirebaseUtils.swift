@@ -23,4 +23,23 @@ struct FirebaseUtils {
         }
     }
     
+    static func signOut() {
+        do {
+            try mAuth.signOut()
+            firebaseUser = nil
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    static func navigateToLogin() {
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+    }
+    
+    static func navigateToServiceTableView() {
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+    }
+    
 }
