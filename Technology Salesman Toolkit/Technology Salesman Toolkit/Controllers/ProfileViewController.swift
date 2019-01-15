@@ -33,9 +33,9 @@ class ProfileViewController: UIViewController {
         updateUI()
     }
     
-    @IBAction func toggleEditModeButtonClicked(_ sender: UIBarButtonItem) { toggleEditMode() }
-    @IBAction func editProfileButtonClicked(_ sender: UIButton) { displayEditProfileDialog() }
-    @IBAction func changePasswordButtonClicked(_ sender: UIButton) { displayChangePasswordAlert() }
+    @IBAction func toggleEditModeButtonTapped(_ sender: UIBarButtonItem) { toggleEditMode() }
+    @IBAction func editProfileButtonTapped(_ sender: UIButton) { displayEditProfileDialog() }
+    @IBAction func changePasswordButtonTapped(_ sender: UIButton) { displayChangePasswordAlert() }
     
     private func updateUI() {
         fullnameLabel.text = FirebaseUtils.firebaseUser?.displayName
