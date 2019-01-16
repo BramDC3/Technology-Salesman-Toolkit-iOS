@@ -48,7 +48,7 @@ class ServiceTableViewController: UITableViewController {
 
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.description
-        cell.categoryLabel.text = "\(service.category)"
+        cell.categoryLabel.text = "\(service.category.rawValue)"
         cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(price: service.price)
         
         if let link = URL(string: service.image) {
