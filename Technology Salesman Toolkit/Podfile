@@ -8,7 +8,7 @@ target 'Technology Salesman Toolkit' do
   # Pods for Technology Salesman Toolkit
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'Firebase/Firestore'
+  pod 'Firebase/Firestore', :inhibit_warnings => true
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
 
