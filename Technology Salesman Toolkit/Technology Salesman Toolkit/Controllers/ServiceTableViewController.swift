@@ -46,12 +46,24 @@ class ServiceTableViewController: UITableViewController {
         
         let service = services[indexPath.row]
 
-        cell.logoImageView.downloaded(from: service.image)
-        
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.description
         cell.categoryLabel.text = "\(service.category)"
         cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(price: service.price)
+        
+        if let link = URL(string: service.image) {
+            FirebaseUtils.fetchImage(url: link) { (image) in
+                guard let image = image else { return }
+                DispatchQueue.main.async {
+                    if let currentIndexPath =
+                        self.tableView.indexPath(for: cell),
+                        currentIndexPath != indexPath {
+                        return
+                    }
+                    cell.logoImageView.image = image
+                }
+            }
+        }
         
         return cell
     }

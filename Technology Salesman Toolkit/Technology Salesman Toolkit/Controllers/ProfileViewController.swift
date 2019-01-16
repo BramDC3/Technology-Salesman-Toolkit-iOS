@@ -26,8 +26,15 @@ class ProfileViewController: UIViewController {
         
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
         
-        if let image = FirebaseUtils.firebaseUser?.photoURL {
-            profilePictureImageView.downloaded(from: image)
+        if let link = FirebaseUtils.firebaseUser?.photoURL {
+            FirebaseUtils.fetchImage(url: link) { (image) in
+                guard let image = image else { return }
+                DispatchQueue.main.async {
+                    self.profilePictureImageView.image = image
+                }
+            }
+        } else {
+            self.profilePictureImageView.image = #imageLiteral(resourceName: "default_profile_image")
         }
         
         updateUI()

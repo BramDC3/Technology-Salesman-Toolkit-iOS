@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         settings.areTimestampsInSnapshotsEnabled = true
         Firestore.firestore().settings = settings
         
+        // Adding cache for storing images, 25 MB of memory and 50 MB of disk space
+        let temporaryDirectory = NSTemporaryDirectory()
+        let urlCache = URLCache(memoryCapacity: 25000000, diskCapacity: 50000000, diskPath: temporaryDirectory)
+        URLCache.shared = urlCache
+        
         // https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self

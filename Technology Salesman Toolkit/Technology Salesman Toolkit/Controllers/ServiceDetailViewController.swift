@@ -49,10 +49,18 @@ class ServiceDetailViewController: UIViewController {
         instructions.forEach { instruction in
             let slide = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
             
-            slide.imageView.downloaded(from: instruction.image)
             slide.titleLabel.text = instruction.title
             slide.descriptionLabel.text = instruction.description
             slide.contentLabel.text = StringUtils.formatInstructionsList(withContent: instruction.content)
+            
+            if let link = URL(string: instruction.image) {
+                FirebaseUtils.fetchImage(url: link) { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        slide.imageView.image = image
+                    }
+                }
+            }
             
             slides.append(slide)
         }
@@ -71,27 +79,4 @@ class ServiceDetailViewController: UIViewController {
         }
     }
 
-}
-
-// Extension to download an image asynchronously
-// https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
-extension UIImageView {
-    func downloaded(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-            }
-        }.resume()
-    }
-    
-    func downloaded(from link: String) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url)
-    }
 }
