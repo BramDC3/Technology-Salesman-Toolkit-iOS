@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct StringUtils {
     
@@ -26,7 +27,7 @@ struct StringUtils {
         return ""
     }
     
-    static func formatInstructionsList(withContent content: [String]) -> String {
+    static func formatInstructionsList(withContent content: List<String>) -> String {
         var string = ""
         for (index, instruction) in content.enumerated() {
             string += "\(index + 1). \(instruction)\n\n"

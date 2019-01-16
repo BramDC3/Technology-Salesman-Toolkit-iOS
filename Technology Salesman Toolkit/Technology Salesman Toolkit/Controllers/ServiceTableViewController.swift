@@ -47,7 +47,7 @@ class ServiceTableViewController: UITableViewController {
         let service = services[indexPath.row]
 
         cell.titleLabel.text = service.name
-        cell.descriptionLabel.text = service.description
+        cell.descriptionLabel.text = service.shortDescription
         cell.categoryLabel.text = "\(service.category.rawValue)"
         cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(price: service.price)
         

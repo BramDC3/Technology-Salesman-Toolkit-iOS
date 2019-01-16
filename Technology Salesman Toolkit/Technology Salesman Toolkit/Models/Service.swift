@@ -9,10 +9,10 @@ enum Category: String {
     case other = "Andere"
 }
 
-class Service {
+class Service : Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
-    @objc dynamic var description: String = ""
+    @objc dynamic var shortDescription: String = ""
     @objc dynamic var categoryRaw: String = ""
     var category: Category {
         get {
@@ -22,15 +22,15 @@ class Service {
             categoryRaw = newValue.rawValue
         }
     }
-    @objc dynamic var created: Timestamp = Timestamp.init()
+    @objc dynamic var created: Date = Date.init()
     @objc dynamic var price: Double = 0.0
     @objc dynamic var image: String = ""
     
-    convenience init(id: String, name: String, description: String, created: Timestamp, price: Double, image: String, category: Category = .other) {
+    convenience init(id: String, name: String, description: String, created: Date, price: Double, image: String, category: Category = .other) {
         self.init()
         self.id = id
         self.name = name
-        self.description = description
+        self.shortDescription = description
         self.category = category
         self.created = created
         self.price = price
@@ -46,6 +46,6 @@ class Service {
             let image = dictionary["image"] as? String
             else { return nil }
         
-        self.init(id: id, name: name, description: description, created: created, price: price, image: image, category: FirebaseUtils.convertIntToCategory(int: category))
+        self.init(id: id, name: name, description: description, created: created.dateValue(), price: price, image: image, category: FirebaseUtils.convertIntToCategory(int: category))
     }
 }
