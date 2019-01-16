@@ -18,9 +18,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     // Function for signing the user in with an email/password combination
     // https://firebase.google.com/docs/auth/ios/custom-auth
     private func signIn() {
-        guard loginFormIsValid() else  { return }
+        guard loginFormIsValid() else { return }
         
-        FirebaseUtils.mAuth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
+        FirebaseUtils.mAuth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             guard let user = user else {
                 let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleLoginAlert, andMessage: StringConstants.errorUnexpected)
                 self.present(alert, animated: true, completion: nil)

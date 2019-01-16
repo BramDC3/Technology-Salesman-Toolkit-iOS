@@ -91,11 +91,9 @@ class ProfileViewController: UIViewController {
     
     private func displayEditProfileDialog() {
         if profileFormIsValid() {
-            let alert = UIAlertController(title: StringConstants.titleProfileEditProfileAlert, message: StringConstants.messageEditProfile, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: StringConstants.alertNo, style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: StringConstants.alertYes, style: .default, handler: { action in
+            let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.messageEditProfile, andFunction: {
                 self.checkForProfileChanges()
-            }))
+            })
             self.present(alert, animated: true)
         }
     }
@@ -116,7 +114,7 @@ class ProfileViewController: UIViewController {
         let changeRequest = FirebaseUtils.firebaseUser!.createProfileChangeRequest()
         changeRequest.displayName = name
         
-        changeRequest.commitChanges { error in
+        changeRequest.commitChanges { (error) in
             if error != nil {
                 let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.errorNameNotChanged)
                 self.present(alert, animated: true, completion: nil)
@@ -131,7 +129,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func changeEmail(to email: String) {
-        FirebaseUtils.firebaseUser!.updateEmail(to: email) { error in
+        FirebaseUtils.firebaseUser!.updateEmail(to: email) { (error) in
             guard error == nil else {
                 let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.errorEmailAddressNotChanged)
                 self.present(alert, animated: true, completion: nil)
@@ -139,7 +137,7 @@ class ProfileViewController: UIViewController {
                 return
             }
             
-            FirebaseUtils.firebaseUser!.sendEmailVerification() { error in
+            FirebaseUtils.firebaseUser!.sendEmailVerification() { (error) in
                 if error == nil {
                     let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.successEmailAddressChange)
                     self.present(alert, animated: true, completion: nil)
@@ -156,16 +154,14 @@ class ProfileViewController: UIViewController {
     }
     
     private func displayChangePasswordAlert() {
-        let alert = UIAlertController(title: StringConstants.titleProfileChangePasswordAlert, message: StringConstants.messageChangePassword, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringConstants.alertNo, style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: StringConstants.alertYes, style: .default, handler: { action in
+        let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleProfileChangePasswordAlert, andMessage: StringConstants.messageChangePassword, andFunction: {
             self.sendResetPasswordEmail()
-        }))
+        })
         self.present(alert, animated: true)
     }
     
     private func sendResetPasswordEmail() {
-        FirebaseUtils.mAuth.sendPasswordReset(withEmail: FirebaseUtils.firebaseUser!.email!) { error in
+        FirebaseUtils.mAuth.sendPasswordReset(withEmail: FirebaseUtils.firebaseUser!.email!) { (error) in
             if error == nil {
                 let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileChangePasswordAlert, andMessage: StringConstants.messageChangePasswordEmailSent)
                 self.present(alert, animated: true, completion: nil)

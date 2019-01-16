@@ -28,7 +28,7 @@ class RegistrationViewController: UIViewController {
             let changeRequest = authResult?.user.createProfileChangeRequest()
             changeRequest?.displayName = "\(self.firstnameTextField.text!) \(self.lastnameTextField.text!)"
             
-            changeRequest?.commitChanges { error in
+            changeRequest?.commitChanges { (error) in
                 if let error = error {
                     print("Error committing change request: %@", error)
                 } else {

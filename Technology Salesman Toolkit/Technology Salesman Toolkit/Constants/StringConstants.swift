@@ -39,14 +39,14 @@ struct StringConstants {
     static let alertYes = "Ja"
     static let alertNo = "Nee"
     static let alertCancel = "Annuleren"
-    static let alertSend = "Verstuur"
+    static let alertSend = "Verzend"
     
     // Errors
     static let errorUnexpected = "Er is een onverwachte fout opgetreden tijdens het aanmelden."
     static let errorAccountNotCreated = "Er is iets fout opgetreden tijdens het aanmaken van uw account."
     static let errorNameNotChanged = "Er is een fout opgetreden tijdens het wijzigen van uw naam."
     static let errorEmailAddressNotChanged = "Er is een onverwachte fout opgetreden tijdens het wijzigen van uw e-mailadres."
-    static let errorChangePasswordEmailNotSent = "Er is een onverwachte fout opgetreden tijdens het versturen van de mail voor het wijzigen van uw wachtwoord."
+    static let errorChangePasswordEmailNotSent = "Er is een onverwachte fout opgetreden tijdens het verzend van de mail voor het wijzigen van uw wachtwoord."
     static let errorEmptySuggestion = "Gelieve een suggestie in te voeren alvorens u op 'Verzend' drukt."
     static let errorSuggestionNotSent = "Er is iets fout opgetreden tijdens het verzenden van uw suggestie."
     

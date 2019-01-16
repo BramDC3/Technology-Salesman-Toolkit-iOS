@@ -24,7 +24,7 @@ class ServiceDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchInstructions(fromService: serviceId) { instructions in
+        FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.updateUI(with: instructions)
             }
@@ -46,7 +46,7 @@ class ServiceDetailViewController: UIViewController {
     private func createInstructionSlides() -> [InstructionView] {
         var slides: [InstructionView] = []
         
-        instructions.forEach { instruction in
+        instructions.forEach { (instruction) in
             let slide = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
             
             slide.titleLabel.text = instruction.title

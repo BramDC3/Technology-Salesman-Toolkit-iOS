@@ -28,7 +28,10 @@ struct StringUtils {
     
     static func formatInstructionsList(withContent content: [String]) -> String {
         var string = ""
-        for (index, instruction) in content.enumerated() { string += "\(index + 1). \(instruction)\n\n" }
+        for (index, instruction) in content.enumerated() {
+            string += "\(index + 1). \(instruction)\n\n"
+            
+        }
         return string
     }
     

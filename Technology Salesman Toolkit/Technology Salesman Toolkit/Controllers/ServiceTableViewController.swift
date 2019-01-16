@@ -19,7 +19,7 @@ class ServiceTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchServices() { services in
+        FirestoreAPI.fetchServices() { (services) in
             if let services = services {
                 self.updateUI(with: services)
             }
@@ -55,9 +55,7 @@ class ServiceTableViewController: UITableViewController {
             FirebaseUtils.fetchImage(url: link) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
-                    if let currentIndexPath =
-                        self.tableView.indexPath(for: cell),
-                        currentIndexPath != indexPath {
+                    if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath != indexPath {
                         return
                     }
                     cell.logoImageView.image = image

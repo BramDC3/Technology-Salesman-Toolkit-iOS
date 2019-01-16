@@ -41,24 +41,17 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func displaySignOutAlert() {
-        let alert = UIAlertController(title: StringConstants.titleSettingsSignOutAlert, message: StringConstants.messageSignOut, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringConstants.alertNo, style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: StringConstants.alertYes, style: .default, handler: { action in
+        let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleSettingsSignOutAlert, andMessage: StringConstants.messageSignOut, andFunction: {
             FirebaseUtils.signOut()
             FirebaseUtils.navigateToLogin()
-        }))
+        })
         self.present(alert, animated: true)
     }
     
     private func displaySendSuggestionAlert() {
-        let alert = UIAlertController(title: StringConstants.titleSettingsSendSuggestionAlert, message: StringConstants.messageSendSuggestion, preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = StringConstants.placeholderSendSuggestionTextfield
-        }
-        alert.addAction(UIAlertAction(title: StringConstants.alertCancel, style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: StringConstants.alertSend, style: .default, handler: { action in
-            self.sendSuggestion(withMessage: alert.textFields![0].text!)
-        }))
+        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (message) in
+            self.sendSuggestion(withMessage: message)
+        })
         self.present(alert, animated: true)
     }
     
@@ -69,7 +62,7 @@ class SettingsTableViewController: UITableViewController {
             return
         }
         
-        FirestoreAPI.postSuggestion(withMessage: message) { succes in
+        FirestoreAPI.postSuggestion(withMessage: message) { (succes) in
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: succes ? StringConstants.successSendSuggestion : StringConstants.errorSuggestionNotSent)
             self.present(alert, animated: true)
         }
