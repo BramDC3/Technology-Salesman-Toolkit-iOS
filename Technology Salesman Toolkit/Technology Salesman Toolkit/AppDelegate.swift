@@ -12,11 +12,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // https://firebase.google.com/docs/auth/ios/start
         FirebaseApp.configure()
         
+        // Firestore settings to use Timestamps instead of Date objects
+        let settings = Firestore.firestore().settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        Firestore.firestore().settings = settings
+        
+        // Adding cache for storing images, 25 MB of memory and 50 MB of disk space
+        let temporaryDirectory = NSTemporaryDirectory()
+        let urlCache = URLCache(memoryCapacity: 25000000, diskCapacity: 50000000, diskPath: temporaryDirectory)
+        URLCache.shared = urlCache
+        
         // https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
-        // try! Auth.auth().signOut()
         
         if FirebaseUtils.firebaseUser == nil {
             let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
@@ -77,7 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if let authResult = authResult {
                 self.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
                 FirebaseUtils.firebaseUser = authResult.user
-                print("Welkom Google gebruiker, \(authResult.user.displayName!)")
             }
         }
     }

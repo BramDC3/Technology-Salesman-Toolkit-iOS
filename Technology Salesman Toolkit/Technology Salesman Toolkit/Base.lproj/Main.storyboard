@@ -386,7 +386,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U">
                                 <rect key="frame" x="62.5" y="93.5" width="250" height="480.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Sw-0Cn">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="08w-qT-IMo"/>
@@ -422,14 +422,14 @@
                                         <rect key="frame" x="0.0" y="441.5" width="250" height="0.0"/>
                                         <state key="normal" title="Wijzig profiel"/>
                                         <connections>
-                                            <action selector="editProfileButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="G24-qS-wQD"/>
+                                            <action selector="editProfileButtonTapped:" destination="2v0-gK-eVD" eventType="touchUpInside" id="G24-qS-wQD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quA-GL-RKO">
                                         <rect key="frame" x="17" y="450.5" width="216" height="30"/>
                                         <state key="normal" title="Wachtwoord wijzigen? Klik hier!"/>
                                         <connections>
-                                            <action selector="changePasswordButtonClicked:" destination="2v0-gK-eVD" eventType="touchUpInside" id="iAi-Br-0co"/>
+                                            <action selector="changePasswordButtonTapped:" destination="2v0-gK-eVD" eventType="touchUpInside" id="iAi-Br-0co"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -455,7 +455,7 @@
                     <navigationItem key="navigationItem" title="Profiel" id="KS1-Vz-iWU">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" id="YlC-nH-Mfk">
                             <connections>
-                                <action selector="toggleEditModeButtonClicked:" destination="2v0-gK-eVD" id="hM6-jg-1wf"/>
+                                <action selector="toggleEditModeButtonTapped:" destination="2v0-gK-eVD" id="hM6-jg-1wf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -532,6 +532,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default_profile_image" width="590" height="619"/>
         <image name="globe_earth" width="30" height="30"/>
         <image name="list" width="24" height="20"/>
         <image name="pencil" width="30" height="30"/>

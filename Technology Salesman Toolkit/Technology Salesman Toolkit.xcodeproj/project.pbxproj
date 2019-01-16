@@ -30,6 +30,7 @@
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
 		11C834572188659A00FE1808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C834552188659A00FE1808 /* Main.storyboard */; };
 		11C8345C2188659B00FE1808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C8345A2188659B00FE1808 /* LaunchScreen.storyboard */; };
+		11F3F4FD21EE4E91000E0206 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F4FC21EE4E91000E0206 /* StringConstants.swift */; };
 		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
 		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		11C834562188659A00FE1808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11C8345B2188659B00FE1808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C8345D2188659B00FE1808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F3F4FC21EE4E91000E0206 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		243E3DEFF752D6F612D8B0AF /* Pods-Technology Salesman Toolkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technology Salesman Toolkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit.debug.xcconfig"; sourceTree = "<group>"; };
 		9958E757FC1A955071D7359D /* Pods-Technology Salesman Toolkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technology Salesman Toolkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,13 +169,14 @@
 		11C834502188659A00FE1808 /* Technology Salesman Toolkit */ = {
 			isa = PBXGroup;
 			children = (
-				114B0E8021DD946000B8A6C0 /* Cells */,
 				11A0D13021DD399000FF3213 /* Bases */,
-				1118FF6721DCE99000EFCCFB /* Views */,
-				1148378D21BABB8A00A1B045 /* Utils */,
-				1138354B21B69F5900FE2702 /* Network */,
-				11B3E37D219C1BBC008A0890 /* Models */,
+				114B0E8021DD946000B8A6C0 /* Cells */,
+				11F3F4FB21EE4E6B000E0206 /* Constants */,
 				11557B74219A2C7F00F16A04 /* Controllers */,
+				11B3E37D219C1BBC008A0890 /* Models */,
+				1138354B21B69F5900FE2702 /* Network */,
+				1148378D21BABB8A00A1B045 /* Utils */,
+				1118FF6721DCE99000EFCCFB /* Views */,
 				11C834512188659A00FE1808 /* AppDelegate.swift */,
 				11A0D12E21DD359300FF3213 /* Assets.xcassets */,
 				11C834552188659A00FE1808 /* Main.storyboard */,
@@ -182,6 +185,14 @@
 				11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */,
 			);
 			path = "Technology Salesman Toolkit";
+			sourceTree = "<group>";
+		};
+		11F3F4FB21EE4E6B000E0206 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				11F3F4FC21EE4E91000E0206 /* StringConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		373CF1AA07A45BDBC76F96A0 /* Pods */ = {
@@ -281,10 +292,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,28 +331,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -370,6 +379,7 @@
 				11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */,
 				11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */,
 				11293EF021DF742300B23209 /* SettingsTableViewController.swift in Sources */,
+				11F3F4FD21EE4E91000E0206 /* StringConstants.swift in Sources */,
 				117F19C521BFA97400476E09 /* Instruction.swift in Sources */,
 				11C834522188659A00FE1808 /* AppDelegate.swift in Sources */,
 				114B0E8321DD947B00B8A6C0 /* ServiceTableViewCell.swift in Sources */,

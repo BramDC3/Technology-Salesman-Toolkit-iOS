@@ -23,4 +23,35 @@ struct FirebaseUtils {
         }
     }
     
+    static func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data,
+                let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+    
+    static func signOut() {
+        do {
+            try mAuth.signOut()
+            firebaseUser = nil
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    static func navigateToLogin() {
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+    }
+    
+    static func navigateToServiceTableView() {
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+    }
+    
 }

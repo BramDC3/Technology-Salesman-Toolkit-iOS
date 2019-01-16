@@ -22,29 +22,49 @@ class SettingsTableViewController: UITableViewController {
         
         switch index {
         case 0:
-            do {
-                try FirebaseUtils.mAuth.signOut()
-                FirebaseUtils.firebaseUser = nil
-            } catch let signOutError as NSError {
-                print ("Error signing out: %@", signOutError)
-            }
-
-            let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-            appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+            displaySignOutAlert()
         case 1:
             print(1)
         case 2:
-            print(2)
+            displaySendSuggestionAlert()
         case 3:
-            if let link = URL(string: "https://technology-salesman-toolkit.firebaseapp.com/privacy_policy.html") {
+            if let link = URL(string: StringConstants.privacyPolicy) {
                 UIApplication.shared.open(link)
             }
         case 4:
-            if let link = URL(string: "https://bramdeconinck.com") {
+            if let link = URL(string: StringConstants.website) {
                 UIApplication.shared.open(link)
             }
         default:
-            print("foutje")
+            fatalError("The selected action doesn't exist.")
+        }
+    }
+    
+    private func displaySignOutAlert() {
+        let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleSettingsSignOutAlert, andMessage: StringConstants.messageSignOut, andFunction: {
+            FirebaseUtils.signOut()
+            FirebaseUtils.navigateToLogin()
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func displaySendSuggestionAlert() {
+        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (message) in
+            self.sendSuggestion(withMessage: message)
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func sendSuggestion(withMessage message: String) {
+        guard !message.isEmpty else {
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.errorEmptySuggestion)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        FirestoreAPI.postSuggestion(withMessage: message) { (succes) in
+            let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: succes ? StringConstants.successSendSuggestion : StringConstants.errorSuggestionNotSent)
+            self.present(alert, animated: true)
         }
     }
 
