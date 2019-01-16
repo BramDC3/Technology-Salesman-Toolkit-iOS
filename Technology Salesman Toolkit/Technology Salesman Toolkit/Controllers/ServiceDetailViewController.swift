@@ -27,6 +27,13 @@ class ServiceDetailViewController: UIViewController {
         FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.updateUI(with: instructions)
+                DispatchQueue.main.async {
+                    InstructionRepository.deleteInstructions(fromService: self.serviceId)
+                    InstructionRepository.addInstructions(instructions: instructions)
+                }
+            } else {
+                let instructions = InstructionRepository.getInstructions(fromService: self.serviceId)
+                self.updateUI(with: Array(instructions))
             }
         }
     }

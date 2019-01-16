@@ -22,6 +22,13 @@ class ServiceTableViewController: UITableViewController {
         FirestoreAPI.fetchServices() { (services) in
             if let services = services {
                 self.updateUI(with: services)
+                DispatchQueue.main.async {
+                    ServiceRepository.deleteAllServices()
+                    ServiceRepository.addServices(services: services)
+                }
+            } else {
+                let services = ServiceRepository.getServices()
+                self.updateUI(with: Array(services))
             }
         }
     }

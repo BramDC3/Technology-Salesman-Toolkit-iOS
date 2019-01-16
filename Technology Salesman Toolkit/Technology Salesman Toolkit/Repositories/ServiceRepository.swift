@@ -19,12 +19,16 @@ struct ServiceRepository {
     
     static func addServices(services: [Service]) {
         let realm = try! Realm()
-        realm.add(services)
+        try! realm.write {
+            realm.add(services)
+        }
     }
     
     static func deleteAllServices() {
         let realm = try! Realm()
-        realm.delete(getServices())
+        try! realm.write {
+            realm.delete(getServices())
+        }
     }
     
 }

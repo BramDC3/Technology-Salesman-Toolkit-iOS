@@ -13,18 +13,22 @@ struct InstructionRepository {
     
     static func getInstructions(fromService serviceId: String) -> Results<Instruction> {
         let realm = try! Realm()
-        let instructions = realm.objects(Instruction.self).filter("serviceId == \(serviceId)")
+        let instructions = realm.objects(Instruction.self).filter("serviceId == %@", serviceId)
         return instructions
     }
     
     static func addInstructions(instructions: [Instruction]) {
         let realm = try! Realm()
-        realm.add(instructions)
+        try! realm.write {
+            realm.add(instructions)
+        }
     }
     
     static func deleteInstructions(fromService serviceId: String) {
         let realm = try! Realm()
-        realm.delete(getInstructions(fromService: serviceId))
+        try! realm.write {
+            realm.delete(getInstructions(fromService: serviceId))
+        }
     }
     
 }
