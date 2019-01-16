@@ -7,35 +7,40 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Instruction {
-    let id: String
-    let title: String
-    let description: String
-    let content: [String]
-    let image: String
-    let serviceId: String
-    let index: Int
-}
-
-extension Instruction {
-    init?(dictionary: [String : Any], id: String) {
+class Instruction : Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var shortDescription: String = ""
+    var content: List<String> = List<String>()
+    @objc dynamic var image: String = ""
+    @objc dynamic var serviceId: String = ""
+    @objc dynamic var index: Int = 0
+    
+    convenience init(id: String, title: String, description: String, content: List<String>, image: String, serviceId: String, index: Int) {
+        self.init()
+        self.id = id
+        self.title = title
+        self.shortDescription = description
+        self.content = content
+        self.image = image
+        self.serviceId = serviceId
+        self.index = index
+    }
+    
+    convenience init?(dictionary: [String : Any], id: String) {
         guard let title = dictionary["title"] as? String,
             let description = dictionary["description"] as? String,
-            let content = dictionary["content"] as? [String],
+            let contentArray = dictionary["content"] as? [String],
             let image = dictionary["image"] as? String,
             let serviceId = dictionary["serviceId"] as? String,
             let index = dictionary["index"] as? Int
             else { return nil }
         
-        self.init(
-            id: id,
-            title: title,
-            description: description,
-            content: content,
-            image: image,
-            serviceId: serviceId,
-            index: index
-        )
+        let content = List<String>()
+        content.append(objectsIn: contentArray)
+        
+        self.init(id: id, title: title, description: description, content: content, image: image, serviceId: serviceId, index: index)
     }
 }

@@ -1,22 +1,43 @@
 import Foundation
 import Firebase
+import RealmSwift
 
-struct Service {
-    let id: String
-    let name: String
-    let description: String
-    let category: Category
-    let created: Timestamp
-    let price: Double
-    let image: String
+enum Category: String {
+    case windows = "Windows"
+    case android = "Android"
+    case apple = "Apple"
+    case other = "Andere"
 }
 
-enum Category {
-    case Windows, Android, Apple, Andere
-}
+class Service : Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var shortDescription: String = ""
+    @objc dynamic var categoryRaw: String = ""
+    var category: Category {
+        get {
+            return Category(rawValue: categoryRaw) ?? .other
+        }
+        set {
+            categoryRaw = newValue.rawValue
+        }
+    }
+    @objc dynamic var created: Date = Date.init()
+    @objc dynamic var price: Double = 0.0
+    @objc dynamic var image: String = ""
+    
+    convenience init(id: String, name: String, description: String, created: Date, price: Double, image: String, category: Category = .other) {
+        self.init()
+        self.id = id
+        self.name = name
+        self.shortDescription = description
+        self.category = category
+        self.created = created
+        self.price = price
+        self.image = image
+    }
 
-extension Service {
-    init?(dictionary: [String : Any], id: String) {
+    convenience init?(dictionary: [String : Any], id: String) {
         guard let name = dictionary["name"] as? String,
             let description = dictionary["description"] as? String,
             let category = dictionary["category"] as? Int,
@@ -25,14 +46,6 @@ extension Service {
             let image = dictionary["image"] as? String
             else { return nil }
         
-        self.init(
-            id: id,
-            name: name,
-            description: description,
-            category: FirebaseUtils.convertIntToCategory(int: category),
-            created: created,
-            price: price,
-            image: image
-        )
+        self.init(id: id, name: name, description: description, created: created.dateValue(), price: price, image: image, category: FirebaseUtils.convertIntToCategory(int: category))
     }
 }

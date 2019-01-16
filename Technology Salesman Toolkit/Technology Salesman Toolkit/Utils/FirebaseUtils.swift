@@ -16,10 +16,10 @@ struct FirebaseUtils {
     
     static func convertIntToCategory(int: Int) -> Category {
         switch int {
-            case 0: return Category.Windows
-            case 1: return Category.Android
-            case 2: return Category.Apple
-            default: return Category.Andere
+            case 0: return Category.windows
+            case 1: return Category.android
+            case 2: return Category.apple
+            default: return Category.other
         }
     }
     

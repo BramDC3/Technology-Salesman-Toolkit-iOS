@@ -27,6 +27,13 @@ class ServiceDetailViewController: UIViewController {
         FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.updateUI(with: instructions)
+                DispatchQueue.main.async {
+                    InstructionRepository.deleteInstructions(fromService: self.serviceId)
+                    InstructionRepository.addInstructions(instructions: instructions)
+                }
+            } else {
+                let instructions = InstructionRepository.getInstructions(fromService: self.serviceId)
+                self.updateUI(with: Array(instructions))
             }
         }
     }
@@ -50,7 +57,7 @@ class ServiceDetailViewController: UIViewController {
             let slide = Bundle.main.loadNibNamed("InstructionView", owner: self, options: nil)?.first as! InstructionView
             
             slide.titleLabel.text = instruction.title
-            slide.descriptionLabel.text = instruction.description
+            slide.descriptionLabel.text = instruction.shortDescription
             slide.contentLabel.text = StringUtils.formatInstructionsList(withContent: instruction.content)
             
             if let link = URL(string: instruction.image) {
