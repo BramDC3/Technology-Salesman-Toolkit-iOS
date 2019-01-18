@@ -20,115 +20,168 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen" translatesAutoresizingMaskIntoConstraints="NO" id="2PL-rw-0tr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="biglogo" highlightedImage="globe_earth" translatesAutoresizingMaskIntoConstraints="NO" id="TeU-5z-mET">
-                                <rect key="frame" x="77" y="57" width="220" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-vL-NFy" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
-                                <rect key="frame" x="66" y="404" width="242" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="pencil"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-NE-41o" customClass="GIDSignInButton">
-                                <rect key="frame" x="66" y="518" width="242" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Meld aan met Google"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-tg-AV0">
-                                <rect key="frame" x="0.0" y="617" width="375" height="30"/>
-                                <state key="normal" title="Heb je nog geen account? Klik hier!">
-                                    <color key="titleColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2iY-aO-kqn" kind="show" id="TU6-IZ-es5"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-ue-MUo" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
-                                <rect key="frame" x="66" y="356" width="242" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user_male"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technology Salesman Toolkit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEQ-NQ-quS">
-                                <rect key="frame" x="60" y="285" width="264" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m89-OO-WP3">
-                                <rect key="frame" x="66" y="452" width="242" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.45098039215686275" green="0.63137254901960782" blue="0.7803921568627451" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Meld aan"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.27058823529411763" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEI-Pf-rhm"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgZ-vm-GBq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNx-nY-Ofv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hRA-st-RxV">
+                                                <rect key="frame" x="55.5" y="24" width="264" height="251"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biglogo" highlightedImage="globe_earth" translatesAutoresizingMaskIntoConstraints="NO" id="TeU-5z-mET">
+                                                        <rect key="frame" x="22" y="0.0" width="220" height="220"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="220" id="Obh-0a-EJV"/>
+                                                            <constraint firstAttribute="height" constant="220" id="tHV-XR-rwn"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology Salesman Toolkit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEQ-NQ-quS">
+                                                        <rect key="frame" x="0.0" y="228" width="264" height="23"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zEY-mJ-jvq">
+                                                <rect key="frame" x="44" y="331" width="287" height="148"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-ue-MUo" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="i0R-tb-gHK"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user_male"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-vL-NFy" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="52" width="287" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="YQP-cy-3C2"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lock"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m89-OO-WP3">
+                                                        <rect key="frame" x="0.0" y="104" width="287" height="44"/>
+                                                        <color key="backgroundColor" red="0.45098039215686275" green="0.63137254901960782" blue="0.7803921568627451" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="qpd-fw-caY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Meld aan"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.27058823529411763" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEI-Pf-rhm"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-NE-41o" customClass="GIDSignInButton">
+                                                <rect key="frame" x="44" y="515" width="287" height="30"/>
+                                                <state key="normal" title="Meld aan met Google"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-tg-AV0">
+                                                <rect key="frame" x="73" y="589" width="229" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Heb je nog geen account? Klik hier!">
+                                                    <color key="titleColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="2iY-aO-kqn" kind="show" id="TU6-IZ-es5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zEY-mJ-jvq" secondAttribute="trailing" constant="44" id="5cR-pb-tp9"/>
+                                            <constraint firstItem="SXs-NE-41o" firstAttribute="top" secondItem="zEY-mJ-jvq" secondAttribute="bottom" constant="36" id="8I1-jT-c6j"/>
+                                            <constraint firstItem="zEY-mJ-jvq" firstAttribute="centerX" secondItem="nNx-nY-Ofv" secondAttribute="centerX" id="CXo-EU-Q8U"/>
+                                            <constraint firstItem="SXs-NE-41o" firstAttribute="centerX" secondItem="nNx-nY-Ofv" secondAttribute="centerX" id="CtX-yk-zf6"/>
+                                            <constraint firstItem="SXs-NE-41o" firstAttribute="leading" secondItem="nNx-nY-Ofv" secondAttribute="leading" constant="44" id="GWp-Yt-PAw"/>
+                                            <constraint firstItem="xNg-tg-AV0" firstAttribute="centerX" secondItem="nNx-nY-Ofv" secondAttribute="centerX" id="LLo-JX-bQz"/>
+                                            <constraint firstAttribute="bottom" secondItem="xNg-tg-AV0" secondAttribute="bottom" constant="16" id="O5N-pM-J2E"/>
+                                            <constraint firstAttribute="trailing" secondItem="SXs-NE-41o" secondAttribute="trailing" constant="44" id="QkC-js-plc"/>
+                                            <constraint firstItem="zEY-mJ-jvq" firstAttribute="top" secondItem="hRA-st-RxV" secondAttribute="bottom" constant="56" id="Urf-pM-gRF"/>
+                                            <constraint firstItem="hRA-st-RxV" firstAttribute="top" secondItem="nNx-nY-Ofv" secondAttribute="top" constant="24" id="aWa-og-lnJ"/>
+                                            <constraint firstItem="hRA-st-RxV" firstAttribute="centerX" secondItem="nNx-nY-Ofv" secondAttribute="centerX" id="hB9-x4-Xv1"/>
+                                            <constraint firstItem="zEY-mJ-jvq" firstAttribute="leading" secondItem="nNx-nY-Ofv" secondAttribute="leading" constant="44" id="oXg-PZ-BwN"/>
+                                            <constraint firstItem="zEY-mJ-jvq" firstAttribute="centerX" secondItem="nNx-nY-Ofv" secondAttribute="centerX" id="puE-iu-XSn"/>
+                                            <constraint firstItem="xNg-tg-AV0" firstAttribute="top" secondItem="SXs-NE-41o" secondAttribute="bottom" constant="44" id="wLA-oK-ybK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nNx-nY-Ofv" secondAttribute="trailing" id="OZ9-GV-cNz"/>
+                                    <constraint firstAttribute="bottom" secondItem="nNx-nY-Ofv" secondAttribute="bottom" id="RDZ-j5-M8s"/>
+                                    <constraint firstItem="nNx-nY-Ofv" firstAttribute="leading" secondItem="WgZ-vm-GBq" secondAttribute="leading" id="w3f-hs-LvZ"/>
+                                    <constraint firstItem="nNx-nY-Ofv" firstAttribute="top" secondItem="WgZ-vm-GBq" secondAttribute="top" id="zx4-yS-Zl1"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xNg-tg-AV0" secondAttribute="trailing" id="4Cf-1B-n5s"/>
+                            <constraint firstAttribute="trailing" secondItem="WgZ-vm-GBq" secondAttribute="trailing" id="4Nw-Si-cBu"/>
+                            <constraint firstItem="WgZ-vm-GBq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4ea-V8-I54"/>
                             <constraint firstItem="2PL-rw-0tr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AZo-ft-lac"/>
                             <constraint firstItem="2PL-rw-0tr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FmG-yG-WWx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xNg-tg-AV0" secondAttribute="bottom" constant="20" id="hsE-Ue-aPJ"/>
+                            <constraint firstItem="WgZ-vm-GBq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LD1-VN-3mJ"/>
+                            <constraint firstItem="nNx-nY-Ofv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gbG-09-lyz"/>
                             <constraint firstItem="2PL-rw-0tr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jNU-W7-zhR"/>
                             <constraint firstItem="2PL-rw-0tr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="prg-YR-sZr"/>
-                            <constraint firstItem="xNg-tg-AV0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tnz-Aj-sJG"/>
+                            <constraint firstItem="WgZ-vm-GBq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rc1-55-1mz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -214,60 +267,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Wg-ULR">
-                                <rect key="frame" x="78" y="72.5" width="219" height="522"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-QZ-X2M">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-6U-ZoN">
-                                        <rect key="frame" x="0.0" y="0.0" width="219" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Familienaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-dh-Ax9">
-                                        <rect key="frame" x="0.0" y="82" width="219" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whG-wy-dEJ">
-                                        <rect key="frame" x="0.0" y="164" width="219" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-vS-P1I">
-                                        <rect key="frame" x="0.0" y="246" width="219" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Herhaal wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEy-F9-Wo3">
-                                        <rect key="frame" x="0.0" y="328" width="219" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUX-VR-Pic">
-                                        <rect key="frame" x="0.0" y="410" width="219" height="30"/>
-                                        <state key="normal" title="Maak account aan"/>
-                                        <connections>
-                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="gKI-xO-rHM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-mG-a4B">
-                                        <rect key="frame" x="0.0" y="492" width="219" height="30"/>
-                                        <state key="normal" title="Heb je al een account? Klik hier!"/>
-                                        <connections>
-                                            <segue destination="B9q-jw-n5i" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="31f-tI-6f8"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0l-U9-qa6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Wg-ULR">
+                                                <rect key="frame" x="78" y="0.0" width="219" height="850"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-6U-ZoN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viC-0E-tUp">
+                                                        <rect key="frame" x="0.0" y="82" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERS-OB-wtd">
+                                                        <rect key="frame" x="0.0" y="164" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pba-jl-Oea">
+                                                        <rect key="frame" x="0.0" y="246" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L4m-FR-W5i">
+                                                        <rect key="frame" x="0.0" y="328" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Familienaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-dh-Ax9">
+                                                        <rect key="frame" x="0.0" y="410" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whG-wy-dEJ">
+                                                        <rect key="frame" x="0.0" y="492" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-vS-P1I">
+                                                        <rect key="frame" x="0.0" y="574" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Herhaal wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEy-F9-Wo3">
+                                                        <rect key="frame" x="0.0" y="656" width="219" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUX-VR-Pic">
+                                                        <rect key="frame" x="0.0" y="738" width="219" height="30"/>
+                                                        <state key="normal" title="Maak account aan"/>
+                                                        <connections>
+                                                            <action selector="createAccountButtonTapped:" destination="2iY-aO-kqn" eventType="touchUpInside" id="gKI-xO-rHM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-mG-a4B">
+                                                        <rect key="frame" x="0.0" y="820" width="219" height="30"/>
+                                                        <state key="normal" title="Heb je al een account? Klik hier!"/>
+                                                        <connections>
+                                                            <segue destination="B9q-jw-n5i" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="31f-tI-6f8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="top" secondItem="l0l-U9-qa6" secondAttribute="top" id="euT-ED-P1B"/>
+                                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="centerX" secondItem="l0l-U9-qa6" secondAttribute="centerX" id="fk8-RJ-8pS"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Pp-Wg-ULR" secondAttribute="bottom" id="jeg-9Q-0sY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="l0l-U9-qa6" secondAttribute="bottom" id="Bwx-wL-xEv"/>
+                                    <constraint firstAttribute="trailing" secondItem="l0l-U9-qa6" secondAttribute="trailing" id="Ndy-j2-Y1c"/>
+                                    <constraint firstItem="l0l-U9-qa6" firstAttribute="top" secondItem="ZCd-QZ-X2M" secondAttribute="top" id="T17-RK-YDj"/>
+                                    <constraint firstItem="l0l-U9-qa6" firstAttribute="leading" secondItem="ZCd-QZ-X2M" secondAttribute="leading" id="d5l-2P-gqE"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="centerX" secondItem="t8g-qt-IWH" secondAttribute="centerX" id="JM4-Aq-ctv"/>
-                            <constraint firstItem="6Pp-Wg-ULR" firstAttribute="centerY" secondItem="t8g-qt-IWH" secondAttribute="centerY" id="z5t-Hi-3Uy"/>
+                            <constraint firstItem="Dqu-un-F5e" firstAttribute="trailing" secondItem="ZCd-QZ-X2M" secondAttribute="trailing" id="OBa-cB-HJA"/>
+                            <constraint firstItem="ZCd-QZ-X2M" firstAttribute="top" secondItem="Dqu-un-F5e" secondAttribute="top" id="div-BZ-2aW"/>
+                            <constraint firstItem="l0l-U9-qa6" firstAttribute="width" secondItem="t8g-qt-IWH" secondAttribute="width" id="elJ-Z4-NOQ"/>
+                            <constraint firstItem="ZCd-QZ-X2M" firstAttribute="leading" secondItem="Dqu-un-F5e" secondAttribute="leading" id="glW-Ki-ns6"/>
+                            <constraint firstItem="Dqu-un-F5e" firstAttribute="bottom" secondItem="ZCd-QZ-X2M" secondAttribute="bottom" id="tY0-4B-ZYa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dqu-un-F5e"/>
                     </view>
@@ -341,6 +443,7 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="rocket" id="TCn-Ih-sAo">
                                                     <rect key="frame" x="16" y="6" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -608,6 +711,7 @@
         <image name="default_profile_image" width="590" height="619"/>
         <image name="globe_earth" width="30" height="30"/>
         <image name="list" width="24" height="20"/>
+        <image name="lock" width="30" height="30"/>
         <image name="pencil" width="30" height="30"/>
         <image name="rocket" width="30" height="30"/>
         <image name="security_checked" width="30" height="30"/>
