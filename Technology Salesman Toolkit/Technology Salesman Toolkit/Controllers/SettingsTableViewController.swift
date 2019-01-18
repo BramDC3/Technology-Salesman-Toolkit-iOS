@@ -17,26 +17,21 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var index = indexPath.row
         if indexPath.section == 1 {
-            index += 2
+            index += 1
         }
         
         switch index {
-        case 0:
-            displaySignOutAlert()
-        case 1:
-            print(1)
-        case 2:
-            displaySendSuggestionAlert()
-        case 3:
-            if let link = URL(string: StringConstants.privacyPolicy) {
-                UIApplication.shared.open(link)
-            }
-        case 4:
-            if let link = URL(string: StringConstants.website) {
-                UIApplication.shared.open(link)
-            }
-        default:
-            fatalError("The selected action doesn't exist.")
+        case 0: displaySignOutAlert()
+        case 1: displaySendSuggestionAlert()
+        case 2: openWebPage(withLink: StringConstants.privacyPolicy)
+        case 3: openWebPage(withLink: StringConstants.website)
+        default: fatalError("The selected action doesn't exist.")
+        }
+    }
+    
+    private func openWebPage(withLink link: String) {
+        if let link = URL(string: link) {
+            UIApplication.shared.open(link)
         }
     }
     
