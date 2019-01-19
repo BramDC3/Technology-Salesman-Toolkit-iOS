@@ -681,7 +681,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBQ-1G-76m">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-HY-HtM">
                                                 <rect key="frame" x="77.5" y="24" width="220" height="255"/>
@@ -701,11 +701,11 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U">
-                                                <rect key="frame" x="44" y="335" width="287" height="148"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JmY-20-02U" customClass="BaseUIStackView" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="335" width="295" height="168"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-jo-x7s" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                                        <rect key="frame" x="10" y="10" width="275" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="DSP-sn-XgW"/>
                                                         </constraints>
@@ -732,7 +732,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Familienaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkS-sW-4yv" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="52" width="287" height="44"/>
+                                                        <rect key="frame" x="10" y="62" width="275" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="fAR-fM-8ww"/>
                                                         </constraints>
@@ -759,7 +759,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-Wb-QNB" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="104" width="287" height="44"/>
+                                                        <rect key="frame" x="10" y="114" width="275" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="JBL-Wx-sEk"/>
                                                         </constraints>
@@ -786,7 +786,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-ek-cbX">
-                                                        <rect key="frame" x="0.0" y="148" width="287" height="44"/>
+                                                        <rect key="frame" x="10" y="158" width="275" height="44"/>
                                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63137254899999995" blue="0.78039215689999997" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="6kB-3W-ZZD"/>
@@ -810,9 +810,25 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" white="1" alpha="0.27000000000000002" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quA-GL-RKO">
-                                                <rect key="frame" x="85.5" y="527" width="204" height="29"/>
+                                                <rect key="frame" x="85.5" y="547" width="204" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Wachtwoord wijzigen? Klik hier!">
                                                     <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -825,14 +841,22 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="quA-GL-RKO" firstAttribute="centerX" secondItem="uBQ-1G-76m" secondAttribute="centerX" id="JyO-Mf-kQz"/>
-                                            <constraint firstAttribute="trailing" secondItem="JmY-20-02U" secondAttribute="trailing" constant="44" id="OVZ-fC-Odc"/>
+                                            <constraint firstAttribute="trailing" secondItem="JmY-20-02U" secondAttribute="trailing" constant="40" id="OVZ-fC-Odc"/>
                                             <constraint firstAttribute="bottom" secondItem="quA-GL-RKO" secondAttribute="bottom" constant="16" id="W8c-tq-jht"/>
                                             <constraint firstItem="quA-GL-RKO" firstAttribute="top" secondItem="JmY-20-02U" secondAttribute="bottom" constant="44" id="WQ4-iW-vV3"/>
                                             <constraint firstItem="1Bb-HY-HtM" firstAttribute="top" secondItem="uBQ-1G-76m" secondAttribute="top" constant="24" id="bhL-lm-fZU"/>
                                             <constraint firstItem="1Bb-HY-HtM" firstAttribute="centerX" secondItem="uBQ-1G-76m" secondAttribute="centerX" id="fev-fR-3tv"/>
                                             <constraint firstItem="JmY-20-02U" firstAttribute="top" secondItem="1Bb-HY-HtM" secondAttribute="bottom" constant="56" id="hdI-6S-u5m"/>
-                                            <constraint firstItem="JmY-20-02U" firstAttribute="leading" secondItem="uBQ-1G-76m" secondAttribute="leading" constant="44" id="ta6-MW-eMM"/>
+                                            <constraint firstItem="JmY-20-02U" firstAttribute="leading" secondItem="uBQ-1G-76m" secondAttribute="leading" constant="40" id="ta6-MW-eMM"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>

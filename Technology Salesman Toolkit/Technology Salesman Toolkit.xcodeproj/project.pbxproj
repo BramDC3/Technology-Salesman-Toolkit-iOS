@@ -34,6 +34,7 @@
 		11B3E37F219C1BD7008A0890 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E37E219C1BD7008A0890 /* Service.swift */; };
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
+		11C8BC4621F331F2008285AC /* BaseUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8BC4521F331F2008285AC /* BaseUIStackView.swift */; };
 		11F3F4FD21EE4E91000E0206 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F4FC21EE4E91000E0206 /* StringConstants.swift */; };
 		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
 		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
@@ -69,6 +70,7 @@
 		11C834512188659A00FE1808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11C834532188659A00FE1808 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11C8345D2188659B00FE1808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C8BC4521F331F2008285AC /* BaseUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIStackView.swift; sourceTree = "<group>"; };
 		11F3F4FC21EE4E91000E0206 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		243E3DEFF752D6F612D8B0AF /* Pods-Technology Salesman Toolkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technology Salesman Toolkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				1119F01521F114B400F506C6 /* BaseUIView.swift */,
 				11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */,
 				11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */,
+				11C8BC4521F331F2008285AC /* BaseUIStackView.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				1118FF6921DCE9A600EFCCFB /* InstructionView.swift in Sources */,
 				112BB32121EF0E1500E556E1 /* ServiceRepository.swift in Sources */,
 				117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */,
+				11C8BC4621F331F2008285AC /* BaseUIStackView.swift in Sources */,
 				110BFE4621EA562600AE3132 /* ProfileViewController.swift in Sources */,
 				1119F01421F114AA00F506C6 /* BaseFormField.swift in Sources */,
 				1138354D21B69F9500FE2702 /* FirestoreAPI.swift in Sources */,
