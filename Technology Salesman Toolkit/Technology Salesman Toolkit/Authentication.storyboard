@@ -24,33 +24,49 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMk-5h-KmY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O1Y-pv-KL0">
-                                                <rect key="frame" x="55.5" y="24" width="264" height="251"/>
+                                                <rect key="frame" x="50" y="24" width="275" height="306"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biglogo" highlightedImage="globe_earth" translatesAutoresizingMaskIntoConstraints="NO" id="B0Z-r3-Duw">
-                                                        <rect key="frame" x="22" y="0.0" width="220" height="220"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="275"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="220" id="N2c-4j-bpy"/>
-                                                            <constraint firstAttribute="width" constant="220" id="WcS-jP-xnR"/>
+                                                            <constraint firstAttribute="width" constant="350" id="CRM-gt-BLH"/>
+                                                            <constraint firstAttribute="height" constant="350" id="vCO-T3-j8W"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="CRM-gt-BLH"/>
+                                                                <exclude reference="vCO-T3-j8W"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <include reference="CRM-gt-BLH"/>
+                                                                <include reference="vCO-T3-j8W"/>
+                                                            </mask>
+                                                        </variation>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology Salesman Toolkit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RE5-UZ-u4n">
-                                                        <rect key="frame" x="0.0" y="228" width="264" height="23"/>
+                                                        <rect key="frame" x="5.5" y="283" width="264" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xxJ-oC-jTm">
-                                                <rect key="frame" x="44" y="331" width="287" height="148"/>
+                                                <rect key="frame" x="44" y="386" width="287" height="148"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHW-Wg-N5d" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="66" id="aEc-M6-CJW"/>
                                                             <constraint firstAttribute="height" constant="44" id="jC2-A7-BRu"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
@@ -74,12 +90,25 @@
                                                                 <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="aEc-M6-CJW"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <include reference="aEc-M6-CJW"/>
+                                                                <exclude reference="jC2-A7-BRu"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p0F-XC-Cxq" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="52" width="287" height="44"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="DnT-0U-ssF"/>
+                                                            <constraint firstAttribute="height" constant="66" id="SrQ-uO-3Wv"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,12 +131,25 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="SrQ-uO-3Wv"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <exclude reference="DnT-0U-ssF"/>
+                                                                <include reference="SrQ-uO-3Wv"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-9N-cEb">
                                                         <rect key="frame" x="0.0" y="104" width="287" height="44"/>
                                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63137254899999995" blue="0.78039215689999997" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="PxT-BJ-Iht"/>
+                                                            <constraint firstAttribute="height" constant="66" id="pbF-kM-Bq2"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,22 +165,38 @@
                                                                 <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="pbF-kM-Bq2"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <mask key="constraints">
+                                                                <exclude reference="PxT-BJ-Iht"/>
+                                                                <include reference="pbF-kM-Bq2"/>
+                                                            </mask>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="signInButtonTapped:" destination="rkp-Wx-Zmy" eventType="touchUpInside" id="ztc-Kh-Yq2"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <variation key="widthClass=regular" spacing="16"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDh-Wk-Bm3" customClass="GIDSignInButton">
-                                                <rect key="frame" x="44" y="515" width="287" height="30"/>
+                                                <rect key="frame" x="44" y="570" width="287" height="30"/>
                                                 <state key="normal" title="Meld aan met Google"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7o-pu-cfM">
-                                                <rect key="frame" x="73" y="589" width="229" height="29"/>
+                                                <rect key="frame" x="73" y="644" width="229" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Heb je nog geen account? Klik hier!">
                                                     <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="9gQ-YH-q4F" kind="show" id="Eid-u0-669"/>
                                                 </connections>
@@ -153,14 +211,42 @@
                                             <constraint firstItem="xxJ-oC-jTm" firstAttribute="leading" secondItem="kMk-5h-KmY" secondAttribute="leading" constant="44" id="L8F-IU-imk"/>
                                             <constraint firstItem="kDh-Wk-Bm3" firstAttribute="centerX" secondItem="kMk-5h-KmY" secondAttribute="centerX" id="LDs-4R-iHZ"/>
                                             <constraint firstItem="O1Y-pv-KL0" firstAttribute="top" secondItem="kMk-5h-KmY" secondAttribute="top" constant="24" id="P5i-4s-SiH"/>
+                                            <constraint firstItem="xxJ-oC-jTm" firstAttribute="leading" secondItem="kMk-5h-KmY" secondAttribute="leading" constant="150" id="RDb-qX-bki"/>
                                             <constraint firstAttribute="trailing" secondItem="kDh-Wk-Bm3" secondAttribute="trailing" constant="44" id="Uah-RH-EOB"/>
                                             <constraint firstItem="P7o-pu-cfM" firstAttribute="top" secondItem="kDh-Wk-Bm3" secondAttribute="bottom" constant="44" id="Zbs-ab-VHt"/>
+                                            <constraint firstItem="kDh-Wk-Bm3" firstAttribute="leading" secondItem="kMk-5h-KmY" secondAttribute="leading" constant="150" id="bT0-t0-Doa"/>
                                             <constraint firstItem="xxJ-oC-jTm" firstAttribute="top" secondItem="O1Y-pv-KL0" secondAttribute="bottom" constant="56" id="dZM-T4-r2d"/>
+                                            <constraint firstAttribute="trailing" secondItem="kDh-Wk-Bm3" secondAttribute="trailing" constant="150" id="hX1-SO-Ofk"/>
                                             <constraint firstItem="xxJ-oC-jTm" firstAttribute="centerX" secondItem="kMk-5h-KmY" secondAttribute="centerX" id="kRe-aS-8OZ"/>
                                             <constraint firstAttribute="bottom" secondItem="P7o-pu-cfM" secondAttribute="bottom" constant="16" id="keC-li-uYX"/>
                                             <constraint firstItem="P7o-pu-cfM" firstAttribute="centerX" secondItem="kMk-5h-KmY" secondAttribute="centerX" id="ks1-aj-8Vj"/>
+                                            <constraint firstItem="O1Y-pv-KL0" firstAttribute="top" secondItem="kMk-5h-KmY" secondAttribute="top" constant="72" id="nbw-7z-mZr"/>
                                             <constraint firstItem="kDh-Wk-Bm3" firstAttribute="leading" secondItem="kMk-5h-KmY" secondAttribute="leading" constant="44" id="rXZ-g5-rgY"/>
+                                            <constraint firstAttribute="trailing" secondItem="xxJ-oC-jTm" secondAttribute="trailing" constant="150" id="xlF-BX-m5D"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nbw-7z-mZr"/>
+                                                <exclude reference="RDb-qX-bki"/>
+                                                <exclude reference="xlF-BX-m5D"/>
+                                                <exclude reference="bT0-t0-Doa"/>
+                                                <exclude reference="hX1-SO-Ofk"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="P5i-4s-SiH"/>
+                                                <include reference="nbw-7z-mZr"/>
+                                                <exclude reference="0of-XN-Hpv"/>
+                                                <exclude reference="L8F-IU-imk"/>
+                                                <include reference="RDb-qX-bki"/>
+                                                <include reference="xlF-BX-m5D"/>
+                                                <exclude reference="Uah-RH-EOB"/>
+                                                <include reference="bT0-t0-Doa"/>
+                                                <include reference="hX1-SO-Ofk"/>
+                                                <exclude reference="rXZ-g5-rgY"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -219,14 +305,33 @@
                                                         <rect key="frame" x="22" y="0.0" width="220" height="220"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="220" id="8bj-Kh-asO"/>
+                                                            <constraint firstAttribute="height" constant="350" id="CbN-1C-iio"/>
+                                                            <constraint firstAttribute="width" constant="350" id="Etu-mH-OqQ"/>
                                                             <constraint firstAttribute="width" constant="220" id="QpZ-dC-6qG"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="CbN-1C-iio"/>
+                                                                <exclude reference="Etu-mH-OqQ"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <exclude reference="8bj-Kh-asO"/>
+                                                                <include reference="CbN-1C-iio"/>
+                                                                <include reference="Etu-mH-OqQ"/>
+                                                                <exclude reference="QpZ-dC-6qG"/>
+                                                            </mask>
+                                                        </variation>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology Salesman Toolkit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ha-gO-x1O">
                                                         <rect key="frame" x="0.0" y="228" width="264" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -236,6 +341,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lUN-QV-mi0" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="66" id="0Ml-fh-lRi"/>
                                                             <constraint firstAttribute="height" constant="44" id="vAy-nu-vjm"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
@@ -259,10 +365,23 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="0Ml-fh-lRi"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <include reference="0Ml-fh-lRi"/>
+                                                                <exclude reference="vAy-nu-vjm"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Familienaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGw-5r-gFt" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="52" width="287" height="44"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="66" id="5L4-55-bmb"/>
                                                             <constraint firstAttribute="height" constant="44" id="ozj-Iq-AkM"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
@@ -286,11 +405,24 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="5L4-55-bmb"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <include reference="5L4-55-bmb"/>
+                                                                <exclude reference="ozj-Iq-AkM"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwT-0Z-v97" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="104" width="287" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="FcX-K4-ZCQ"/>
+                                                            <constraint firstAttribute="height" constant="66" id="WdA-Xx-Ywp"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -313,10 +445,23 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="WdA-Xx-Ywp"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <exclude reference="FcX-K4-ZCQ"/>
+                                                                <include reference="WdA-Xx-Ywp"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3no-SD-xse" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="156" width="287" height="44"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="66" id="IRn-tq-g1h"/>
                                                             <constraint firstAttribute="height" constant="44" id="TgA-k0-yxO"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
@@ -340,11 +485,24 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="IRn-tq-g1h"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <include reference="IRn-tq-g1h"/>
+                                                                <exclude reference="TgA-k0-yxO"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Herhaal wachtwoord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n3P-7w-FEy" customClass="FormUITextField" customModule="Technology_Salesman_Toolkit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="208" width="287" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="R1e-BZ-hcx"/>
+                                                            <constraint firstAttribute="height" constant="66" id="jL5-aC-qnH"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -367,11 +525,24 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="jL5-aC-qnH"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <mask key="constraints">
+                                                                <exclude reference="R1e-BZ-hcx"/>
+                                                                <include reference="jL5-aC-qnH"/>
+                                                            </mask>
+                                                        </variation>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-Jt-FGC">
                                                         <rect key="frame" x="0.0" y="260" width="287" height="44"/>
                                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63137254899999995" blue="0.78039215689999997" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="66" id="89I-yx-1J0"/>
                                                             <constraint firstAttribute="height" constant="44" id="mBB-gB-6OB"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -389,11 +560,24 @@
                                                                 <color key="value" red="0.27058823529999998" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="89I-yx-1J0"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <mask key="constraints">
+                                                                <include reference="89I-yx-1J0"/>
+                                                                <exclude reference="mBB-gB-6OB"/>
+                                                            </mask>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="createAccountButtonTapped:" destination="9gQ-YH-q4F" eventType="touchUpInside" id="Jrz-TD-rZf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <variation key="widthClass=regular" spacing="16"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEx-3g-4nJ">
                                                 <rect key="frame" x="84" y="670" width="207" height="29"/>
@@ -401,6 +585,9 @@
                                                 <state key="normal" title="Heb je al een account? Klik hier!">
                                                     <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="Nk0-VR-PWo" kind="unwind" unwindAction="unwindToLoginWithUnwindSegue:" id="De4-EE-EII"/>
                                                 </connections>
@@ -410,14 +597,34 @@
                                         <constraints>
                                             <constraint firstItem="acq-gV-4cI" firstAttribute="centerX" secondItem="I1l-Cb-HNa" secondAttribute="centerX" id="13w-yG-ape"/>
                                             <constraint firstAttribute="trailing" secondItem="acq-gV-4cI" secondAttribute="trailing" constant="44" id="By3-7h-e57"/>
+                                            <constraint firstAttribute="trailing" secondItem="acq-gV-4cI" secondAttribute="trailing" constant="150" id="CV8-AF-AX8"/>
                                             <constraint firstItem="XEx-3g-4nJ" firstAttribute="bottom" secondItem="acq-gV-4cI" secondAttribute="bottom" constant="64" id="K1C-Vv-q4M"/>
                                             <constraint firstItem="acq-gV-4cI" firstAttribute="leading" secondItem="I1l-Cb-HNa" secondAttribute="leading" constant="44" id="KDt-9s-fTr"/>
                                             <constraint firstItem="cRI-SY-2Qw" firstAttribute="centerX" secondItem="I1l-Cb-HNa" secondAttribute="centerX" id="UhM-Hx-VID"/>
                                             <constraint firstItem="acq-gV-4cI" firstAttribute="top" secondItem="cRI-SY-2Qw" secondAttribute="bottom" constant="56" id="Yw8-LN-LgN"/>
                                             <constraint firstAttribute="bottom" secondItem="XEx-3g-4nJ" secondAttribute="bottom" constant="16" id="fVA-eX-TSb"/>
+                                            <constraint firstItem="acq-gV-4cI" firstAttribute="leading" secondItem="I1l-Cb-HNa" secondAttribute="leading" constant="150" id="ntj-CT-rTI"/>
+                                            <constraint firstItem="cRI-SY-2Qw" firstAttribute="top" secondItem="I1l-Cb-HNa" secondAttribute="top" constant="72" id="pTt-xd-TIH"/>
                                             <constraint firstItem="cRI-SY-2Qw" firstAttribute="top" secondItem="I1l-Cb-HNa" secondAttribute="top" constant="24" id="sju-XG-IWe"/>
                                             <constraint firstItem="XEx-3g-4nJ" firstAttribute="centerX" secondItem="I1l-Cb-HNa" secondAttribute="centerX" id="spP-N6-0oT"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pTt-xd-TIH"/>
+                                                <exclude reference="CV8-AF-AX8"/>
+                                                <exclude reference="ntj-CT-rTI"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="pTt-xd-TIH"/>
+                                                <exclude reference="sju-XG-IWe"/>
+                                                <exclude reference="By3-7h-e57"/>
+                                                <include reference="CV8-AF-AX8"/>
+                                                <exclude reference="KDt-9s-fTr"/>
+                                                <include reference="ntj-CT-rTI"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
