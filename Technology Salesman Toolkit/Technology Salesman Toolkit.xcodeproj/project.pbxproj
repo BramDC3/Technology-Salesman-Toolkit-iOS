@@ -27,6 +27,7 @@
 		1150293821BB1CCE00DF9A64 /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150293721BB1CCE00DF9A64 /* ValidationUtils.swift */; };
 		11557B76219A40B900F16A04 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11557B75219A40B900F16A04 /* RegistrationViewController.swift */; };
 		11692C8621BAEE5200C1E6C0 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */; };
+		117913F621F383BF00480D51 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117913F521F383BF00480D51 /* Authentication.storyboard */; };
 		117F19C521BFA97400476E09 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C421BFA97400476E09 /* Instruction.swift */; };
 		117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */; };
 		118AEEC921F3368600A11D49 /* WebsiteUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AEEC821F3368600A11D49 /* WebsiteUtils.swift */; };
@@ -64,6 +65,7 @@
 		1150293721BB1CCE00DF9A64 /* ValidationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		11557B75219A40B900F16A04 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
+		117913F521F383BF00480D51 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		117F19C421BFA97400476E09 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		118AEEC821F3368600A11D49 /* WebsiteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteUtils.swift; sourceTree = "<group>"; };
@@ -219,8 +221,9 @@
 				1118FF6721DCE99000EFCCFB /* Views */,
 				11C834512188659A00FE1808 /* AppDelegate.swift */,
 				11A0D12E21DD359300FF3213 /* Assets.xcassets */,
-				1119F01921F114DA00F506C6 /* Main.storyboard */,
 				1119F01721F114CF00F506C6 /* LaunchScreen.storyboard */,
+				117913F521F383BF00480D51 /* Authentication.storyboard */,
+				1119F01921F114DA00F506C6 /* Main.storyboard */,
 				11C8345D2188659B00FE1808 /* Info.plist */,
 				11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */,
 			);
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */,
+				117913F621F383BF00480D51 /* Authentication.storyboard in Resources */,
 				114B0E8421DD947B00B8A6C0 /* ServiceTableViewCell.xib in Resources */,
 				1118FF6B21DCEA0100EFCCFB /* InstructionView.xib in Resources */,
 				1119F01A21F114DB00F506C6 /* Main.storyboard in Resources */,

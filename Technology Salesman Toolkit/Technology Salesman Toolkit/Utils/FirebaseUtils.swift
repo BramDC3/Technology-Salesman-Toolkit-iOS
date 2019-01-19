@@ -44,14 +44,14 @@ struct FirebaseUtils {
         }
     }
     
-    static func navigateToLogin() {
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+    static func navigateToLoginView() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
+        return storyboard.instantiateInitialViewController()!
     }
     
-    static func navigateToServiceTableView() {
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+    static func navigateToServiceTableView() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateInitialViewController()!
     }
     
 }
