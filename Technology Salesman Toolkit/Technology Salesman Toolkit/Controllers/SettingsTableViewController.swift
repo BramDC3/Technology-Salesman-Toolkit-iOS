@@ -21,17 +21,11 @@ class SettingsTableViewController: UITableViewController {
         }
         
         switch index {
-        case 0: displaySignOutAlert()
-        case 1: displaySendSuggestionAlert()
-        case 2: openWebPage(withLink: StringConstants.privacyPolicy)
-        case 3: openWebPage(withLink: StringConstants.website)
-        default: fatalError("The selected action doesn't exist.")
-        }
-    }
-    
-    private func openWebPage(withLink link: String) {
-        if let link = URL(string: link) {
-            UIApplication.shared.open(link)
+            case 0: displaySignOutAlert()
+            case 1: displaySendSuggestionAlert()
+            case 2: WebsiteUtils.openWebsite(withLink: StringConstants.privacyPolicy)
+            case 3: WebsiteUtils.openWebsite(withLink: StringConstants.website)
+            default: fatalError("The selected action doesn't exist.")
         }
     }
     

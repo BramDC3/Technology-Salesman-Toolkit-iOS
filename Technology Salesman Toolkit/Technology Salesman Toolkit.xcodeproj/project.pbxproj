@@ -28,6 +28,7 @@
 		11692C8621BAEE5200C1E6C0 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */; };
 		117F19C521BFA97400476E09 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C421BFA97400476E09 /* Instruction.swift */; };
 		117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */; };
+		118AEEC921F3368600A11D49 /* WebsiteUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AEEC821F3368600A11D49 /* WebsiteUtils.swift */; };
 		11A0D12F21DD359300FF3213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0D12E21DD359300FF3213 /* Assets.xcassets */; };
 		11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */; };
 		11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */; };
@@ -62,6 +63,7 @@
 		11692C8521BAEE5200C1E6C0 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		117F19C421BFA97400476E09 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		118AEEC821F3368600A11D49 /* WebsiteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteUtils.swift; sourceTree = "<group>"; };
 		11A0D12E21DD359300FF3213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddedLabel.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				1150293421BB145500DF9A64 /* AlertUtils.swift */,
 				1150293721BB1CCE00DF9A64 /* ValidationUtils.swift */,
 				1103825D21EA8E82008FE8D4 /* StringUtils.swift */,
+				118AEEC821F3368600A11D49 /* WebsiteUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				110BFE4621EA562600AE3132 /* ProfileViewController.swift in Sources */,
 				1119F01421F114AA00F506C6 /* BaseFormField.swift in Sources */,
 				1138354D21B69F9500FE2702 /* FirestoreAPI.swift in Sources */,
+				118AEEC921F3368600A11D49 /* WebsiteUtils.swift in Sources */,
 				11C834542188659A00FE1808 /* LoginViewController.swift in Sources */,
 				1119F01621F114B400F506C6 /* BaseUIView.swift in Sources */,
 				1150293821BB1CCE00DF9A64 /* ValidationUtils.swift in Sources */,

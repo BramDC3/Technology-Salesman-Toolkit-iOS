@@ -39,4 +39,12 @@ struct AlertUtils {
         return alert
     }
     
+    static func createPrivacyPolicyAlert(withTitle title: String, andMessage message: String, andFunction function: @escaping () -> Void) -> UIAlertController {
+        let alert = createFunctionalAlert(withTitle: title, andMessage: message, andFunction: function)
+        alert.addAction(UIAlertAction(title: StringConstants.alertPrivacyPolicy, style: .default, handler: { (action) in
+            WebsiteUtils.openWebsite(withLink: StringConstants.privacyPolicy)
+        }))
+        return alert
+    }
+    
 }

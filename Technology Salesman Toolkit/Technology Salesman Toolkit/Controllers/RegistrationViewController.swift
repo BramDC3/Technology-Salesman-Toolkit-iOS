@@ -12,12 +12,17 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func createAccountButtonTapped(_ sender: UIButton) { createAccount() }
+    @IBAction func createAccountButtonTapped(_ sender: UIButton) { displayPrivacyPolicyAlert() }
+    
+    private func displayPrivacyPolicyAlert() {
+        guard registrationFormIsValid() else { return }
+        
+        let alert = AlertUtils.createPrivacyPolicyAlert(withTitle: StringConstants.privacyPolicyAlert, andMessage: StringConstants.messagePrivacyPolicy, andFunction: createAccount)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // https://firebase.google.com/docs/auth/ios/custom-auth
     private func createAccount() {
-        guard registrationFormIsValid() else { return }
-        
         FirebaseUtils.mAuth.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
             guard authResult?.user != nil else {
                 let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.errorAccountNotCreated)
@@ -33,6 +38,7 @@ class RegistrationViewController: UIViewController {
                     print("Error committing change request: %@", error)
                 } else {
                     authResult?.user.sendEmailVerification()
+                    FirebaseUtils.signOut()
                     let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleRegistrationAlert, andMessage: StringConstants.messageVerificationEmailSent)
                     self.present(alert, animated: true, completion: nil)
                 }

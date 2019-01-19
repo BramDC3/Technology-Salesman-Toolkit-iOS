@@ -16,6 +16,8 @@ struct StringConstants {
     // RegistrationViewController
     static let titleRegistrationAlert = "Account aanmaken"
     static let messageVerificationEmailSent = "Uw account werd succesvol aangemaakt en er werd een bevestigingsmail naar uw e-mailadres verzonden."
+    static let privacyPolicyAlert = "Privacybeleid"
+    static let messagePrivacyPolicy = "Door op 'Ja' te drukken, gaat u akkoord met het privacybeleid en zal uw account aangemaakt worden. Er zal een bevestigingsmail naar uw e-mailadres verzonden worden."
     
     // SettingsViewController
     static let titleSettingsSignOutAlert = "Afmelden"
@@ -40,6 +42,7 @@ struct StringConstants {
     static let alertNo = "Nee"
     static let alertCancel = "Annuleren"
     static let alertSend = "Verzend"
+    static let alertPrivacyPolicy = "Bekijk privacybeleid"
     
     // Errors
     static let errorUnexpected = "Er is een onverwachte fout opgetreden tijdens het aanmelden."
