@@ -16,8 +16,8 @@
 		1119F01821F114CF00F506C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1119F01721F114CF00F506C6 /* LaunchScreen.storyboard */; };
 		1119F01A21F114DB00F506C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1119F01921F114DA00F506C6 /* Main.storyboard */; };
 		11293EF021DF742300B23209 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11293EEF21DF742300B23209 /* SettingsTableViewController.swift */; };
-		112BB32121EF0E1500E556E1 /* ServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BB32021EF0E1500E556E1 /* ServiceRepository.swift */; };
-		112BB32321EF112D00E556E1 /* InstructionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BB32221EF112D00E556E1 /* InstructionRepository.swift */; };
+		112BB32121EF0E1500E556E1 /* ServiceDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BB32021EF0E1500E556E1 /* ServiceDao.swift */; };
+		112BB32321EF112D00E556E1 /* InstructionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BB32221EF112D00E556E1 /* InstructionDao.swift */; };
 		1138354D21B69F9500FE2702 /* FirestoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138354C21B69F9500FE2702 /* FirestoreAPI.swift */; };
 		113FA80821F34F3F00E27F21 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FA80721F34F3F00E27F21 /* ServiceController.swift */; };
 		1148378F21BABB9A00A1B045 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148378E21BABB9A00A1B045 /* FirebaseUtils.swift */; };
@@ -33,6 +33,7 @@
 		11A0D12F21DD359300FF3213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0D12E21DD359300FF3213 /* Assets.xcassets */; };
 		11A0D13221DD39B700FF3213 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */; };
 		11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */; };
+		11AF731921F3786500ABD9A4 /* InstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF731821F3786500ABD9A4 /* InstructionController.swift */; };
 		11B3E37F219C1BD7008A0890 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E37E219C1BD7008A0890 /* Service.swift */; };
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
@@ -52,8 +53,8 @@
 		1119F01721F114CF00F506C6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1119F01921F114DA00F506C6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		11293EEF21DF742300B23209 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		112BB32021EF0E1500E556E1 /* ServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRepository.swift; sourceTree = "<group>"; };
-		112BB32221EF112D00E556E1 /* InstructionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionRepository.swift; sourceTree = "<group>"; };
+		112BB32021EF0E1500E556E1 /* ServiceDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDao.swift; sourceTree = "<group>"; };
+		112BB32221EF112D00E556E1 /* InstructionDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDao.swift; sourceTree = "<group>"; };
 		1138354C21B69F9500FE2702 /* FirestoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPI.swift; sourceTree = "<group>"; };
 		113FA80721F34F3F00E27F21 /* ServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceController.swift; sourceTree = "<group>"; };
 		1148378E21BABB9A00A1B045 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		11A0D12E21DD359300FF3213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddedLabel.swift; sourceTree = "<group>"; };
+		11AF731821F3786500ABD9A4 /* InstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionController.swift; sourceTree = "<group>"; };
 		11B3E37E219C1BD7008A0890 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		11C8344E2188659A00FE1808 /* Technology Salesman Toolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technology Salesman Toolkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C834512188659A00FE1808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,13 +105,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		112BB31F21EF0DF400E556E1 /* Repositories */ = {
+		112BB31F21EF0DF400E556E1 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				112BB32021EF0E1500E556E1 /* ServiceRepository.swift */,
-				112BB32221EF112D00E556E1 /* InstructionRepository.swift */,
+				112BB32021EF0E1500E556E1 /* ServiceDao.swift */,
+				112BB32221EF112D00E556E1 /* InstructionDao.swift */,
 			);
-			path = Repositories;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		1138354B21B69F5900FE2702 /* Network */ = {
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				113FA80721F34F3F00E27F21 /* ServiceController.swift */,
+				11AF731821F3786500ABD9A4 /* InstructionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,9 +211,9 @@
 				114B0E8021DD946000B8A6C0 /* Cells */,
 				11F3F4FB21EE4E6B000E0206 /* Constants */,
 				113FA80621F34F1A00E27F21 /* Controllers */,
+				112BB31F21EF0DF400E556E1 /* Database */,
 				11B3E37D219C1BBC008A0890 /* Models */,
 				1138354B21B69F5900FE2702 /* Network */,
-				112BB31F21EF0DF400E556E1 /* Repositories */,
 				1148378D21BABB8A00A1B045 /* Utils */,
 				11557B74219A2C7F00F16A04 /* ViewControllers */,
 				1118FF6721DCE99000EFCCFB /* Views */,
@@ -410,11 +413,12 @@
 				11557B76219A40B900F16A04 /* RegistrationViewController.swift in Sources */,
 				113FA80821F34F3F00E27F21 /* ServiceController.swift in Sources */,
 				11692C8621BAEE5200C1E6C0 /* ServiceTableViewController.swift in Sources */,
-				112BB32321EF112D00E556E1 /* InstructionRepository.swift in Sources */,
+				112BB32321EF112D00E556E1 /* InstructionDao.swift in Sources */,
 				11B3E37F219C1BD7008A0890 /* Service.swift in Sources */,
 				1150293521BB145500DF9A64 /* AlertUtils.swift in Sources */,
 				1118FF6921DCE9A600EFCCFB /* InstructionView.swift in Sources */,
-				112BB32121EF0E1500E556E1 /* ServiceRepository.swift in Sources */,
+				112BB32121EF0E1500E556E1 /* ServiceDao.swift in Sources */,
+				11AF731921F3786500ABD9A4 /* InstructionController.swift in Sources */,
 				117F19C721BFCDDF00476E09 /* ServiceDetailViewController.swift in Sources */,
 				11C8BC4621F331F2008285AC /* BaseUIStackView.swift in Sources */,
 				110BFE4621EA562600AE3132 /* ProfileViewController.swift in Sources */,
