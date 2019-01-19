@@ -139,11 +139,8 @@ class ProfileViewController: UIViewController {
             
             FirebaseUtils.firebaseUser!.sendEmailVerification() { (error) in
                 if error == nil {
-                    let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.successEmailAddressChange)
-                    self.present(alert, animated: true, completion: nil)
-                    
                     FirebaseUtils.signOut()
-                    FirebaseUtils.navigateToLogin()
+                    self.present(FirebaseUtils.navigateToLoginView(), animated: true, completion: nil)
                 } else {
                     let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.errorEmailAddressNotChanged)
                     self.present(alert, animated: true, completion: nil)

@@ -33,7 +33,6 @@ struct StringConstants {
     static let messageEditProfile = "Bent u zeker dat u uw profiel wilt wijzigen?"
     static let messageChangePassword = "Bent u zeker dat u uw wachtwoord wilt wijzigen? Als u op 'Ja' drukt, zal er een e-mail verzonden worden waarmee uw wachtwoord opnieuw ingesteld kan worden."
     static let successNameChange = "Uw naam werd succesvol gewijzigd."
-    static let successEmailAddressChange = "Uw e-mailadres werd succesvol gewijzigd."
     static let messageChangePasswordEmailSent = "Er werd een e-mail verzonden naar uw e-mailadres waarmee u uw wachtwoord kunt wijzigen."
     
     // Alerts

@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        if FirebaseUtils.firebaseUser == nil {
-            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+        if FirebaseUtils.firebaseUser == nil || !FirebaseUtils.firebaseUser!.isEmailVerified {
+            let rootController = UIStoryboard(name: "Authentication", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
             self.window?.rootViewController = rootController
         }
         

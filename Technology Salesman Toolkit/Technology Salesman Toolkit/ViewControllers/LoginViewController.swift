@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             }
             
             FirebaseUtils.firebaseUser = user.user
-            FirebaseUtils.navigateToServiceTableView()
+            self.present(FirebaseUtils.navigateToServiceTableView(), animated: true, completion: nil)
         }
     }
     

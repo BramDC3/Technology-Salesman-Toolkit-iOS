@@ -32,7 +32,7 @@ class SettingsTableViewController: UITableViewController {
     private func displaySignOutAlert() {
         let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleSettingsSignOutAlert, andMessage: StringConstants.messageSignOut, andFunction: {
             FirebaseUtils.signOut()
-            FirebaseUtils.navigateToLogin()
+            self.present(FirebaseUtils.navigateToLoginView(), animated: true, completion: nil)
         })
         self.present(alert, animated: true)
     }
