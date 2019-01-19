@@ -9,25 +9,19 @@
 import Foundation
 import RealmSwift
 
-struct InstructionRepository {
+struct InstructionDao {
     
-    static func getInstructions(fromService serviceId: String) -> Results<Instruction> {
+    static func getInstructions() -> Results<Instruction> {
         let realm = try! Realm()
-        let instructions = realm.objects(Instruction.self).filter("serviceId == %@", serviceId)
+        let instructions = realm.objects(Instruction.self)
         return instructions
     }
     
     static func addInstructions(instructions: [Instruction]) {
         let realm = try! Realm()
         try! realm.write {
+            realm.delete(getInstructions().filter { $0.serviceId == instructions.first?.serviceId })
             realm.add(instructions)
-        }
-    }
-    
-    static func deleteInstructions(fromService serviceId: String) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.delete(getInstructions(fromService: serviceId))
         }
     }
     

@@ -37,7 +37,7 @@ class ServiceController {
             self.isLoading = false
             if let services = services {
                 self.allServices = services
-                ServiceRepository.addServices(services: services)
+                ServiceDao.addServices(services: services)
             } else if !self.realmServices.isEmpty {
                 self.allServices = self.realmServices
             }
@@ -46,7 +46,7 @@ class ServiceController {
     }
     
     private func fetchServicesFromRealm() {
-        realmServices = Array(ServiceRepository.getServices())
+        realmServices = Array(ServiceDao.getServices())
         if allServices.isEmpty && isLoading == false {
             allServices = realmServices
             refreshServiceList()

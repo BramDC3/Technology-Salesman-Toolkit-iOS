@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-struct ServiceRepository {
+struct ServiceDao {
     
     static func getServices() -> Results<Service> {
         let realm = try! Realm()

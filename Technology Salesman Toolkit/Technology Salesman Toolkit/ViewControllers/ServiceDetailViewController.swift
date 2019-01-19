@@ -23,27 +23,22 @@ class ServiceDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchInstructions(fromService: service.id) { (instructions) in
-            if let instructions = instructions {
-                self.updateUI(with: instructions)
-                DispatchQueue.main.async {
-                    InstructionRepository.deleteInstructions(fromService: self.service.id)
-                    InstructionRepository.addInstructions(instructions: instructions)
-                }
-            } else {
-                let instructions = InstructionRepository.getInstructions(fromService: self.service.id)
-                self.updateUI(with: Array(instructions))
-            }
-        }
+        InstructionController.shared.setServiceId(toServiceId: service.id)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotification(_:)), name: .didFetchInstructions, object: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setupSlideScrollView()
     }
     
-    private func updateUI(with instructions: [Instruction]) {
+    @objc private func onReceiveNotification(_ notification: Notification) {
+        updateUI()
+    }
+    
+    private func updateUI() {
         DispatchQueue.main.async {
-            self.instructions = instructions
+            self.instructions = InstructionController.shared.getInstructions()
             self.instructionSlides = self.createInstructionSlides()
             self.setupSlideScrollView()
         }
