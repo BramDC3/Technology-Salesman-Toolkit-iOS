@@ -72,9 +72,6 @@ class ServiceTableViewController: UITableViewController {
             FirebaseUtils.fetchImage(url: link) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
-                    if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath != indexPath {
-                        return
-                    }
                     cell.logoImageView.image = image
                 }
             }
