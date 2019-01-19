@@ -10,8 +10,7 @@ import UIKit
 
 class ServiceDetailViewController: UIViewController {
     
-    var serviceId: String!
-    var serviceName: String!
+    var service: Service!
     var instructions: [Instruction] = []
     var instructionSlides: [InstructionView] = []
 
@@ -20,19 +19,19 @@ class ServiceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = serviceName
+        self.title = service.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
+        FirestoreAPI.fetchInstructions(fromService: service.id) { (instructions) in
             if let instructions = instructions {
                 self.updateUI(with: instructions)
                 DispatchQueue.main.async {
-                    InstructionRepository.deleteInstructions(fromService: self.serviceId)
+                    InstructionRepository.deleteInstructions(fromService: self.service.id)
                     InstructionRepository.addInstructions(instructions: instructions)
                 }
             } else {
-                let instructions = InstructionRepository.getInstructions(fromService: self.serviceId)
+                let instructions = InstructionRepository.getInstructions(fromService: self.service.id)
                 self.updateUI(with: Array(instructions))
             }
         }

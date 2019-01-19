@@ -19,18 +19,16 @@ class ServiceTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FirestoreAPI.fetchServices() { (services) in
-            if let services = services {
-                self.updateUI(with: services)
-                DispatchQueue.main.async {
-                    ServiceRepository.deleteAllServices()
-                    ServiceRepository.addServices(services: services)
-                }
-            } else {
-                let services = ServiceRepository.getServices()
-                self.updateUI(with: Array(services))
-            }
+        if !ServiceController.shared.filteredServices.isEmpty {
+            updateUI()
         }
+        
+        // https://learnappmaking.com/notification-center-how-to-swift/
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotification(_:)), name: .didFetchServices, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .didFetchServices, object: nil)
     }
     
     // The number of sections, 1 is default but I want to clearly define this table view
@@ -81,14 +79,17 @@ class ServiceTableViewController: UITableViewController {
         if segue.identifier == "GoToServiceDetail" {
             let index = (sender as! IndexPath).row
             let detailViewController = segue.destination as! ServiceDetailViewController
-            detailViewController.serviceId = services[index].id
-            detailViewController.serviceName = services[index].name
+            detailViewController.service = services[index]
         }
     }
     
-    private func updateUI(with services: [Service]) {
+    @objc private func onReceiveNotification(_ notification: Notification) {
+        updateUI()
+    }
+    
+    private func updateUI() {
         DispatchQueue.main.async {
-            self.services = services
+            self.services = ServiceController.shared.filteredServices
             self.tableView.reloadData()
         }
     }
