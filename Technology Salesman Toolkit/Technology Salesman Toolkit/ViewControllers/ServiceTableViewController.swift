@@ -11,15 +11,27 @@ import UIKit
 class ServiceTableViewController: UITableViewController {
     
     var services: [Service] = []
+    
+    // https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "ServiceCell")
+        
+        // https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Zoek hier..."
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !ServiceController.shared.filteredServices.isEmpty {
+        if !ServiceController.shared.getServices().isEmpty {
             updateUI()
         }
         
@@ -89,9 +101,20 @@ class ServiceTableViewController: UITableViewController {
     
     private func updateUI() {
         DispatchQueue.main.async {
-            self.services = ServiceController.shared.filteredServices
+            self.services = ServiceController.shared.getServices()
             self.tableView.reloadData()
         }
     }
+    
+    private func filterByName(withName name: String) {
+        ServiceController.shared.setNameFilter(toName: name)
+    }
 
+}
+
+// https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
+extension ServiceTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterByName(withName: searchController.searchBar.text!)
+    }
 }
