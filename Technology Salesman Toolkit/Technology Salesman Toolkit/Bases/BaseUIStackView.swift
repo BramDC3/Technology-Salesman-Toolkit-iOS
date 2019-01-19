@@ -17,7 +17,7 @@ class BaseUIStackView: UIStackView {
         get { return color }
         set {
             color = newValue
-            self.setNeedsLayout() // EDIT 2017-02-03 thank you @BruceLiu
+            self.setNeedsLayout()
         }
     }
     
