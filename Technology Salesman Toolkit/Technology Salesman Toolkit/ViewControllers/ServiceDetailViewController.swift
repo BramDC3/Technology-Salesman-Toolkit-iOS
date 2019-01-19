@@ -29,7 +29,9 @@ class ServiceDetailViewController: UIViewController {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        setupSlideScrollView()
+        DispatchQueue.main.async {
+            self.setupSlideScrollView()
+        }
     }
     
     @objc private func onReceiveNotification(_ notification: Notification) {
