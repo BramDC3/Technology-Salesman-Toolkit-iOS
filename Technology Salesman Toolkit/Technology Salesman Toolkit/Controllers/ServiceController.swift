@@ -14,14 +14,21 @@ class ServiceController {
     private var allServices: [Service] = []
     private var realmServices: [Service] = []
     private var isLoading: Bool = false
-    
-    var filteredServices: [Service] = []
-    var nameFilter: String = ""
-    var categoryFilter: Category? = nil
+    private var filteredServices: [Service] = []
+    private var nameFilter: String = ""
     
     init() {
         fetchServicesFromFirestore()
         fetchServicesFromRealm()
+    }
+    
+    func getServices() -> [Service] {
+        return filteredServices
+    }
+    
+    func setNameFilter(toName name: String) {
+        nameFilter = name
+        refreshServiceList()
     }
     
     private func fetchServicesFromFirestore() {
@@ -48,8 +55,7 @@ class ServiceController {
     
     private func refreshServiceList() {
         filteredServices = allServices.filter {
-            (nameFilter == "" || $0.name.lowercased().contains(nameFilter.lowercased())) &&
-            (categoryFilter == nil || $0.category == categoryFilter)
+            nameFilter == "" || $0.name.lowercased().contains(nameFilter.lowercased())
         }
         postNotification()
     }
