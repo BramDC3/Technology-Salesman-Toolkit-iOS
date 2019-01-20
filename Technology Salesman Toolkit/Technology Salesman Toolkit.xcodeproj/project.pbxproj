@@ -37,6 +37,8 @@
 		11A2D87C21DE45C3001294C0 /* BasePaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */; };
 		11A6D71021F4BE6300C63346 /* DatabaseTestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D70F21F4BE6300C63346 /* DatabaseTestUtils.swift */; };
 		11A6D71221F4C4F400C63346 /* InstructionDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6D71121F4C4F400C63346 /* InstructionDaoTests.swift */; };
+		11A7CC1721F517B4002EB14B /* ServiceDaoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A7CC1621F517B4002EB14B /* ServiceDaoMock.swift */; };
+		11A7CC1921F51BA9002EB14B /* InstructionDaoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A7CC1821F51BA9002EB14B /* InstructionDaoMock.swift */; };
 		11AF731921F3786500ABD9A4 /* InstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF731821F3786500ABD9A4 /* InstructionController.swift */; };
 		11B3E37F219C1BD7008A0890 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E37E219C1BD7008A0890 /* Service.swift */; };
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
@@ -45,19 +47,11 @@
 		11F3F4FD21EE4E91000E0206 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F4FC21EE4E91000E0206 /* StringConstants.swift */; };
 		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
 		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
-		4BFA1149E3C272131FCD7487 /* Pods_Technology_Salesman_Toolkit_UI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B397584DB33547D54FB7A60 /* Pods_Technology_Salesman_Toolkit_UI_Tests.framework */; };
 		6A1A349AB545482D0E6D61F1 /* Pods_Technology_Salesman_Toolkit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4EABB8BBE6E4FD0FB7DF78 /* Pods_Technology_Salesman_Toolkit_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		11785FDC21F4B7D4005DA510 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11C834462188659A00FE1808 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11C8344D2188659A00FE1808;
-			remoteInfo = "Technology Salesman Toolkit";
-		};
-		11999B4621F50A840094C69C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11C834462188659A00FE1808 /* Project object */;
 			proxyType = 1;
@@ -94,12 +88,13 @@
 		117F19C421BFA97400476E09 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		117F19C621BFCDDF00476E09 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		118AEEC821F3368600A11D49 /* WebsiteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteUtils.swift; sourceTree = "<group>"; };
-		11999B4121F50A840094C69C /* Technology Salesman Toolkit UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Technology Salesman Toolkit UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0D12E21DD359300FF3213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddedLabel.swift; sourceTree = "<group>"; };
 		11A6D70F21F4BE6300C63346 /* DatabaseTestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTestUtils.swift; sourceTree = "<group>"; };
 		11A6D71121F4C4F400C63346 /* InstructionDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDaoTests.swift; sourceTree = "<group>"; };
+		11A7CC1621F517B4002EB14B /* ServiceDaoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDaoMock.swift; sourceTree = "<group>"; };
+		11A7CC1821F51BA9002EB14B /* InstructionDaoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDaoMock.swift; sourceTree = "<group>"; };
 		11AF731821F3786500ABD9A4 /* InstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionController.swift; sourceTree = "<group>"; };
 		11B3E37E219C1BD7008A0890 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		11C8344E2188659A00FE1808 /* Technology Salesman Toolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technology Salesman Toolkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,14 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1A349AB545482D0E6D61F1 /* Pods_Technology_Salesman_Toolkit_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11999B3E21F50A840094C69C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4BFA1149E3C272131FCD7487 /* Pods_Technology_Salesman_Toolkit_UI_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				11A6D70F21F4BE6300C63346 /* DatabaseTestUtils.swift */,
+				11A7CC1621F517B4002EB14B /* ServiceDaoMock.swift */,
+				11A7CC1821F51BA9002EB14B /* InstructionDaoMock.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -284,7 +273,6 @@
 			children = (
 				11C8344E2188659A00FE1808 /* Technology Salesman Toolkit.app */,
 				11785FD721F4B7D4005DA510 /* Technology Salesman Toolkit Tests.xctest */,
-				11999B4121F50A840094C69C /* Technology Salesman Toolkit UI Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,25 +357,6 @@
 			productReference = 11785FD721F4B7D4005DA510 /* Technology Salesman Toolkit Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		11999B4021F50A840094C69C /* Technology Salesman Toolkit UI Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11999B4821F50A840094C69C /* Build configuration list for PBXNativeTarget "Technology Salesman Toolkit UI Tests" */;
-			buildPhases = (
-				FD4628937774602DE72D361A /* [CP] Check Pods Manifest.lock */,
-				11999B3D21F50A840094C69C /* Sources */,
-				11999B3E21F50A840094C69C /* Frameworks */,
-				11999B3F21F50A840094C69C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11999B4721F50A840094C69C /* PBXTargetDependency */,
-			);
-			name = "Technology Salesman Toolkit UI Tests";
-			productName = "Technology Salesman Toolkit UI Tests";
-			productReference = 11999B4121F50A840094C69C /* Technology Salesman Toolkit UI Tests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		11C8344D2188659A00FE1808 /* Technology Salesman Toolkit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11C834602188659B00FE1808 /* Build configuration list for PBXNativeTarget "Technology Salesman Toolkit" */;
@@ -422,10 +391,6 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 11C8344D2188659A00FE1808;
 					};
-					11999B4021F50A840094C69C = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 11C8344D2188659A00FE1808;
-					};
 					11C8344D2188659A00FE1808 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -446,20 +411,12 @@
 			targets = (
 				11C8344D2188659A00FE1808 /* Technology Salesman Toolkit */,
 				11785FD621F4B7D4005DA510 /* Technology Salesman Toolkit Tests */,
-				11999B4021F50A840094C69C /* Technology Salesman Toolkit UI Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		11785FD521F4B7D4005DA510 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11999B3F21F50A840094C69C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -581,28 +538,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Technology Salesman Toolkit/Pods-Technology Salesman Toolkit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD4628937774602DE72D361A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Technology Salesman Toolkit UI Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -610,16 +545,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A7CC1921F51BA9002EB14B /* InstructionDaoMock.swift in Sources */,
 				11785FE421F4B83A005DA510 /* ServiceDaoTests.swift in Sources */,
 				11A6D71021F4BE6300C63346 /* DatabaseTestUtils.swift in Sources */,
+				11A7CC1721F517B4002EB14B /* ServiceDaoMock.swift in Sources */,
 				11A6D71221F4C4F400C63346 /* InstructionDaoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11999B3D21F50A840094C69C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,11 +595,6 @@
 			target = 11C8344D2188659A00FE1808 /* Technology Salesman Toolkit */;
 			targetProxy = 11785FDC21F4B7D4005DA510 /* PBXContainerItemProxy */;
 		};
-		11999B4721F50A840094C69C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11C8344D2188659A00FE1808 /* Technology Salesman Toolkit */;
-			targetProxy = 11999B4621F50A840094C69C /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -712,46 +637,6 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Technology Salesman Toolkit.app/Technology Salesman Toolkit";
-			};
-			name = Release;
-		};
-		11999B4921F50A840094C69C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B79785E9D27D3DE8C6B064E9 /* Pods-Technology Salesman Toolkit UI Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Technology Salesman Toolkit UI Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bramdeconinck.Technology-Salesman-Toolkit-UI-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Technology Salesman Toolkit";
-			};
-			name = Debug;
-		};
-		11999B4A21F50A840094C69C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC84AB7CFD730628E288C1C9 /* Pods-Technology Salesman Toolkit UI Tests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Technology Salesman Toolkit UI Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bramdeconinck.Technology-Salesman-Toolkit-UI-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Technology Salesman Toolkit";
 			};
 			name = Release;
 		};
@@ -915,15 +800,6 @@
 			buildConfigurations = (
 				11785FDE21F4B7D4005DA510 /* Debug */,
 				11785FDF21F4B7D4005DA510 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11999B4821F50A840094C69C /* Build configuration list for PBXNativeTarget "Technology Salesman Toolkit UI Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11999B4921F50A840094C69C /* Debug */,
-				11999B4A21F50A840094C69C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

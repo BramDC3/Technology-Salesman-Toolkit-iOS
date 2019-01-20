@@ -59,11 +59,11 @@ class ServiceController {
      retrieved from the network.
      */
     private func fetchServicesFromNetwork() {
-        FirestoreAPI.fetchServices() { (services) in
+        FirestoreAPI.instance.fetchServices() { (services) in
 
             if let services = services {
                 self.allServices = services
-                ServiceDao.add(services)
+                ServiceDao.instance.add(services)
             } else if !self.localServices.isEmpty {
                 self.allServices = self.localServices
             }
@@ -79,7 +79,7 @@ class ServiceController {
      is done and none are retrieved.
      */
     private func fetchServicesFromLocalDatabase() {
-        localServices = Array(ServiceDao.getServices())
+        localServices = Array(ServiceDao.instance.getServices())
         
         if allServices.isEmpty {
             allServices = localServices
