@@ -9,16 +9,22 @@ import RealmSwift
  guided me during the creation of the Realm database and its models.
  SOURCE: https://github.com/Pieter-hogent/RealmProjectManager
  */
-struct InstructionDao {
+class InstructionDao {
+    
+    /**
+     Instance of the instruction dao so it can be accessed anywhere
+     and it will always be the same instruction dao.
+     */
+    static let instance = InstructionDao()
     
     /**
      Retrieving all instructions from the local database.
      
      - Returns: A list of persisted instructions.
      */
-    static func getInstructions() -> Results<Instruction> {
+    func getInstructions(from serviceId: String) -> Results<Instruction> {
         let realm = try! Realm()
-        let instructions = realm.objects(Instruction.self)
+        let instructions = realm.objects(Instruction.self).filter("serviceId = %@", serviceId)
         return instructions
     }
     
@@ -30,10 +36,10 @@ struct InstructionDao {
      
      - Parameter instructions: Instructions that need to be persisted.
      */
-    static func add(_ instructions: [Instruction]) {
+    func add(_ instructions: [Instruction]) {
         let realm = try! Realm()
         try! realm.write {
-            realm.delete(getInstructions().filter { $0.serviceId == instructions.first?.serviceId })
+            if !instructions.isEmpty { realm.delete(getInstructions(from: instructions.first!.serviceId)) }
             realm.add(instructions)
         }
     }

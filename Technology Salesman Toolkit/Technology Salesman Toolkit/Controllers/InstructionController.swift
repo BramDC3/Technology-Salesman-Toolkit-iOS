@@ -15,19 +15,8 @@ class InstructionController {
     /// List of all instructions, that should remain untouched.
     private var instructions: [Instruction] = []
     
-    /// List of all instructions coming from the local database.
-    private var localInstructions: [Instruction] = []
-    
     /// Identifier of the service which instructions are needed.
     private var serviceId: String = ""
-    
-    /**
-     Initializes a new instructions controller
-     and starts fetching instructions the local database.
-     */
-    init() {
-        fetchInstructionsFromLocalDatabase()
-    }
     
     /**
      Getter that retrieves the list instructions of a certain service.
@@ -48,6 +37,7 @@ class InstructionController {
     func setServiceId(to serviceId: String) {
         instructions.removeAll()
         self.serviceId = serviceId
+        fetchInstructionsFromLocalDatabase()
         fetchInstructionsFromNetwork()
     }
     
@@ -58,27 +48,24 @@ class InstructionController {
      none were retrieved from the network.
      */
     private func fetchInstructionsFromNetwork() {
-        FirestoreAPI.fetchInstructions(with: serviceId) { (instructions) in
+        FirestoreAPI.instance.fetchInstructions(with: serviceId) { (instructions) in
             if let instructions = instructions {
-                self.instructions = instructions
-                InstructionDao.add(instructions)
-            } else {
-                let filteredInstructions = self.localInstructions.filter {
-                    $0.serviceId == self.serviceId
+                if self.instructions.isEmpty {
+                    self.instructions = instructions
+                    self.postNotification()
                 }
-                
-                if !filteredInstructions.isEmpty {
-                    self.instructions = filteredInstructions
-                }
+                InstructionDao.instance.add(instructions)
             }
-            
-            self.postNotification()
         }
     }
     
-    /// Fetching all instructions from the local database.
+    /// Fetching instructions from the local database of a certain service.
     private func fetchInstructionsFromLocalDatabase() {
-        localInstructions = Array(InstructionDao.getInstructions())
+        let instructions = InstructionDao.instance.getInstructions(from: serviceId)
+        if !instructions.isEmpty {
+            self.instructions = Array(instructions)
+            self.postNotification()
+        }
     }
     
     /// Posts a notification to notify observers of any changes to the list of instructions.

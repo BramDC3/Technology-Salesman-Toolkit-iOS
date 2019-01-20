@@ -9,10 +9,16 @@ import Firebase
  SOURCE: https://firebase.google.com/docs/firestore/query-data/get-data
  SOURCE: https://firebase.google.com/docs/firestore/manage-data/add-data
  */
-struct FirestoreAPI {
+class FirestoreAPI {
+    
+    /**
+     Instance of the firestore api so it can be accessed anywhere
+     and it will always be the same firestore api.
+     */
+    static let instance = FirestoreAPI()
     
     /// Instance of the Firestore used for reading and writing.
-    private static let db = Firestore.firestore()
+    private let db = Firestore.firestore()
     
     /**
      Fetching all services from the Firestore.
@@ -20,7 +26,7 @@ struct FirestoreAPI {
      - Parameter completion: Function to execute after the services are fetched
                              or when an error occurs during the fetching.
      */
-    static func fetchServices(_ completion: @escaping ([Service]?) -> Void) {
+    func fetchServices(_ completion: @escaping ([Service]?) -> Void) {
         var services: [Service] = []
         
         db.collection("Services").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -50,7 +56,7 @@ struct FirestoreAPI {
         - completion: Function to execute after the instructions are fetched
                       or when an error occurs during the fetching.
      */
-    static func fetchInstructions(with serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
+    func fetchInstructions(with serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
         var instructions: [Instruction] = []
         
         db.collection("Instructions").whereField("serviceId", isEqualTo: serviceId).order(by: "index").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -80,7 +86,7 @@ struct FirestoreAPI {
         - completion: Function to execute after the suggestion is posted
                       or when an error occurred during the posting.
      */
-    static func postSuggestion(_ suggestion: String, completion: @escaping (Bool) -> Void) {
+    func postSuggestion(_ suggestion: String, completion: @escaping (Bool) -> Void) {
         db.collection("Suggestions").addDocument(data: [
             "message": suggestion,
             "sender": String(FirebaseUtils.firebaseUser!.uid)

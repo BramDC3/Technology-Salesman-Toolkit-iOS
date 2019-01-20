@@ -52,7 +52,7 @@ class SettingsTableViewController: UITableViewController {
             return
         }
         
-        FirestoreAPI.postSuggestion(suggestion) { (succes) in
+        FirestoreAPI.instance.postSuggestion(suggestion) { (succes) in
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: succes ? StringConstants.successSendSuggestion : StringConstants.errorSuggestionNotSent)
             self.present(alert, animated: true)
         }

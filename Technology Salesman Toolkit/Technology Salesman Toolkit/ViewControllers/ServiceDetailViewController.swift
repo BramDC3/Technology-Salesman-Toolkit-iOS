@@ -25,11 +25,11 @@ class ServiceDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        InstructionController.instance.setServiceId(to: service.id)
-        
         /// Adding an observer that gets notified when the instructions are fetched.
         /// SOURCE: https://learnappmaking.com/notification-center-how-to-swift/
         NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotification(_:)), name: .didFetchInstructions, object: nil)
+        
+        InstructionController.instance.setServiceId(to: service.id)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
