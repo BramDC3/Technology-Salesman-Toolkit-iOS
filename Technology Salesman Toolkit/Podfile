@@ -13,4 +13,9 @@ target 'Technology Salesman Toolkit' do
   pod 'GoogleSignIn'
   pod 'RealmSwift'
 
+  target 'Technology Salesman Toolkit Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
