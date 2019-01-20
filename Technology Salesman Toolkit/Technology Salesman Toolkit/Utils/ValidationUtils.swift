@@ -26,7 +26,7 @@ struct ValidationUtils {
      - Returns: Indication whether all provided form fields have a value or not.
      */
     static func everyFieldHasValue(_ fields: [String]) -> Bool {
-        if fields.contains("") {
+        if fields.isEmpty || fields.contains("") {
             return false
         } else {
             return true

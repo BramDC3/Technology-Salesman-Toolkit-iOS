@@ -44,6 +44,9 @@
 		11C834522188659A00FE1808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834512188659A00FE1808 /* AppDelegate.swift */; };
 		11C834542188659A00FE1808 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C834532188659A00FE1808 /* LoginViewController.swift */; };
 		11C8BC4621F331F2008285AC /* BaseUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8BC4521F331F2008285AC /* BaseUIStackView.swift */; };
+		11E79CA021F52310003881E1 /* FirebaseUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E79C9F21F52310003881E1 /* FirebaseUtilsTests.swift */; };
+		11E79CA221F52553003881E1 /* ValidationUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E79CA121F52553003881E1 /* ValidationUtilsTests.swift */; };
+		11E79CA421F526F2003881E1 /* StringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E79CA321F526F2003881E1 /* StringUtilsTests.swift */; };
 		11F3F4FD21EE4E91000E0206 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F4FC21EE4E91000E0206 /* StringConstants.swift */; };
 		11F50AB4219ABE6800E62D5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */; };
 		2BC498C9969407F3CBAE4D90 /* Pods_Technology_Salesman_Toolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD5A2F6C3880CAD53141DE2 /* Pods_Technology_Salesman_Toolkit.framework */; };
@@ -102,6 +105,9 @@
 		11C834532188659A00FE1808 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11C8345D2188659B00FE1808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11C8BC4521F331F2008285AC /* BaseUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIStackView.swift; sourceTree = "<group>"; };
+		11E79C9F21F52310003881E1 /* FirebaseUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtilsTests.swift; sourceTree = "<group>"; };
+		11E79CA121F52553003881E1 /* ValidationUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtilsTests.swift; sourceTree = "<group>"; };
+		11E79CA321F526F2003881E1 /* StringUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilsTests.swift; sourceTree = "<group>"; };
 		11F3F4FC21EE4E91000E0206 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C4EABB8BBE6E4FD0FB7DF78 /* Pods_Technology_Salesman_Toolkit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technology_Salesman_Toolkit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,8 +216,9 @@
 		11785FD821F4B7D4005DA510 /* Technology Salesman Toolkit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				11A6D70E21F4BE4B00C63346 /* Utils */,
 				11785FE221F4B826005DA510 /* Database */,
+				11E79C9E21F522CE003881E1 /* Utils */,
+				11A6D70E21F4BE4B00C63346 /* TestUtils */,
 				11785FDB21F4B7D4005DA510 /* Info.plist */,
 			);
 			path = "Technology Salesman Toolkit Tests";
@@ -238,14 +245,14 @@
 			path = Bases;
 			sourceTree = "<group>";
 		};
-		11A6D70E21F4BE4B00C63346 /* Utils */ = {
+		11A6D70E21F4BE4B00C63346 /* TestUtils */ = {
 			isa = PBXGroup;
 			children = (
 				11A6D70F21F4BE6300C63346 /* DatabaseTestUtils.swift */,
 				11A7CC1621F517B4002EB14B /* ServiceDaoMock.swift */,
 				11A7CC1821F51BA9002EB14B /* InstructionDaoMock.swift */,
 			);
-			path = Utils;
+			path = TestUtils;
 			sourceTree = "<group>";
 		};
 		11B3E37D219C1BBC008A0890 /* Models */ = {
@@ -299,6 +306,16 @@
 				11F50AB3219ABE6800E62D5E /* GoogleService-Info.plist */,
 			);
 			path = "Technology Salesman Toolkit";
+			sourceTree = "<group>";
+		};
+		11E79C9E21F522CE003881E1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11E79C9F21F52310003881E1 /* FirebaseUtilsTests.swift */,
+				11E79CA121F52553003881E1 /* ValidationUtilsTests.swift */,
+				11E79CA321F526F2003881E1 /* StringUtilsTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		11F3F4FB21EE4E6B000E0206 /* Constants */ = {
@@ -549,6 +566,9 @@
 				11785FE421F4B83A005DA510 /* ServiceDaoTests.swift in Sources */,
 				11A6D71021F4BE6300C63346 /* DatabaseTestUtils.swift in Sources */,
 				11A7CC1721F517B4002EB14B /* ServiceDaoMock.swift in Sources */,
+				11E79CA421F526F2003881E1 /* StringUtilsTests.swift in Sources */,
+				11E79CA021F52310003881E1 /* FirebaseUtilsTests.swift in Sources */,
+				11E79CA221F52553003881E1 /* ValidationUtilsTests.swift in Sources */,
 				11A6D71221F4C4F400C63346 /* InstructionDaoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
