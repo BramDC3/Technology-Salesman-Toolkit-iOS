@@ -1,21 +1,41 @@
-//
-//  AppDelegate.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 30/10/2018.
-//  Copyright © 2018 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        /// Configuring the app to work with Firebase.
+        /// SOURCE: https://firebase.google.com/docs/auth/ios/start
+        FirebaseApp.configure()
+        
+        /// Firestore settings to use Timestamps instead of Date objects.
+        /// SOURCE: https://stackoverflow.com/a/51880479
+        let settings = Firestore.firestore().settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        Firestore.firestore().settings = settings
+        
+        /// Adding cache for storing images: 25 MB of memory and 50 MB of disk space
+        let temporaryDirectory = NSTemporaryDirectory()
+        let urlCache = URLCache(memoryCapacity: 25000000, diskCapacity: 50000000, diskPath: temporaryDirectory)
+        URLCache.shared = urlCache
+        
+        /// Used for signing in with a Google account.
+        /// SOURCE: https://firebase.google.com/docs/auth/ios/google-signin
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        /// Checking whether the user is signed in or not.
+        /// If not, they are redirected to the login view.
+        if FirebaseUtils.firebaseUser == nil || !FirebaseUtils.firebaseUser!.isEmailVerified {
+            let rootController = UIStoryboard(name: "Authentication", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController")
+            self.window?.rootViewController = rootController
+        }
+        
         return true
     }
 
@@ -40,7 +60,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    /// Used for signing in with a Google account.
+    /// SOURCE: https://firebase.google.com/docs/auth/ios/google-signin
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    /// Used for creating a Firebase account with a Google account.
+    /// SOURCE: https://firebase.google.com/docs/auth/ios/google-signin
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print(error)
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
 
-
+        FirebaseUtils.mAuth.signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            // User is signed in
+            if let authResult = authResult {
+                self.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+                FirebaseUtils.firebaseUser = authResult.user
+            }
+        }
+    }
+    
 }
-
