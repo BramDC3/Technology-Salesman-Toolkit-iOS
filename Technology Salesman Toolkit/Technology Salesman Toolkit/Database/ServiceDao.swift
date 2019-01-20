@@ -9,14 +9,20 @@ import RealmSwift
  guided me during the creation of the Realm database and its models.
  SOURCE: https://github.com/Pieter-hogent/RealmProjectManager
  */
-struct ServiceDao {
+class ServiceDao {
+    
+    /**
+     Instance of the service dao so it can be accessed anywhere
+     and it will always be the same service dao.
+     */
+    static let instance = ServiceDao()
     
     /**
      Retrieving all services from the local database.
      
      - Returns: A list of persisted services.
      */
-    static func getServices() -> Results<Service> {
+    func getServices() -> Results<Service> {
         let realm = try! Realm()
         let services = realm.objects(Service.self)
         return services
@@ -29,7 +35,7 @@ struct ServiceDao {
      
      - Parameter services: Services that need to be persisted.
     */
-    static func add(_ services: [Service]) {
+    func add(_ services: [Service]) {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(getServices())
