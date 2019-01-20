@@ -1,0 +1,565 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 6,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 8,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 10,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 42,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 47,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 52,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 56,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 60,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/AppDelegate.swift",
+      "line": 70,
+      "symbol": "AppDelegate.application(_:open:sourceApplication:annotation:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseFormField.swift",
+      "line": 9,
+      "symbol": "FormUITextField.leftViewRect(forBounds:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseFormField.swift",
+      "line": 15,
+      "symbol": "FormUITextField.leftImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseFormField.swift",
+      "line": 21,
+      "symbol": "FormUITextField.leftPadding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseFormField.swift",
+      "line": 23,
+      "symbol": "FormUITextField.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseFormField.swift",
+      "line": 29,
+      "symbol": "FormUITextField.updateView()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 8,
+      "symbol": "BasePaddedLabel.topInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 9,
+      "symbol": "BasePaddedLabel.bottomInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 10,
+      "symbol": "BasePaddedLabel.leftInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 11,
+      "symbol": "BasePaddedLabel.rightInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 13,
+      "symbol": "BasePaddedLabel.drawText(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BasePaddedLabel.swift",
+      "line": 18,
+      "symbol": "BasePaddedLabel.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseTabBarController.swift",
+      "line": 8,
+      "symbol": "BaseTabBarController.defaultIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseTabBarController.swift",
+      "line": 10,
+      "symbol": "BaseTabBarController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseUIStackView.swift",
+      "line": 9,
+      "symbol": "BaseUIStackView.backgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseUIStackView.swift",
+      "line": 22,
+      "symbol": "BaseUIStackView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseUIView.swift",
+      "line": 8,
+      "symbol": "UIView.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseUIView.swift",
+      "line": 18,
+      "symbol": "UIView.borderWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Bases/BaseUIView.swift",
+      "line": 27,
+      "symbol": "UIView.borderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Cells/ServiceTableViewCell.swift",
+      "line": 19,
+      "symbol": "ServiceTableViewCell.priceLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Cells/ServiceTableViewCell.swift",
+      "line": 21,
+      "symbol": "ServiceTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Cells/ServiceTableViewCell.swift",
+      "line": 25,
+      "symbol": "ServiceTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 11,
+      "symbol": "StringConstants.titleLoginAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 14,
+      "symbol": "StringConstants.titleRegistrationAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 15,
+      "symbol": "StringConstants.messageVerificationEmailSent",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 16,
+      "symbol": "StringConstants.privacyPolicyAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 17,
+      "symbol": "StringConstants.messagePrivacyPolicy",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 20,
+      "symbol": "StringConstants.titleSettingsSignOutAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 21,
+      "symbol": "StringConstants.messageSignOut",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 22,
+      "symbol": "StringConstants.titleSettingsSendSuggestionAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 23,
+      "symbol": "StringConstants.messageSendSuggestion",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 24,
+      "symbol": "StringConstants.placeholderSendSuggestionTextfield",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 25,
+      "symbol": "StringConstants.successSendSuggestion",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 28,
+      "symbol": "StringConstants.titleProfileEditProfileAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 29,
+      "symbol": "StringConstants.titleProfileChangePasswordAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 30,
+      "symbol": "StringConstants.messageEditProfile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 31,
+      "symbol": "StringConstants.messageChangePassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 32,
+      "symbol": "StringConstants.successNameChange",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 33,
+      "symbol": "StringConstants.messageChangePasswordEmailSent",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 36,
+      "symbol": "StringConstants.alertOk",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 37,
+      "symbol": "StringConstants.alertYes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 38,
+      "symbol": "StringConstants.alertNo",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 39,
+      "symbol": "StringConstants.alertCancel",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 40,
+      "symbol": "StringConstants.alertSend",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 41,
+      "symbol": "StringConstants.alertPrivacyPolicy",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 44,
+      "symbol": "StringConstants.errorUnexpected",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 45,
+      "symbol": "StringConstants.errorAccountNotCreated",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 46,
+      "symbol": "StringConstants.errorNameNotChanged",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 47,
+      "symbol": "StringConstants.errorEmailAddressNotChanged",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 48,
+      "symbol": "StringConstants.errorChangePasswordEmailNotSent",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 49,
+      "symbol": "StringConstants.errorEmptySuggestion",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 50,
+      "symbol": "StringConstants.errorSuggestionNotSent",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 53,
+      "symbol": "StringConstants.formEmptyFields",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 54,
+      "symbol": "StringConstants.formInvalidEmailAddress",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 55,
+      "symbol": "StringConstants.formUnverifiedEmailAddress",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 56,
+      "symbol": "StringConstants.formInvalidPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 57,
+      "symbol": "StringConstants.formPasswordsDoNotMatch",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 60,
+      "symbol": "StringConstants.website",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Constants/StringConstants.swift",
+      "line": 61,
+      "symbol": "StringConstants.privacyPolicy",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Controllers/InstructionController.swift",
+      "line": 95,
+      "symbol": "Notification.Name.didFetchInstructions",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/Controllers/ServiceController.swift",
+      "line": 119,
+      "symbol": "Notification.Name.didFetchServices",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/LoginViewController.swift",
+      "line": 22,
+      "symbol": "LoginViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ProfileViewController.swift",
+      "line": 37,
+      "symbol": "ProfileViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/RegistrationViewController.swift",
+      "line": 27,
+      "symbol": "RegistrationViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceDetailViewController.swift",
+      "line": 21,
+      "symbol": "ServiceDetailViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceDetailViewController.swift",
+      "line": 27,
+      "symbol": "ServiceDetailViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceDetailViewController.swift",
+      "line": 35,
+      "symbol": "ServiceDetailViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceTableViewController.swift",
+      "line": 16,
+      "symbol": "ServiceTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceTableViewController.swift",
+      "line": 31,
+      "symbol": "ServiceTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceTableViewController.swift",
+      "line": 41,
+      "symbol": "ServiceTableViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/ServiceTableViewController.swift",
+      "line": 133,
+      "symbol": "ServiceTableViewController.updateSearchResults(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit/Technology Salesman Toolkit/ViewControllers/SettingsTableViewController.swift",
+      "line": 6,
+      "symbol": "SettingsTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bramdc/Documents/GitHub/Technology-Salesman-Toolkit-iOS/Technology Salesman Toolkit"
+}

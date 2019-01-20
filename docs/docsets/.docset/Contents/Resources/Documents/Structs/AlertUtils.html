@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AlertUtils Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/AlertUtils" class="dashAnchor"></a>
+    <a title="AlertUtils Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (61% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AlertUtils Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasePaddedLabel.html">BasePaddedLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseTabBarController.html">BaseTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseUIStackView.html">BaseUIStackView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FormUITextField.html">FormUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Instruction.html">Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstructionController.html">InstructionController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstructionView.html">InstructionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProfileViewController.html">ProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RegistrationViewController.html">RegistrationViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Service.html">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceController.html">ServiceController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceDetailViewController.html">ServiceDetailViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceTableViewCell.html">ServiceTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceTableViewController.html">ServiceTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Category.html">Category</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification.html">Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AlertUtils.html">AlertUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FirebaseUtils.html">FirebaseUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FirestoreAPI.html">FirestoreAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InstructionDao.html">InstructionDao</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServiceDao.html">ServiceDao</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StringConstants.html">StringConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StringUtils.html">StringUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ValidationUtils.html">ValidationUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WebsiteUtils.html">WebsiteUtils</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AlertUtils</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AlertUtils</span></code></pre>
+
+                </div>
+              </div>
+            <p>Utilities used by functions related to alerts.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:27Technology_Salesman_Toolkit10AlertUtilsV012createSimpleD09withTitle10andMessageSo17UIAlertControllerCSS_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/createSimpleAlert(withTitle:andMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:27Technology_Salesman_Toolkit10AlertUtilsV012createSimpleD09withTitle10andMessageSo17UIAlertControllerCSS_SStFZ">createSimpleAlert(withTitle:andMessage:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an alert with a single action.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createSimpleAlert</span><span class="p">(</span><span class="n">withTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIAlertController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Title of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A simple alert.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:27Technology_Salesman_Toolkit10AlertUtilsV016createFunctionalD09withTitle10andMessage0J8FunctionSo17UIAlertControllerCSS_SSyyctFZ"></a>
+                    <a name="//apple_ref/swift/Method/createFunctionalAlert(withTitle:andMessage:andFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:27Technology_Salesman_Toolkit10AlertUtilsV016createFunctionalD09withTitle10andMessage0J8FunctionSo17UIAlertControllerCSS_SSyyctFZ">createFunctionalAlert(withTitle:andMessage:andFunction:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an alert with two actions and a function for the positive action.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createFunctionalAlert</span><span class="p">(</span><span class="n">withTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andFunction</span> <span class="nv">function</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIAlertController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Title of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function of the positive action.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An alert with a function.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:27Technology_Salesman_Toolkit10AlertUtilsV020createSendSuggestionD09withTitle10andMessage0K8FunctionSo17UIAlertControllerCSS_SSySSctFZ"></a>
+                    <a name="//apple_ref/swift/Method/createSendSuggestionAlert(withTitle:andMessage:andFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:27Technology_Salesman_Toolkit10AlertUtilsV020createSendSuggestionD09withTitle10andMessage0K8FunctionSo17UIAlertControllerCSS_SSySSctFZ">createSendSuggestionAlert(withTitle:andMessage:andFunction:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an alert with two actions, a function for the positive action and a textfield.
+It is used to display an alert for posting a suggestion</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createSendSuggestionAlert</span><span class="p">(</span><span class="n">withTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andFunction</span> <span class="nv">function</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIAlertController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Title of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function of the positive action.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An alert with a function and a textfield.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:27Technology_Salesman_Toolkit10AlertUtilsV019createPrivacyPolicyD09withTitle10andMessage0K8FunctionSo17UIAlertControllerCSS_SSyyctFZ"></a>
+                    <a name="//apple_ref/swift/Method/createPrivacyPolicyAlert(withTitle:andMessage:andFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:27Technology_Salesman_Toolkit10AlertUtilsV019createPrivacyPolicyD09withTitle10andMessage0K8FunctionSo17UIAlertControllerCSS_SSyyctFZ">createPrivacyPolicyAlert(withTitle:andMessage:andFunction:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an alert with three actions and a function for the positive action and the third action.
+It is used to display an alert when creating an account with an extra button for the privacy policy.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createPrivacyPolicyAlert</span><span class="p">(</span><span class="n">withTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andFunction</span> <span class="nv">function</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIAlertController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Title of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message of the alert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>function</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function of the positive action.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An alert with two functions.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-01-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

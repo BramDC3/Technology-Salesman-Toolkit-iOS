@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ProfileViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ProfileViewController" class="dashAnchor"></a>
+    <a title="ProfileViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (61% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ProfileViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasePaddedLabel.html">BasePaddedLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseTabBarController.html">BaseTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseUIStackView.html">BaseUIStackView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FormUITextField.html">FormUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Instruction.html">Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstructionController.html">InstructionController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstructionView.html">InstructionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProfileViewController.html">ProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RegistrationViewController.html">RegistrationViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Service.html">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceController.html">ServiceController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceDetailViewController.html">ServiceDetailViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceTableViewCell.html">ServiceTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceTableViewController.html">ServiceTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Category.html">Category</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification.html">Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AlertUtils.html">AlertUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FirebaseUtils.html">FirebaseUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FirestoreAPI.html">FirestoreAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InstructionDao.html">InstructionDao</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServiceDao.html">ServiceDao</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StringConstants.html">StringConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StringUtils.html">StringUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ValidationUtils.html">ValidationUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WebsiteUtils.html">WebsiteUtils</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ProfileViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ProfileViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
+                </div>
+              </div>
+            <p>View where users can see their personal information and edit it.</p>
+
+<p>The Firebase documentation by Google was used as guide
+for everything related to editing the account of a user.
+SOURCE: <a href="https://firebase.google.com/docs/auth/ios/manage-users">https://firebase.google.com/docs/auth/ios/manage-users</a></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)profilePictureImageView"></a>
+                    <a name="//apple_ref/swift/Property/profilePictureImageView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)profilePictureImageView">profilePictureImageView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Profile picture of the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">profilePictureImageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)fullnameLabel"></a>
+                    <a name="//apple_ref/swift/Property/fullnameLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)fullnameLabel">fullnameLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Full name of the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">fullnameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)firstnameTextField"></a>
+                    <a name="//apple_ref/swift/Property/firstnameTextField" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)firstnameTextField">firstnameTextField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TextField where users fill in their first name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">firstnameTextField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)lastnameTextField"></a>
+                    <a name="//apple_ref/swift/Property/lastnameTextField" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)lastnameTextField">lastnameTextField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TextField where users fill in their last name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">lastnameTextField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)emailTextField"></a>
+                    <a name="//apple_ref/swift/Property/emailTextField" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)emailTextField">emailTextField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TextField where users fill in their email address.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">emailTextField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)editProfileButton"></a>
+                    <a name="//apple_ref/swift/Property/editProfileButton" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)editProfileButton">editProfileButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Button to enter or exit &lsquo;editing mode&rsquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">editProfileButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)changePasswordButton"></a>
+                    <a name="//apple_ref/swift/Property/changePasswordButton" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(py)changePasswordButton">changePasswordButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Button that is visible in &lsquo;editing mode&rsquo; to apply profile changes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">changePasswordButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)toggleEditModeButtonTapped:"></a>
+                    <a name="//apple_ref/swift/Method/toggleEditModeButtonTapped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)toggleEditModeButtonTapped:">toggleEditModeButtonTapped(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Function executed when the user taps on the toggle edit mode button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">toggleEditModeButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)editProfileButtonTapped:"></a>
+                    <a name="//apple_ref/swift/Method/editProfileButtonTapped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)editProfileButtonTapped:">editProfileButtonTapped(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Function executed when the user taps on the edit profile button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">editProfileButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)changePasswordButtonTapped:"></a>
+                    <a name="//apple_ref/swift/Method/changePasswordButtonTapped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Technology_Salesman_Toolkit@objc(cs)ProfileViewController(im)changePasswordButtonTapped:">changePasswordButtonTapped(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Function executed when the user taps on the change password button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">changePasswordButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-01-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
