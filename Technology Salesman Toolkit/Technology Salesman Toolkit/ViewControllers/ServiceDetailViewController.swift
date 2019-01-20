@@ -1,11 +1,3 @@
-//
-//  ServiceDetailViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 11/12/2018.
-//  Copyright © 2018 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
 class ServiceDetailViewController: UIViewController {
@@ -23,7 +15,7 @@ class ServiceDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        InstructionController.shared.setServiceId(toServiceId: service.id)
+        InstructionController.instance.setServiceId(to: service.id)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotification(_:)), name: .didFetchInstructions, object: nil)
     }
@@ -40,7 +32,7 @@ class ServiceDetailViewController: UIViewController {
     
     private func updateUI() {
         DispatchQueue.main.async {
-            self.instructions = InstructionController.shared.getInstructions()
+            self.instructions = InstructionController.instance.getInstructions()
             self.instructionSlides = self.createInstructionSlides()
             self.setupSlideScrollView()
         }
@@ -54,10 +46,10 @@ class ServiceDetailViewController: UIViewController {
             
             slide.titleLabel.text = instruction.title
             slide.descriptionLabel.text = instruction.shortDescription
-            slide.contentLabel.text = StringUtils.formatInstructionsList(withContent: instruction.content)
+            slide.contentLabel.text = StringUtils.formattingInstructionsList(with: instruction.content)
             
             if let link = URL(string: instruction.image) {
-                FirebaseUtils.fetchImage(url: link) { (image) in
+                FirebaseUtils.fetchImage(with: link) { (image) in
                     guard let image = image else { return }
                     DispatchQueue.main.async {
                         slide.imageView.image = image
@@ -71,6 +63,7 @@ class ServiceDetailViewController: UIViewController {
         return slides
     }
     
+    // https://medium.com/@anitaa_1990/create-a-horizontal-paging-uiscrollview-with-uipagecontrol-swift-4-xcode-9-a3dddc845e92
     private func setupSlideScrollView() {
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(instructionSlides.count), height: view.frame.height)

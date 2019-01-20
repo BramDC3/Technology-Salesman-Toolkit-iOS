@@ -40,12 +40,12 @@ class Service : Object {
     convenience init?(dictionary: [String : Any], id: String) {
         guard let name = dictionary["name"] as? String,
             let description = dictionary["description"] as? String,
-            let category = dictionary["category"] as? Int,
+            let categoryInt = dictionary["category"] as? Int,
             let created = dictionary["created"] as? Timestamp,
             let price = dictionary["price"] as? Double,
             let image = dictionary["image"] as? String
             else { return nil }
         
-        self.init(id: id, name: name, description: description, created: created.dateValue(), price: price, image: image, category: FirebaseUtils.convertIntToCategory(int: category))
+        self.init(id: id, name: name, description: description, created: created.dateValue(), price: price, image: image, category: FirebaseUtils.convertToCategory(categoryInt))
     }
 }

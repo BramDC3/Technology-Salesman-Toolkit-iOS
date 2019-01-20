@@ -1,52 +1,49 @@
-//
-//  ServiceController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 19/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 
 class ServiceController {
-    static let shared = ServiceController()
+    
+    static let instance = ServiceController()
     
     private var allServices: [Service] = []
     private var realmServices: [Service] = []
-    private var isLoading: Bool = false
     private var filteredServices: [Service] = []
+    private var isLoading: Bool = false
     private var nameFilter: String = ""
     
     init() {
-        fetchServicesFromFirestore()
-        fetchServicesFromRealm()
+        fetchServicesFromNetwork()
+        fetchServicesFromLocalDatabase()
     }
     
     func getServices() -> [Service] {
         return filteredServices
     }
     
-    func setNameFilter(toName name: String) {
+    func setNameFilter(to name: String) {
         nameFilter = name
         refreshServiceList()
     }
     
-    private func fetchServicesFromFirestore() {
+    private func fetchServicesFromNetwork() {
         isLoading = true
+        
         FirestoreAPI.fetchServices() { (services) in
             self.isLoading = false
+            
             if let services = services {
                 self.allServices = services
-                ServiceDao.addServices(services: services)
+                ServiceDao.add(services)
             } else if !self.realmServices.isEmpty {
                 self.allServices = self.realmServices
             }
+            
             self.refreshServiceList()
         }
     }
     
-    private func fetchServicesFromRealm() {
+    private func fetchServicesFromLocalDatabase() {
         realmServices = Array(ServiceDao.getServices())
+        
         if allServices.isEmpty && isLoading == false {
             allServices = realmServices
             refreshServiceList()
@@ -57,6 +54,7 @@ class ServiceController {
         filteredServices = allServices.filter {
             nameFilter == "" || $0.name.lowercased().contains(nameFilter.lowercased())
         }
+        
         postNotification()
     }
     

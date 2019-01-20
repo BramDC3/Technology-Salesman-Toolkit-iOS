@@ -1,11 +1,3 @@
-//
-//  ProfileViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 12/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 import FirebaseAuth
 
@@ -27,7 +19,7 @@ class ProfileViewController: UIViewController {
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
         
         if let link = FirebaseUtils.firebaseUser?.photoURL {
-            FirebaseUtils.fetchImage(url: link) { (image) in
+            FirebaseUtils.fetchImage(with: link) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
                     self.profilePictureImageView.image = image
@@ -46,8 +38,8 @@ class ProfileViewController: UIViewController {
     
     private func updateUI() {
         fullnameLabel.text = FirebaseUtils.firebaseUser?.displayName
-        firstnameTextField.text = StringUtils.getFirstname(fullname: FirebaseUtils.firebaseUser?.displayName)
-        lastnameTextField.text = StringUtils.getLastname(fullname: FirebaseUtils.firebaseUser?.displayName)
+        firstnameTextField.text = StringUtils.getFirstname(from: FirebaseUtils.firebaseUser?.displayName)
+        lastnameTextField.text = StringUtils.getLastname(from: FirebaseUtils.firebaseUser?.displayName)
         emailTextField.text = FirebaseUtils.firebaseUser?.email
     }
     
@@ -66,10 +58,10 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    private func profileFormIsValid() -> Bool {
+    private func isProfileFormValid() -> Bool {
         guard let firstname = firstnameTextField.text, let lastname = lastnameTextField.text, let email = emailTextField.text else { return false }
         
-        guard ValidationUtils.doesEveryFieldHaveValue(fields: [firstname, lastname, email]) else {
+        guard ValidationUtils.everyFieldHasValue([firstname, lastname, email]) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.formEmptyFields)
             self.present(alert, animated: true, completion: nil)
             return false
@@ -80,7 +72,7 @@ class ProfileViewController: UIViewController {
             return false
         }
         
-        guard ValidationUtils.isEmailValid(email: email) else {
+        guard ValidationUtils.isEmailValid(email) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.formInvalidEmailAddress)
             self.present(alert, animated: true, completion: nil)
             return false
@@ -90,7 +82,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func displayEditProfileDialog() {
-        if profileFormIsValid() {
+        if isProfileFormValid() {
             let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.messageEditProfile, andFunction: {
                 self.checkForProfileChanges()
             })

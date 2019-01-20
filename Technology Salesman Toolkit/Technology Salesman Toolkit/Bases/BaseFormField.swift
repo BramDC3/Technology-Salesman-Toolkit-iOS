@@ -1,11 +1,3 @@
-//
-//  BaseFormField.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 17/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

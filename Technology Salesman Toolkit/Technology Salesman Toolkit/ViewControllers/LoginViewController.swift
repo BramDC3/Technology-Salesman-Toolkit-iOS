@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     // Function for signing the user in with an email/password combination
     // https://firebase.google.com/docs/auth/ios/custom-auth
     private func signIn() {
-        guard loginFormIsValid() else { return }
+        guard isLoginFormValid() else { return }
         
         FirebaseUtils.mAuth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             guard let user = user else {
@@ -40,16 +40,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     // Function that checks whether all fields of the form are filled in correctly
-    private func loginFormIsValid() -> Bool {
+    private func isLoginFormValid() -> Bool {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return false }
         
-        guard ValidationUtils.doesEveryFieldHaveValue(fields: [email, password]) else {
+        guard ValidationUtils.everyFieldHasValue([email, password]) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleLoginAlert, andMessage: StringConstants.formEmptyFields)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         
-        guard ValidationUtils.isEmailValid(email: email) else {
+        guard ValidationUtils.isEmailValid(email) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleLoginAlert, andMessage: StringConstants.formInvalidEmailAddress)
             self.present(alert, animated: true, completion: nil)
             return false

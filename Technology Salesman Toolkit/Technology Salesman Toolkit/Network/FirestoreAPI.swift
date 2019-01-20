@@ -6,7 +6,7 @@ struct FirestoreAPI {
     private static let db = Firestore.firestore()
     
     // https://firebase.google.com/docs/firestore/quickstart
-    static func fetchServices(completion: @escaping ([Service]?) -> Void) {
+    static func fetchServices(_ completion: @escaping ([Service]?) -> Void) {
         var services: [Service] = []
         
         db.collection("Services").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -28,7 +28,7 @@ struct FirestoreAPI {
         }
     }
     
-    static func fetchInstructions(fromService serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
+    static func fetchInstructions(with serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
         var instructions: [Instruction] = []
         
         db.collection("Instructions").whereField("serviceId", isEqualTo: serviceId).order(by: "index").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -50,11 +50,11 @@ struct FirestoreAPI {
         }
     }
     
-    static func postSuggestion(withMessage message: String, completion: @escaping (Bool) -> Void) {
+    static func postSuggestion(_ suggestion: String, completion: @escaping (Bool) -> Void) {
         db.collection("Suggestions").addDocument(data: [
-            "message": message,
+            "message": suggestion,
             "sender": String(FirebaseUtils.firebaseUser!.uid)
-        ]) { err in
+        ]) { (err) in
             if let err = err {
                 print("Error writing document: \(err)")
                 completion(false)

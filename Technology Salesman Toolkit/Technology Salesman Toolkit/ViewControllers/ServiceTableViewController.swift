@@ -1,11 +1,3 @@
-//
-//  ServiceTableViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 07/12/2018.
-//  Copyright © 2018 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
 class ServiceTableViewController: UITableViewController {
@@ -31,7 +23,7 @@ class ServiceTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !ServiceController.shared.getServices().isEmpty {
+        if !ServiceController.instance.getServices().isEmpty {
             updateUI()
         }
         
@@ -66,10 +58,10 @@ class ServiceTableViewController: UITableViewController {
         cell.titleLabel.text = service.name
         cell.descriptionLabel.text = service.shortDescription
         cell.categoryLabel.text = "\(service.category.rawValue)"
-        cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(price: service.price)
+        cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(service.price)
         
         if let link = URL(string: service.image) {
-            FirebaseUtils.fetchImage(url: link) { (image) in
+            FirebaseUtils.fetchImage(with: link) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
                     cell.logoImageView.image = image
@@ -98,13 +90,13 @@ class ServiceTableViewController: UITableViewController {
     
     private func updateUI() {
         DispatchQueue.main.async {
-            self.services = ServiceController.shared.getServices()
+            self.services = ServiceController.instance.getServices()
             self.tableView.reloadData()
         }
     }
     
-    private func filterByName(withName name: String) {
-        ServiceController.shared.setNameFilter(toName: name)
+    private func filterByName(_ name: String) {
+        ServiceController.instance.setNameFilter(to: name)
     }
 
 }
@@ -112,6 +104,6 @@ class ServiceTableViewController: UITableViewController {
 // https://www.raywenderlich.com/472-uisearchcontroller-tutorial-getting-started
 extension ServiceTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterByName(withName: searchController.searchBar.text!)
+        filterByName(searchController.searchBar.text!)
     }
 }

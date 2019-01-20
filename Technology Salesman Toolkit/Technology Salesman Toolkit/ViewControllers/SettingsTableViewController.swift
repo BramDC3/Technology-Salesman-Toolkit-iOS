@@ -1,11 +1,3 @@
-//
-//  SettingsTableViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 04/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
@@ -38,20 +30,20 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func displaySendSuggestionAlert() {
-        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (message) in
-            self.sendSuggestion(withMessage: message)
+        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (suggestion) in
+            self.sendSuggestion(suggestion)
         })
         self.present(alert, animated: true)
     }
     
-    private func sendSuggestion(withMessage message: String) {
-        guard !message.isEmpty else {
+    private func sendSuggestion(_ suggestion: String) {
+        guard !suggestion.isEmpty else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.errorEmptySuggestion)
             self.present(alert, animated: true)
             return
         }
         
-        FirestoreAPI.postSuggestion(withMessage: message) { (succes) in
+        FirestoreAPI.postSuggestion(suggestion) { (succes) in
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: succes ? StringConstants.successSendSuggestion : StringConstants.errorSuggestionNotSent)
             self.present(alert, animated: true)
         }

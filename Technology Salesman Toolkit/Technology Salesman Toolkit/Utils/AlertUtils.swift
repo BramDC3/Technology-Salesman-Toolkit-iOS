@@ -1,11 +1,3 @@
-//
-//  AlertUtils.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 07/12/2018.
-//  Copyright © 2018 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 import Foundation
 

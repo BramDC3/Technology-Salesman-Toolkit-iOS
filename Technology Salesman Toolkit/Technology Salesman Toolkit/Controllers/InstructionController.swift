@@ -1,61 +1,58 @@
-//
-//  InstructionController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 19/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 
 class InstructionController {
-    static let shared = InstructionController()
+    
+    static let instance = InstructionController()
     
     private var instructions: [Instruction] = []
     private var realmInstructions: [Instruction] = []
     private var serviceId: String = ""
     
     init() {
-        fetchInstructionsFromRealm()
+        fetchInstructionsFromLocalDatabase()
     }
     
     func getInstructions() -> [Instruction] {
         return instructions
     }
     
-    func setServiceId(toServiceId serviceId: String) {
+    func setServiceId(to serviceId: String) {
         instructions.removeAll()
         self.serviceId = serviceId
-        fetchInstructionsFromFirestore()
+        fetchInstructionsFromNetwork()
     }
     
-    private func fetchInstructionsFromRealm() {
-        realmInstructions = Array(InstructionDao.getInstructions())
-    }
-    
-    private func fetchInstructionsFromFirestore() {
-        FirestoreAPI.fetchInstructions(fromService: serviceId) { (instructions) in
+    private func fetchInstructionsFromNetwork() {
+        FirestoreAPI.fetchInstructions(with: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.instructions = instructions
-                InstructionDao.addInstructions(instructions: instructions)
+                InstructionDao.add(instructions)
             } else {
                 let filteredInstructions = self.realmInstructions.filter {
                     $0.serviceId == self.serviceId
                 }
+                
                 if !filteredInstructions.isEmpty {
                     self.instructions = filteredInstructions
                 }
             }
+            
             self.postNotification()
         }
     }
     
+    private func fetchInstructionsFromLocalDatabase() {
+        realmInstructions = Array(InstructionDao.getInstructions())
+    }
+    
+    // https://learnappmaking.com/notification-center-how-to-swift/
     private func postNotification() {
         NotificationCenter.default.post(name: .didFetchInstructions, object: nil)
     }
     
 }
 
+// https://learnappmaking.com/notification-center-how-to-swift/
 extension Notification.Name {
     static let didFetchInstructions = Notification.Name("didFetchInstructions")
 }

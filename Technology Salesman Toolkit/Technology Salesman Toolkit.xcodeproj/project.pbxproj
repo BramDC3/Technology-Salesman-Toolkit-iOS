@@ -170,11 +170,11 @@
 		11A0D13021DD399000FF3213 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
-				1119F01321F114AA00F506C6 /* BaseFormField.swift */,
-				1119F01521F114B400F506C6 /* BaseUIView.swift */,
 				11A0D13121DD39B700FF3213 /* BaseTabBarController.swift */,
 				11A2D87B21DE45C3001294C0 /* BasePaddedLabel.swift */,
 				11C8BC4521F331F2008285AC /* BaseUIStackView.swift */,
+				1119F01521F114B400F506C6 /* BaseUIView.swift */,
+				1119F01321F114AA00F506C6 /* BaseFormField.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
