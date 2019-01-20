@@ -1,13 +1,10 @@
-//
-//  StringConstants.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 15/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 
+/**
+ Collection of all strings that are either
+ used multiple times or need to be translated.
+ Only Dutch is supported at the moment.
+ */
 struct StringConstants {
     
     // LoginViewController

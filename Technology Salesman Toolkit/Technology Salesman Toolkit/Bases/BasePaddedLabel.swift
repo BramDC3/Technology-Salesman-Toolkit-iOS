@@ -1,13 +1,8 @@
-//
-//  BasePaddedLabel.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 03/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
+/// Used to add padding to a label.
+/// SOURCE: https://stackoverflow.com/a/32368958
+@IBDesignable
 class BasePaddedLabel: UILabel {
 
     @IBInspectable var topInset: CGFloat = 0

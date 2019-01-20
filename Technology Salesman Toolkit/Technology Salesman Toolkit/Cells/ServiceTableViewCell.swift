@@ -1,19 +1,21 @@
-//
-//  ServiceTableViewCell.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 03/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
+/// Custom cell used in the ServiceTableView.
 class ServiceTableViewCell: UITableViewCell {
     
+    /// Image of the logo of a service.
     @IBOutlet weak var logoImageView: UIImageView!
+    
+    /// Title of a service.
     @IBOutlet weak var titleLabel: UILabel!
+    
+    /// Description of a service.
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    /// Category of a service.
     @IBOutlet weak var categoryLabel: UILabel!
+    
+    // Price of a service, only displayed if it isn't 0.
     @IBOutlet weak var priceLabel: UILabel!
     
     override func awakeFromNib() {

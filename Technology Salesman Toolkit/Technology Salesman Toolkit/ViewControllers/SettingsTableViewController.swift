@@ -1,19 +1,13 @@
-//
-//  SettingsTableViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 04/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 
+/// View containing all settings of the app and useful information about the app.
 class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    /// Called when a row of the table view is selected.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var index = indexPath.row
         if indexPath.section == 1 {
@@ -29,6 +23,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    /// Display the sign out alert.
     private func displaySignOutAlert() {
         let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleSettingsSignOutAlert, andMessage: StringConstants.messageSignOut, andFunction: {
             FirebaseUtils.signOut()
@@ -37,21 +32,27 @@ class SettingsTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
+    /// Display the send suggestion alert.
     private func displaySendSuggestionAlert() {
-        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (message) in
-            self.sendSuggestion(withMessage: message)
+        let alert = AlertUtils.createSendSuggestionAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.messageSendSuggestion, andFunction: { (suggestion) in
+            self.sendSuggestion(suggestion)
         })
         self.present(alert, animated: true)
     }
     
-    private func sendSuggestion(withMessage message: String) {
-        guard !message.isEmpty else {
+    /**
+     Post a suggestion the user entered to the Firestore.
+     
+     - Parameter suggestion: Suggestion of the user.
+     */
+    private func sendSuggestion(_ suggestion: String) {
+        guard !suggestion.isEmpty else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: StringConstants.errorEmptySuggestion)
             self.present(alert, animated: true)
             return
         }
         
-        FirestoreAPI.postSuggestion(withMessage: message) { (succes) in
+        FirestoreAPI.postSuggestion(suggestion) { (succes) in
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleSettingsSendSuggestionAlert, andMessage: succes ? StringConstants.successSendSuggestion : StringConstants.errorSuggestionNotSent)
             self.present(alert, animated: true)
         }

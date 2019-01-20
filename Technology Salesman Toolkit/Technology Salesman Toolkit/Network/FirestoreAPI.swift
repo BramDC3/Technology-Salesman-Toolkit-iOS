@@ -1,12 +1,26 @@
 import Foundation
 import Firebase
 
+/**
+ Contains functions used to read services from and write services to the Firestore.
+ 
+ The Firebase documentation by Google was used as guide
+ during the creation of the Firestore and its functions.
+ SOURCE: https://firebase.google.com/docs/firestore/query-data/get-data
+ SOURCE: https://firebase.google.com/docs/firestore/manage-data/add-data
+ */
 struct FirestoreAPI {
     
+    /// Instance of the Firestore used for reading and writing.
     private static let db = Firestore.firestore()
     
-    // https://firebase.google.com/docs/firestore/quickstart
-    static func fetchServices(completion: @escaping ([Service]?) -> Void) {
+    /**
+     Fetching all services from the Firestore.
+     
+     - Parameter completion: Function to execute after the services are fetched
+                             or when an error occurs during the fetching.
+     */
+    static func fetchServices(_ completion: @escaping ([Service]?) -> Void) {
         var services: [Service] = []
         
         db.collection("Services").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -28,7 +42,15 @@ struct FirestoreAPI {
         }
     }
     
-    static func fetchInstructions(fromService serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
+    /**
+     Fetching all instructions of a specific service from the Firestore.
+     
+     - Parameters:
+        - serviceId: Identifier of the service which the instructions belong to.
+        - completion: Function to execute after the instructions are fetched
+                      or when an error occurs during the fetching.
+     */
+    static func fetchInstructions(with serviceId: String, completion: @escaping ([Instruction]?) -> Void) {
         var instructions: [Instruction] = []
         
         db.collection("Instructions").whereField("serviceId", isEqualTo: serviceId).order(by: "index").getDocuments(source: FirestoreSource.server) { (querySnapshot, err) in
@@ -50,11 +72,19 @@ struct FirestoreAPI {
         }
     }
     
-    static func postSuggestion(withMessage message: String, completion: @escaping (Bool) -> Void) {
+    /**
+     Posting a suggestion of a user to the Firestore.
+     
+     - Parameters:
+        - suggestion: The suggestion the user wants to post.
+        - completion: Function to execute after the suggestion is posted
+                      or when an error occurred during the posting.
+     */
+    static func postSuggestion(_ suggestion: String, completion: @escaping (Bool) -> Void) {
         db.collection("Suggestions").addDocument(data: [
-            "message": message,
+            "message": suggestion,
             "sender": String(FirebaseUtils.firebaseUser!.uid)
-        ]) { err in
+        ]) { (err) in
             if let err = err {
                 print("Error writing document: \(err)")
                 completion(false)

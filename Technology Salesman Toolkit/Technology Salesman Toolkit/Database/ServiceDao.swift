@@ -1,23 +1,35 @@
-//
-//  ServiceRepository.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 16/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 import RealmSwift
 
+/**
+ Contains queries used to retrieve services from
+ and write services to the local database.
+ 
+ The 'RealmProjectManager' project of Pieter Van Der Helst
+ guided me during the creation of the Realm database and its models.
+ SOURCE: https://github.com/Pieter-hogent/RealmProjectManager
+ */
 struct ServiceDao {
     
+    /**
+     Retrieving all services from the local database.
+     
+     - Returns: A list of persisted services.
+     */
     static func getServices() -> Results<Service> {
         let realm = try! Realm()
         let services = realm.objects(Service.self)
         return services
     }
     
-    static func addServices(services: [Service]) {
+    /**
+     Persisting a list of services to the local database.
+     Also removing all old services to prevent duplication
+     and outdated services.
+     
+     - Parameter services: Services that need to be persisted.
+    */
+    static func add(_ services: [Service]) {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(getServices())

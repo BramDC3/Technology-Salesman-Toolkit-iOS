@@ -1,15 +1,8 @@
-//
-//  BaseUIView.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 17/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
-// https://stackoverflow.com/questions/28854469/change-uibutton-bordercolor-in-storyboard
+/// Extension for View to add corner radius and a border.
+/// SOURCE: https://stackoverflow.com/a/38068594
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {

@@ -1,24 +1,37 @@
-//
-//  ProfileViewController.swift
-//  Technology Salesman Toolkit
-//
-//  Created by Bram De Coninck on 12/01/2019.
-//  Copyright © 2019 Bram De Coninck. All rights reserved.
-//
-
 import UIKit
 import FirebaseAuth
 
+/**
+ View where users can see their personal information and edit it.
+ 
+ The Firebase documentation by Google was used as guide
+ for everything related to editing the account of a user.
+ SOURCE: https://firebase.google.com/docs/auth/ios/manage-users
+ */
 class ProfileViewController: UIViewController {
     
+    /// Indication whether 'editing mode' is enabled or not.
     private var editable: Bool = false
 
+    /// Profile picture of the user.
     @IBOutlet weak var profilePictureImageView: UIImageView!
+    
+    /// Full name of the user.
     @IBOutlet weak var fullnameLabel: UILabel!
+    
+    /// TextField where users fill in their first name.
     @IBOutlet weak var firstnameTextField: UITextField!
+    
+    /// TextField where users fill in their last name.
     @IBOutlet weak var lastnameTextField: UITextField!
+    
+    /// TextField where users fill in their email address.
     @IBOutlet weak var emailTextField: UITextField!
+    
+    /// Button to enter or exit 'editing mode'.
     @IBOutlet weak var editProfileButton: UIButton!
+    
+    /// Button that is visible in 'editing mode' to apply profile changes.
     @IBOutlet weak var changePasswordButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,7 +40,7 @@ class ProfileViewController: UIViewController {
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
         
         if let link = FirebaseUtils.firebaseUser?.photoURL {
-            FirebaseUtils.fetchImage(url: link) { (image) in
+            FirebaseUtils.fetchImage(with: link) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
                     self.profilePictureImageView.image = image
@@ -40,17 +53,24 @@ class ProfileViewController: UIViewController {
         updateUI()
     }
     
+    /// Function executed when the user taps on the toggle edit mode button.
     @IBAction func toggleEditModeButtonTapped(_ sender: UIBarButtonItem) { toggleEditMode() }
-    @IBAction func editProfileButtonTapped(_ sender: UIButton) { displayEditProfileDialog() }
+    
+    /// Function executed when the user taps on the edit profile button.
+    @IBAction func editProfileButtonTapped(_ sender: UIButton) { displayEditProfileAlert() }
+    
+    /// Function executed when the user taps on the change password button.
     @IBAction func changePasswordButtonTapped(_ sender: UIButton) { displayChangePasswordAlert() }
     
+    /// Filling in the label and textfields with data of the user.
     private func updateUI() {
         fullnameLabel.text = FirebaseUtils.firebaseUser?.displayName
-        firstnameTextField.text = StringUtils.getFirstname(fullname: FirebaseUtils.firebaseUser?.displayName)
-        lastnameTextField.text = StringUtils.getLastname(fullname: FirebaseUtils.firebaseUser?.displayName)
+        firstnameTextField.text = StringUtils.getFirstname(from: FirebaseUtils.firebaseUser?.displayName)
+        lastnameTextField.text = StringUtils.getLastname(from: FirebaseUtils.firebaseUser?.displayName)
         emailTextField.text = FirebaseUtils.firebaseUser?.email
     }
     
+    /// Exiting 'edit mode' when it is entered and vice versa.
     private func toggleEditMode() {
         editable = !editable
         
@@ -66,10 +86,15 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    private func profileFormIsValid() -> Bool {
+    /**
+     Checking whether the profile form is valid or not
+     
+     - Returns: Indication whether the profile form is valid or not.
+     */
+    private func isProfileFormValid() -> Bool {
         guard let firstname = firstnameTextField.text, let lastname = lastnameTextField.text, let email = emailTextField.text else { return false }
         
-        guard ValidationUtils.doesEveryFieldHaveValue(fields: [firstname, lastname, email]) else {
+        guard ValidationUtils.everyFieldHasValue([firstname, lastname, email]) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.formEmptyFields)
             self.present(alert, animated: true, completion: nil)
             return false
@@ -80,7 +105,7 @@ class ProfileViewController: UIViewController {
             return false
         }
         
-        guard ValidationUtils.isEmailValid(email: email) else {
+        guard ValidationUtils.isEmailValid(email) else {
             let alert = AlertUtils.createSimpleAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.formInvalidEmailAddress)
             self.present(alert, animated: true, completion: nil)
             return false
@@ -89,8 +114,9 @@ class ProfileViewController: UIViewController {
         return true
     }
     
-    private func displayEditProfileDialog() {
-        if profileFormIsValid() {
+    /// Displaying the edit profile alert.
+    private func displayEditProfileAlert() {
+        if isProfileFormValid() {
             let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleProfileEditProfileAlert, andMessage: StringConstants.messageEditProfile, andFunction: {
                 self.checkForProfileChanges()
             })
@@ -98,6 +124,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    /// Checking whether the user has changed their name, email address or both.
     private func checkForProfileChanges() {
         let name = "\(firstnameTextField.text!) \(lastnameTextField.text!)"
         if (FirebaseUtils.firebaseUser!.displayName! != name) {
@@ -110,6 +137,11 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    /**
+     Changing the name of the user.
+     
+     - Parameter name: New name of the user.
+     */
     private func changeName(to name: String) {
         let changeRequest = FirebaseUtils.firebaseUser!.createProfileChangeRequest()
         changeRequest.displayName = name
@@ -128,6 +160,11 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    /**
+     Changing the email address of the user.
+     
+     - Parameter email: New email address of the user.
+     */
     private func changeEmail(to email: String) {
         FirebaseUtils.firebaseUser!.updateEmail(to: email) { (error) in
             guard error == nil else {
@@ -150,6 +187,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    /// Displaying the change password alert.
     private func displayChangePasswordAlert() {
         let alert = AlertUtils.createFunctionalAlert(withTitle: StringConstants.titleProfileChangePasswordAlert, andMessage: StringConstants.messageChangePassword, andFunction: {
             self.sendResetPasswordEmail()
@@ -157,6 +195,7 @@ class ProfileViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    /// Sending a reset password email to the user.
     private func sendResetPasswordEmail() {
         FirebaseUtils.mAuth.sendPasswordReset(withEmail: FirebaseUtils.firebaseUser!.email!) { (error) in
             if error == nil {
