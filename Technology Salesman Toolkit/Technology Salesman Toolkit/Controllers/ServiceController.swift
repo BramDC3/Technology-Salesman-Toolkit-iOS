@@ -21,9 +21,6 @@ class ServiceController {
     /// List of services that is filtered and ready to be displayed.
     private var filteredServices: [Service] = []
     
-    /// Indicator to see if the services are still being loaded from the network.
-    private var isLoading: Bool = false
-    
     /// Filter to only have services where the name contains this word.
     private var nameFilter: String = ""
     
@@ -62,11 +59,8 @@ class ServiceController {
      retrieved from the network.
      */
     private func fetchServicesFromNetwork() {
-        isLoading = true
-        
         FirestoreAPI.fetchServices() { (services) in
-            self.isLoading = false
-            
+
             if let services = services {
                 self.allServices = services
                 ServiceDao.add(services)
@@ -87,7 +81,7 @@ class ServiceController {
     private func fetchServicesFromLocalDatabase() {
         localServices = Array(ServiceDao.getServices())
         
-        if allServices.isEmpty && isLoading == false {
+        if allServices.isEmpty {
             allServices = localServices
             refreshServiceList()
         }

@@ -22,14 +22,6 @@ class InstructionController {
     private var serviceId: String = ""
     
     /**
-     Initializes a new instructions controller
-     and starts fetching instructions the local database.
-     */
-    init() {
-        fetchInstructionsFromLocalDatabase()
-    }
-    
-    /**
      Getter that retrieves the list instructions of a certain service.
      
      - Returns: A list of instructions.
@@ -46,8 +38,10 @@ class InstructionController {
      - Parameter serviceId: Identifier of a service.
      */
     func setServiceId(to serviceId: String) {
+        fetchAllInstructionsFromLocalDatabase()
         instructions.removeAll()
         self.serviceId = serviceId
+        fetchInstructionsFromLocalDatabase()
         fetchInstructionsFromNetwork()
     }
     
@@ -61,23 +55,34 @@ class InstructionController {
         FirestoreAPI.fetchInstructions(with: serviceId) { (instructions) in
             if let instructions = instructions {
                 self.instructions = instructions
+                if !self.localDatabaseContainsInstructionsOfSelectedService() {
+                    self.postNotification()
+                }
                 InstructionDao.add(instructions)
-            } else {
-                let filteredInstructions = self.localInstructions.filter {
-                    $0.serviceId == self.serviceId
-                }
-                
-                if !filteredInstructions.isEmpty {
-                    self.instructions = filteredInstructions
-                }
             }
-            
+        }
+    }
+    
+    /// Fetching instructions from the local database of a certain service.
+    private func fetchInstructionsFromLocalDatabase() {
+        if localDatabaseContainsInstructionsOfSelectedService() {
+            let filteredInstructions = localInstructions.filter { $0.serviceId == serviceId }
+            instructions = filteredInstructions
             self.postNotification()
         }
     }
     
+    /**
+     Checking whether the local database contains instructions of the selected service or not.
+     
+     - Returns: Indication whether the local database contains instructions of the selected service or not.
+     */
+    private func localDatabaseContainsInstructionsOfSelectedService() -> Bool {
+        return localInstructions.filter { $0.serviceId == serviceId }.count != 0
+    }
+    
     /// Fetching all instructions from the local database.
-    private func fetchInstructionsFromLocalDatabase() {
+    private func fetchAllInstructionsFromLocalDatabase() {
         localInstructions = Array(InstructionDao.getInstructions())
     }
     
