@@ -1,5 +1,10 @@
 import Foundation
 
+/**
+ Collection of all strings that are either
+ used multiple times or need to be translated.
+ Only Dutch is supported at the moment.
+ */
 struct StringConstants {
     
     // LoginViewController

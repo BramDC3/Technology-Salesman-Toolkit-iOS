@@ -1,5 +1,8 @@
 import UIKit
 
+/// Used to add padding to a label.
+/// SOURCE: https://stackoverflow.com/a/32368958
+@IBDesignable
 class BasePaddedLabel: UILabel {
 
     @IBInspectable var topInset: CGFloat = 0

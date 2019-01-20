@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
 
-// https://stackoverflow.com/questions/28854469/change-uibutton-bordercolor-in-storyboard
+/// Extension for View to add corner radius and a border.
+/// SOURCE: https://stackoverflow.com/a/38068594
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {

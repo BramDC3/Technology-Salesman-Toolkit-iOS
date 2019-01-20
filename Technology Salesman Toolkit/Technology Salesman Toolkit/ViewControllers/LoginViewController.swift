@@ -1,22 +1,34 @@
 import UIKit
 import GoogleSignIn
 
+/**
+ The first view users see when they aren't signed in. It is
+ used to sign in with both an email/password combination
+ and Google sign-in.
+ 
+ The Firebase documentation by Google was used as guide
+ for everything related to signing in.
+ SOURCE: https://firebase.google.com/docs/auth/ios/custom-auth
+ SOURCE: https://firebase.google.com/docs/auth/ios/google-signin
+ */
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
+    /// TextField where users fill in their email address.
     @IBOutlet weak var emailTextField: UITextField!
+    
+    /// TextField where users fill in their password.
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
+    /// Function executed when the user taps on the sign in button.
     @IBAction func signInButtonTapped(_ sender: UIButton) { signIn() }
     
-    // Function for signing the user in with an email/password combination
-    // https://firebase.google.com/docs/auth/ios/custom-auth
+    /// Signing a user in with their email/password combination.
     private func signIn() {
         guard isLoginFormValid() else { return }
         
@@ -39,7 +51,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
     
-    // Function that checks whether all fields of the form are filled in correctly
+    /**
+     Checking whether the login form is valid or not
+     
+     - Returns: Indication whether the login form is valid or not.
+     */
     private func isLoginFormValid() -> Bool {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return false }
         
@@ -58,7 +74,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         return true
     }
     
-    // Function for going back to the login screen
+    /**
+     Unwinding to the login view.
+     
+     - Parameter unwindSeque: Segue that is executed.
+     */
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) { }
     
 }

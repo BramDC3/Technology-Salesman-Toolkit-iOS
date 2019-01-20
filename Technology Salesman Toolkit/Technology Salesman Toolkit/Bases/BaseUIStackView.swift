@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
 
-// https://stackoverflow.com/questions/32551890/how-to-add-leading-padding-to-view-added-inside-an-uistackview
+/// Used to add a background color to a StackView.
+/// SOURCE: https://stackoverflow.com/a/39720288
 @IBDesignable
 class BaseUIStackView: UIStackView {
     @IBInspectable private var color: UIColor?
