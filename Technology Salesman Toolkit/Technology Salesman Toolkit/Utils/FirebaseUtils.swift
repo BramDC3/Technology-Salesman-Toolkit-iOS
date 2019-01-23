@@ -43,6 +43,8 @@ struct FirebaseUtils {
     /**
      Fetching an image from the internet.
      
+     SOURCE: App Development with Swift page 946 - 947
+     
      - Parameters:
         - url: Link to the image that needs to be fetched.
         - completion: Function that needs to be executed when

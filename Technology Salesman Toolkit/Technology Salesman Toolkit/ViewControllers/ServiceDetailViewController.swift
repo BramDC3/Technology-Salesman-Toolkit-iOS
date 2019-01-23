@@ -72,6 +72,7 @@ class ServiceDetailViewController: UIViewController {
             slide.descriptionLabel.text = instruction.shortDescription
             slide.contentLabel.text = StringUtils.formattingInstructionsList(with: instruction.content)
             
+            /// SOURCE: App Development with Swift page 949
             if let link = URL(string: instruction.image) {
                 FirebaseUtils.fetchImage(with: link) { (image) in
                     guard let image = image else { return }

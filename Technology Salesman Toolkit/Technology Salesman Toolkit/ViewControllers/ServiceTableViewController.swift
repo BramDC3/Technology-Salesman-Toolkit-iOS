@@ -71,6 +71,7 @@ class ServiceTableViewController: UITableViewController {
         cell.categoryLabel.text = service.category.rawValue
         cell.priceLabel.text = service.price == 0.0 ? " " : StringUtils.formatPrice(service.price)
         
+        /// SOURCE: App Development with Swift page 948
         if let link = URL(string: service.image) {
             FirebaseUtils.fetchImage(with: link) { (image) in
                 guard let image = image else { return }

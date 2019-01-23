@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         Firestore.firestore().settings = settings
         
         /// Adding cache for storing images: 25 MB of memory and 50 MB of disk space
+        /// SOURCE: App Development with Swift page 945
         let temporaryDirectory = NSTemporaryDirectory()
         let urlCache = URLCache(memoryCapacity: 25000000, diskCapacity: 50000000, diskPath: temporaryDirectory)
         URLCache.shared = urlCache

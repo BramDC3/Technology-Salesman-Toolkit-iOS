@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
         
+        /// SOURCE: App Development with Swift page 949
         if let link = FirebaseUtils.firebaseUser?.photoURL {
             FirebaseUtils.fetchImage(with: link) { (image) in
                 guard let image = image else { return }
