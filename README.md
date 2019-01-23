@@ -22,7 +22,7 @@ This is the GitHub repository for the Technology Salesman Toolkit (TEST) app, an
 
 ## Technology
 
-Technology Salesman Toolkit is a native iOS application that supports iPhones and iPads with iOS 9 or higher. It was created in Xcode 10.1 with Swift 4.2.1. The architecture used to create TEST is MVC. The app uses a Firebase backend and it uses a local Realm database for caching.
+Technology Salesman Toolkit is a native iOS application that supports iPhones and iPads with iOS 9 or higher. It was created in Xcode 10.1 with Swift 4.2.1. The architecture used to create TEST is MVC. The app uses a Firebase backend and it uses a local Realm database for caching. Most of my Swift knowledge comes from the book 'App Development with Swift'.
 
 ## Testaccount
 
